@@ -15,19 +15,34 @@ class RegisterRepoImpl extends Registerrepo {
     required String email,
     required String password,
   }) async {
-    try {
-      print("in register function");
-      UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      print(userCredential.user?.uid);
-      auth.currentUser!.sendEmailVerification();
-      return right(userCredential);
-    } on Exception catch (e) {
-      if (e is FirebaseAuthException) {
-        return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
-      } else {
-        return left(FirebaseFailure.fromFirebaseError(errorCode: e.toString()));
+    QuerySnapshot query = await FirebaseFirestore.instance
+        .collection('users')
+        .where('email', isEqualTo: email)
+        .get();
+    if (query.docs.length == 0) {
+      try {
+        print("+++++++++++++++++++++++++++++++++++++++");
+        print("in register function");
+        UserCredential userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
+        print(userCredential.user?.uid);
+        auth.currentUser!.sendEmailVerification();
+        return right(userCredential);
+      } on Exception catch (e) {
+        if (e is FirebaseAuthException) {
+          return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
+        } else {
+          return left(
+              FirebaseFailure.fromFirebaseError(errorCode: e.toString()));
+        }
       }
+    } else {
+      print("+++++++++++++++++++++++++++++++++++++++");
+      print(
+          "Email already used in USERS Application, Please use another Email.");
+      return left(FirebaseFailure.fromFirebaseError(
+          errorCode:
+              "Email already used in USERS Application, Please use another Email."));
     }
   }
 
@@ -35,28 +50,27 @@ class RegisterRepoImpl extends Registerrepo {
   Future<Either<Faliures, UserCredential>> signUpwithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
-
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
-
       UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
-
       // Check if the user is new
       final isNewUser = userCredential.additionalUserInfo!.isNewUser;
-
-      if (!isNewUser) {
+      QuerySnapshot query = await FirebaseFirestore.instance
+          .collection('users')
+          .where('email', isEqualTo: userCredential.user!.email)
+          .get();
+      if (query.docs.length == 0) {
+        //Go to the sign up screen
+        return right(userCredential);
+      } else {
+        //Go to the login screen
         return left(FirebaseFailure.fromFirebaseError(
             errorCode: "Email already used. Go to the login page."));
-      } else {
-        // Uplaod User Info to firestore
-
-        return right(userCredential);
       }
     } on Exception catch (e) {
       if (e is FirebaseAuthException) {

@@ -1,4 +1,3 @@
-
 import 'package:nike_app_vendors/app/core/errors/faliure.dart';
 
 class FirebaseFailure extends Faliures {
@@ -36,7 +35,7 @@ class FirebaseFailure extends Faliures {
           return "Email address is invalid.";
 
         default:
-          return "Registeration failed. Please try again.";
+          return errorCode;
       }
     }
 

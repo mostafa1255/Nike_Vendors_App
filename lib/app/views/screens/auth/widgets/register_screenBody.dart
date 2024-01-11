@@ -95,8 +95,8 @@ class RegisterScreenBody extends StatelessWidget {
             ),
             fcolorWhite: true,
             color: AppColors.kOfWhiteColor,
-            onPressed: () {
-              regCubit.signUpWithGoogle();
+            onPressed: () async {
+              await regCubit.signUpWithGoogle();
             },
           ),
           const VsizedBox(height: 20),
