@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
           CustomTextFormField(
             stringController: logCubit.passController,
             widget: IconButton(
-                onPressed: () {}, icon: Image.asset(AppImages.iconeyePassword)),
+                onPressed: () {}, icon: Image.asset(AppImages.iconsEyePassword)),
             hinttext: "Password",
             securPass: true,
             width: double.infinity,

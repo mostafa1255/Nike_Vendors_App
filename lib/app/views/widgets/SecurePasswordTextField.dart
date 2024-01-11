@@ -26,7 +26,7 @@ class _SecurePasswordState extends State<SecurePasswordTextField> {
               securPass = !securPass;
             });
           },
-          icon: Image.asset(AppImages.iconeyePassword)),
+          icon: Image.asset(AppImages.iconsEyePassword)),
       hinttext: "Password",
       securPass: securPass,
       width: double.infinity,

@@ -19,7 +19,7 @@ class CustomForgetPasswordAlertDialog extends StatelessWidget {
       title: CircleAvatar(
         radius: 25.r,
         backgroundColor: AppColors.kPrimaryColor,
-        child: Image.asset(AppImages.iconEmail),
+        child: Image.asset(AppImages.iconsEmail1),
       ),
       content: SizedBox(
         height: 88.h,

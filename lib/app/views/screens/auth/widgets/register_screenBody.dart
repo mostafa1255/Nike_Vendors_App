@@ -83,7 +83,7 @@ class RegisterScreenBody extends StatelessWidget {
             widget: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(AppImages.iconGoogle),
+                Image.asset(AppImages.iconsGoogleicon),
                 const HsizedBox(width: 15),
                 Text(
                   "Sign In with Google ",

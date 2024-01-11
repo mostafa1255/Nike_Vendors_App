@@ -22,7 +22,7 @@ class CustomCartIcon extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
           onPressed: onPressed,
-          icon: Image.asset(AppImages.iconcart),
+          icon: Image.asset(AppImages.iconsCartIcon),
         ));
   }
 }
