@@ -17,7 +17,7 @@ class VendorHomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             // Product Catalog Widget
-            // Implement a widget to display the list of Nike shoes products
+            // Implement a widget to splay the list of Nike shoes products
 
             SizedBox(height: 20),
 
