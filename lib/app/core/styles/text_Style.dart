@@ -4,6 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants.dart';
 
 class Txtstyle {
+  static TextStyle style50({required BuildContext context}) {
+    return TextStyle(
+        // fontFamily: Constants.popinsFamily,
+        fontSize: 50.sp,
+        color: Colors.white);
+  }
+
   static TextStyle style34({required BuildContext context}) {
     return TextStyle(
         fontFamily: Constants.relwayFamily,

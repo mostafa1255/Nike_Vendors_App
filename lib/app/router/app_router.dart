@@ -22,7 +22,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => LoginScreen(),
+        builder: (context, state) => HomeScreen(),
       ),
       /*  GoRoute(
         path: pageview,
