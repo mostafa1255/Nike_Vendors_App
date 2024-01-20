@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:nike_app_vendors/app/views/screens/Add_Product_Screen/add_Product_Screen.dart';
 import 'package:nike_app_vendors/app/views/screens/auth/login_screen/login_screen.dart';
 import 'package:nike_app_vendors/app/views/screens/auth/register_screen/register_screen.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/home_screen.dart';
@@ -22,7 +23,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => AddProductScreen(),
       ),
       /*  GoRoute(
         path: pageview,
