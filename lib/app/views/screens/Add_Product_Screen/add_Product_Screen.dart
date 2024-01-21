@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nike_app_vendors/app/views/screens/Add_Product_Screen/widgets/favoriteScreenAppBar.dart';
+import 'package:nike_app_vendors/app/views/widgets/customAppBar.dart';
 import 'widgets/AddProductScreenBody.dart';
 
 class AddProductScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class AddProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: addProductAppBar(
+      appBar: customAppBar(
         context: context,
         title: "Add Product",
         iconData: Icons.add,

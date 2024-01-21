@@ -4,7 +4,6 @@ import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/views/widgets/CustomTextFormField.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
-
 import '../../../../core/styles/text_Style.dart';
 
 class AddProductScreenBody extends StatelessWidget {

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import '../../../../core/constants.dart';
-import '../../../../core/styles/App_Colors.dart';
-import '../../../../core/styles/text_Style.dart';
-import '../../../widgets/CustomBackIcon.dart';
+import '../../core/constants.dart';
+import '../../core/styles/App_Colors.dart';
+import '../../core/styles/text_Style.dart';
+import 'CustomBackIcon.dart';
 
-AppBar addProductAppBar(
+AppBar customAppBar(
     {required BuildContext context,
     required String title,
     void Function()? onPressed1,
     IconData? iconData}) {
   return AppBar(
     surfaceTintColor: Colors.transparent,
-    backgroundColor: Colors.white,
+    backgroundColor: AppColors.kOfWhiteColor,
     leading: CustomBackAndFavIcon(
       onPressed: onPressed1,
     ),
