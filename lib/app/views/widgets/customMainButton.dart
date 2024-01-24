@@ -14,6 +14,7 @@ class CustomMainButton extends StatelessWidget {
     this.widget,
     this.fcolorWhite,
     this.width,
+    this.fontcolor,
   });
   final double? width;
   final String? txt;
@@ -21,11 +22,14 @@ class CustomMainButton extends StatelessWidget {
   final Color color;
   final Widget? widget;
   final bool? fcolorWhite;
+  final Color? fontcolor;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-            shadowColor: const MaterialStatePropertyAll<Color>(Colors.white),
+            shadowColor: const MaterialStatePropertyAll<Color>(
+              Colors.white,
+            ),
             backgroundColor: MaterialStatePropertyAll(color),
             fixedSize:
                 MaterialStatePropertyAll(Size(width ?? double.infinity, 55.h)),
@@ -36,8 +40,7 @@ class CustomMainButton extends StatelessWidget {
             Text(
               txt!,
               style: Txtstyle.style14(context: context).copyWith(
-                  color:
-                      fcolorWhite == true ? Colors.white : AppColors.kFontColor,
+                  color: fcolorWhite == true ? Colors.white : fontcolor,
                   fontFamily: Constants.relwayFamily),
             ));
   }

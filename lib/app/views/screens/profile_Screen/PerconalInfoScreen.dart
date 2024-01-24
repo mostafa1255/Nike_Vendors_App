@@ -3,10 +3,10 @@ import '../../../core/constants.dart';
 import '../../../core/styles/App_Colors.dart';
 import '../../../core/styles/text_Style.dart';
 import '../../widgets/CustomBackIcon.dart';
-import 'widgets/ProfileScreenBody.dart';
+import 'widgets/PerconalInfoScreenBody.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class PerconalInfoScreen extends StatelessWidget {
+  const PerconalInfoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
               fontFamily: Constants.relwayFamily),
         ),
       ),
-      body: const ProfileScreenBody(),
+      body: const PerconalInfoScreenBody(),
     );
   }
 }

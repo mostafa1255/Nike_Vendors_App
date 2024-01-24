@@ -116,4 +116,10 @@ class AppImages {
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png
   static const String imagesOnboarding1 = "assets/images/onboarding1.png";
+
+  static const String iconUser = "assets/icons/user.png";
+
+  static const String userReview = "assets/icons/userReview.png";
+
+  static const String redLogout = "assets/icons/redLogout.png";
 }

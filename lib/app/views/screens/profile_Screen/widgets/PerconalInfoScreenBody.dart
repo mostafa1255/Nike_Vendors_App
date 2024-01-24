@@ -8,8 +8,8 @@ import '../../../widgets/CustomTextFormField.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
 
-class ProfileScreenBody extends StatelessWidget {
-  const ProfileScreenBody({super.key});
+class PerconalInfoScreenBody extends StatelessWidget {
+  const PerconalInfoScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
