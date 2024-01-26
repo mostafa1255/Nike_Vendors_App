@@ -6,7 +6,7 @@ import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/App_Regex.dart';
 import '../../../../core/tools/global_keys.dart';
-import '../../../../data/auth cubits/register_Cubit/register_cubit.dart';
+import '../../../../data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import '../../../widgets/CustomTextFormField.dart';
 import '../../../widgets/SecurePasswordTextField.dart';
 import '../../../widgets/VsizedBox.dart';

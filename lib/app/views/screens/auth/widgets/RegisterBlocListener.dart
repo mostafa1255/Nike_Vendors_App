@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/Functions/Snack_Bar.dart';
-import '../../../../data/auth cubits/register_Cubit/register_cubit.dart';
+import '../../../../data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
+import '../../../../router/app_router.dart';
 
 class RegisterBlocListener extends StatelessWidget {
   const RegisterBlocListener({
@@ -20,14 +21,8 @@ class RegisterBlocListener extends StatelessWidget {
           );
         } else if (state is RegisterSuccess) {
           customsnackBar(context, "Account Created Successfully", Colors.green);
-         //GoRouter.of(context).push(Approuter.loginescreen);
+          GoRouter.of(context).push(Approuter.loginescreen);
         } else if (state is RegisterFailure) {
-          customsnackBar(context, state.errMessage, Colors.red);
-        } else if (state is UserInfoUploadedLoading) {
-          const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (state is UserInfoUploadedFaliure) {
           customsnackBar(context, state.errMessage, Colors.red);
         }
       },

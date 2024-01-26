@@ -8,11 +8,4 @@ abstract class Registerrepo {
     required String password,
   });
   Future<Either<Faliures, UserCredential>> signUpwithGoogle();
-  Future<Either<Faliures, void>> sendVendorInfotoFirestore({
-    required String name,
-    required String email,
-    required String userid,
-    required String location,
-    required num number,
-  });
 }

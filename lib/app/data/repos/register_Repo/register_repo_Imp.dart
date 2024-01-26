@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../../core/errors/faliure.dart';
 import '../../../core/errors/firebase_faliure.dart';
-import '../../models/Vendors_Model.dart';
 import 'register_repo.dart';
 
 class RegisterRepoImpl extends Registerrepo {
@@ -37,9 +36,6 @@ class RegisterRepoImpl extends Registerrepo {
         }
       }
     } else {
-      print("+++++++++++++++++++++++++++++++++++++++");
-      print(
-          "Email already used in USERS Application, Please use another Email.");
       return left(FirebaseFailure.fromFirebaseError(
           errorCode:
               "Email already used in USERS Application, Please use another Email."));
@@ -71,34 +67,6 @@ class RegisterRepoImpl extends Registerrepo {
       } else {
         return right(userCredential);
       }
-    } on Exception catch (e) {
-      if (e is FirebaseAuthException) {
-        return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
-      } else {
-        return left(FirebaseFailure.fromFirebaseError(errorCode: e.toString()));
-      }
-    }
-  }
-
-  @override
-  Future<Either<Faliures, void>> sendVendorInfotoFirestore({
-    required String name,
-    required String email,
-    required String userid,
-    required String location,
-    required num number,
-  }) async {
-    VendorModel usermodel = VendorModel(
-        id: userid,
-        name: name,
-        email: email,
-        location: "[0.2,5.2]",
-        number: number);
-    try {
-      return right(await FirebaseFirestore.instance
-          .collection("vendors")
-          .doc(userid)
-          .set(usermodel.toMap()));
     } on Exception catch (e) {
       if (e is FirebaseAuthException) {
         return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));

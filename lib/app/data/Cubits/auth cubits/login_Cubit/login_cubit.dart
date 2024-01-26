@@ -2,7 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import '../../repos/login_Repo/login_repo.dart';
+
+import '../../../repos/login_Repo/login_repo.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

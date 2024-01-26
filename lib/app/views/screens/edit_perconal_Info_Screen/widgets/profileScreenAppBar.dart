@@ -22,12 +22,10 @@ PreferredSizeWidget profileScreenAppBar(BuildContext context) {
           fontFamily: Constants.relwayFamily),
     ),
     actions: [
-      GestureDetector(
-        onTap: () {
-          GoRouter.of(context).pop();
-        },
+      TextButton(
+        onPressed: () {},
         child: Text(
-          "Done",
+          "Cancel",
           style: Txtstyle.style16(context: context).copyWith(
               color: AppColors.kPrimaryColor,
               fontWeight: FontWeight.w600,

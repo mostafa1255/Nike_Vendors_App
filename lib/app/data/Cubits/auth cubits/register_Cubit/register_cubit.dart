@@ -2,7 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../../repos/register_Repo/register_repo.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
+import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
+
+import '../../../repos/register_Repo/register_repo.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
@@ -16,6 +19,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
+  final imageController = TextEditingController();
 
 //Email and Password Auth
   Future<void> signUpwithEmailandPassword({
@@ -33,8 +37,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     }, (usercredential) {
       userCredential = usercredential;
       emit(RegisterSuccess());
-      sendVendorInfotoFirestore(
-          name: name, email: email, userid: auth.currentUser!.uid);
+      //   vendorCubit!.sendVendorInfotoFirestore(
+      //   name: name, email: email, userid: auth.currentUser!.uid);
     });
   }
 
@@ -47,30 +51,12 @@ class RegisterCubit extends Cubit<RegisterState> {
     }, (usercredential) {
       userCredential = usercredential;
       emit(RegisterSuccess());
-      sendVendorInfotoFirestore(
-          name: userCredential.user!.displayName!,
-          email: userCredential.user!.email!,
-          userid: userCredential.user!.uid);
+      //    vendorCubit!.sendVendorInfotoFirestore(
+      ///       name: userCredential.user!.displayName!,
+      //     email: userCredential.user!.email!,
+      //      userid: userCredential.user!.uid);
     });
   }
 
 // Upload User Info
-  Future<void> sendVendorInfotoFirestore({
-    required String name,
-    required String email,
-    required String userid,
-  }) async {
-    emit(UserInfoUploadedLoading());
-    var result = await registerrepo.sendVendorInfotoFirestore(
-        number: 01289880177,
-        location: '[0.2,5.2]',
-        name: name,
-        email: email,
-        userid: userid);
-    result.fold((faliure) {
-      emit(UserInfoUploadedFaliure(errMessage: faliure.errmessage));
-    }, (usercredential) {
-      emit(UserInfoUploadedSuccsess());
-    });
-  }
 }

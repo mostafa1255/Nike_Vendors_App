@@ -1,7 +1,7 @@
 import '../../../../core/tools/App_Regex.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
-import '../../../../data/auth cubits/login_Cubit/login_cubit.dart';
+import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../widgets/CustomTextFormField.dart';
 
 class ForgetPasswordForm extends StatefulWidget {

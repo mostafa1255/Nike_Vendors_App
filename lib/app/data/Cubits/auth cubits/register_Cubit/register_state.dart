@@ -15,12 +15,4 @@ class RegisterFailure extends RegisterState {
   RegisterFailure({required this.errMessage});
 }
 
-class UserInfoUploadedLoading extends RegisterState {}
 
-class UserInfoUploadedSuccsess extends RegisterState {}
-
-class UserInfoUploadedFaliure extends RegisterState {
-  final String errMessage;
-
-  UserInfoUploadedFaliure({required this.errMessage});
-}

@@ -7,7 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../../../core/errors/faliure.dart';
 import '../../../core/errors/firebase_faliure.dart';
 import '../../../core/tools/reg_imp.dart';
-import '../../auth cubits/login_Cubit/login_cubit.dart';
+import '../../Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import 'login_repo.dart';
 
 class LoginRepoImpl extends LoginRepo {

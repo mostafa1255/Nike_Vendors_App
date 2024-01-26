@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
-import '../../../../data/auth cubits/login_Cubit/login_cubit.dart';
+import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../widgets/CustomBackIcon.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
