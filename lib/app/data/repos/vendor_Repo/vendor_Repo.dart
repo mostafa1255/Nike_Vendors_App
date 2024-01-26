@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:nike_app_vendors/app/core/errors/faliure.dart';
 import 'package:nike_app_vendors/app/core/tools/App_States.dart';
@@ -10,7 +12,8 @@ abstract class VendorRepo {
     required String location,
     required num number,
   });
-  Future<Either<AppState, AppState>> getImageFromGallery();
-  Future<Either<AppState, AppState>> getImageFromCamera();
-  Future<Either<Faliures, String>> uploadImageToStorage();
+  Future<Either<AppState, File>> getImageFromGallery();
+  Future<Either<AppState, File>> getImageFromCamera();
+  Future<Either<Faliures, String>> uploadImageToStorage(
+      {required File userImage});
 }

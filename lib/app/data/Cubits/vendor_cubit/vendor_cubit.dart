@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo.dart';
-
 part 'vendor_state.dart';
 
 class VendorCubit extends Cubit<VendorState> {
@@ -27,14 +26,37 @@ class VendorCubit extends Cubit<VendorState> {
     });
   }
 
-  //Future<void> getImageFromGallery() async {
-  // emit(ImageSelectedLoading());
-  // var result = await vendorRepo.getImageFromGallery();
-  // result.fold((faliure) {
-  // emit(ImageSelectedFaliure(errMessage: faliure.errmessage));
-  //}, (image) {
-  // userImage = image;
-  //emit(ImageSelectedSuccsess());
-  //});
-  // }
+  Future<void> getImageFromGalleryAndUploadtoStorage() async {
+    emit(ImageSelectedLoading());
+    var result = await vendorRepo.getImageFromGallery();
+    result.fold((faliure) {
+      emit(ImageSelectedFaliure(errMessage: "Please Select Image"));
+    }, (image) async {
+      emit(ImageSelectedSuccsess());
+      emit(ImageUploadedLoading());
+      var result2 = await vendorRepo.uploadImageToStorage(userImage: image);
+      result2.fold((faliure) {
+        emit(ImageUploadedFaliure(errMessage: faliure.errmessage));
+      }, (imageurl) {
+        emit(ImageUploadedSuccsess(imageUrl: imageurl));
+      });
+    });
+  }
+
+  Future<void> getImageFromCameraAndUploadtoStorage() async {
+    emit(ImageSelectedLoading());
+    var result = await vendorRepo.getImageFromCamera();
+    result.fold((faliure) {
+      emit(ImageSelectedFaliure(errMessage: "Please Select Image"));
+    }, (image) async {
+      emit(ImageSelectedSuccsess());
+      emit(ImageUploadedLoading());
+      var result2 = await vendorRepo.uploadImageToStorage(userImage: image);
+      result2.fold((faliure) {
+        emit(ImageUploadedFaliure(errMessage: faliure.errmessage));
+      }, (imageurl) {
+        emit(ImageUploadedSuccsess(imageUrl: imageurl));
+      });
+    });
+  }
 }

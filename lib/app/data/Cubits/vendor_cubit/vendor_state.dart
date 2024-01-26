@@ -15,8 +15,26 @@ class UserInfoUploadedFaliure extends VendorState {
   UserInfoUploadedFaliure({required this.errMessage});
 }
 
+class ImageSelectedSuccsess extends VendorState {}
+
+class ImageSelectedFaliure extends VendorState {
+  final String errMessage;
+
+  ImageSelectedFaliure({required this.errMessage});
+}
+
+class ImageSelectedLoading extends VendorState {}
+
 class ImageUploadedLoading extends VendorState {}
 
-class ImageUploadedSuccsess extends VendorState {}
+class ImageUploadedSuccsess extends VendorState {
+  final String imageUrl;
 
-class ImageUploadedFaliure extends VendorState {}
+  ImageUploadedSuccsess({required this.imageUrl});
+}
+
+class ImageUploadedFaliure extends VendorState {
+  final String errMessage;
+
+  ImageUploadedFaliure({required this.errMessage});
+}

@@ -16,26 +16,24 @@ class VendroRepoImpl extends VendorRepo {
   File? userImage;
 
   @override
-  Future<Either<AppState, AppState>> getImageFromCamera() async {
+  Future<Either<AppState, File>> getImageFromCamera() async {
     final pickedImage =
         await ImagePicker().pickImage(source: ImageSource.camera);
     if (pickedImage != null) {
       userImage = File(pickedImage.path);
-      return right(AppState.pickedImage);
+      return right(userImage!);
     } else {
       return left(AppState.notPickedImage);
     }
   }
 
   @override
-  Future<Either<AppState, AppState>> getImageFromGallery() async {
+  Future<Either<AppState, File>> getImageFromGallery() async {
     final pickedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       userImage = File(pickedImage.path);
-      print("Image is not null");
-      print(userImage);
-      return right(AppState.pickedImage);
+      return right(userImage!);
     } else {
       print("Image is null");
       return left(AppState.notPickedImage);
@@ -43,7 +41,8 @@ class VendroRepoImpl extends VendorRepo {
   }
 
   @override
-  Future<Either<Faliures, String>> uploadImageToStorage() async {
+  Future<Either<Faliures, String>> uploadImageToStorage(
+      {required File userImage}) async {
     try {
       debugPrint("File is : $userImage");
       debugPrint("Base name is : ${basename(userImage!.path)}");

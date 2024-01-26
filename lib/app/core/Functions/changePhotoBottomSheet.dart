@@ -45,10 +45,10 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
             CustomMainButton(
               onPressed: () async {
                 print("/" * 30);
-                await repo.getImageFromGallery();
-                final st = await repo.uploadImageToStorage();
+             //   await repo.getImageFromGallery();
+               // final st = await repo.uploadImageToStorage();
                 print("+" * 30);
-                print(st);
+          //      print(st);
               },
               width: 200.w,
               color: AppColors.kPrimaryColor,
