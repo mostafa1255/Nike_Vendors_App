@@ -1,10 +1,11 @@
+import '../../../../core/Functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
-import '../../../../data/auth cubits/register_Cubit/register_cubit.dart';
+import '../../../../data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import '../../../widgets/HsizedBox.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
@@ -36,7 +37,6 @@ class RegisterScreenBody extends StatelessWidget {
               icon: const Icon(Icons.arrow_back_ios_rounded),
             ),
           ),
-          const VsizedBox(height: 8),
           Align(
             alignment: Alignment.center,
             child: Text(
@@ -46,16 +46,19 @@ class RegisterScreenBody extends StatelessWidget {
             ),
           ),
           const VsizedBox(height: 8),
-          Align(
-            alignment: Alignment.center,
-            child: SizedBox(
-              width: 260.w,
-              child: Text(
-                "Fill your details or continue with social media",
-                textAlign: TextAlign.center,
-                style: Txtstyle.style16(context: context)
-                    .copyWith(color: AppColors.kGreyColorB81),
-              ),
+          Center(
+            child: CircleAvatar(
+              radius: 70.r,
+              backgroundColor: Colors.grey.shade300.withOpacity(0.55),
+              child: IconButton(
+                  onPressed: () {
+                    changePhotoBottomSheet(context);
+                  },
+                  icon: Icon(
+                    Icons.camera_alt,
+                    color: AppColors.kPrimaryColor,
+                    size: 25.sp,
+                  )),
             ),
           ),
           const RegisterFormField(),
@@ -97,6 +100,10 @@ class RegisterScreenBody extends StatelessWidget {
             color: AppColors.kOfWhiteColor,
             onPressed: () async {
               await regCubit.signUpWithGoogle();
+              print("/" * 50);
+
+              // FirebaseAuth.instance.currentUser!.providerData
+              //   .any((userInfo) => userInfo.providerId == 'google.com');
             },
           ),
           const VsizedBox(height: 20),
