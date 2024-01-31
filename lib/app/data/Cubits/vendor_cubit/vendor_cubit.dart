@@ -8,14 +8,24 @@ class VendorCubit extends Cubit<VendorState> {
   VendorRepo vendorRepo;
 
   Future<void> sendVendorInfotoFirestore({
+    required String userid,
     required String name,
     required String email,
-    required String userid,
+    required double latitude,
+    required double longitude,
+    required String vendorImageUrl,
+    required num number,
+    required num totalPrice,
+    required int totalOrders,
   }) async {
     emit(UserInfoUploadedLoading());
     var result = await vendorRepo.sendVendorInfotoFirestore(
         number: 01289880177,
-        location: '[0.2,5.2]',
+        latitude: 15,
+        longitude: 10,
+        totalOrders: 20,
+        totalPrice: 3500,
+        vendorImageUrl: "",
         name: name,
         email: email,
         userid: userid);

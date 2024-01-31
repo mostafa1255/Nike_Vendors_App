@@ -58,18 +58,27 @@ class VendroRepoImpl extends VendorRepo {
 
   @override
   Future<Either<Faliures, void>> sendVendorInfotoFirestore({
+    required String userid,
     required String name,
     required String email,
-    required String userid,
-    required String location,
+    required double latitude,
+    required double longitude,
+    required String vendorImageUrl,
     required num number,
+    required num totalPrice,
+    required int totalOrders,
   }) async {
     VendorModel usermodel = VendorModel(
+        totalOrders: 10,
+        totalPrice: 10,
+        vendorImageUrl: "https//",
         id: userid,
         name: name,
         email: email,
-        location: "[0.2,5.2]",
+        latitude: 5,
+        longitude: 10,
         number: number);
+
     try {
       return right(await FirebaseFirestore.instance
           .collection("vendors")

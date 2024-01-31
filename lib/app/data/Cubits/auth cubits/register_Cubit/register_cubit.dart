@@ -2,9 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
-import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
-
 import '../../../repos/register_Repo/register_repo.dart';
 part 'register_state.dart';
 

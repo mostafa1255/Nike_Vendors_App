@@ -1,3 +1,4 @@
+import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import '../../../../core/Functions/Snack_Bar.dart';
 import '../../../../core/Functions/changePhotoBottomSheet.dart';
@@ -20,6 +21,15 @@ class VendorImageBlocBuilder extends StatelessWidget {
               radius: 70.r,
               backgroundColor: Colors.grey.shade300.withOpacity(0.55),
               backgroundImage: NetworkImage(state.imageUrl));
+        } else if (state is ImageUploadedLoading) {
+          return CircleAvatar(
+            radius: 70.r,
+            backgroundColor: Colors.grey.shade300.withOpacity(0.55),
+            child: const Center(
+                child: CircularProgressIndicator(
+              color: AppColors.kPrimaryColor,
+            )),
+          );
         } else if (state is ImageUploadedFaliure) {
           return CustomCircleAvatarRegisterScreen(
             onPressed: () {

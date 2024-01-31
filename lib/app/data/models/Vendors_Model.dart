@@ -2,13 +2,21 @@ class VendorModel {
   String? id;
   String? name;
   String? email;
-  String? location;
   num? number;
+  double? latitude;
+  double? longitude;
+  num? totalPrice;
+  int? totalOrders;
+  String? vendorImageUrl;
 
   VendorModel({
     required this.id,
     required this.email,
-    required this.location,
+    required this.totalOrders,
+    required this.totalPrice,
+    required this.vendorImageUrl,
+    required this.latitude,
+    required this.longitude,
     required this.name,
     required this.number,
   });
@@ -19,7 +27,11 @@ class VendorModel {
       'id': id,
       'name': name,
       'email': email,
-      'location': location,
+      'totalOrders': totalOrders,
+      'totalPrice': totalPrice,
+      'vendorImageUrl': vendorImageUrl,
+      'latitude': latitude,
+      'longitude': longitude,
       'number': number,
     };
   }
@@ -29,7 +41,11 @@ class VendorModel {
     return VendorModel(
       id: map['id'] ?? '',
       email: map['email'] ?? '',
-      location: map['location'] ?? '',
+      totalOrders: map['totalOrders'] ?? '',
+      totalPrice: map['totalPrice'] ?? '',
+      vendorImageUrl: map['vendorImageUrl'] ?? '',
+      latitude: map['latitude'] ?? '',
+      longitude: map['longitude'] ?? '',
       name: map['name'] ?? '',
       number: map['number']?.toInt() ?? 0,
     );
