@@ -1,15 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo.dart';
-import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
+import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import '../../views/widgets/VsizedBox.dart';
 import '../../views/widgets/customMainButton.dart';
 import '../styles/App_Colors.dart';
 
 PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
     BuildContext context) {
-  final repo = VendroRepoImpl();
+  final vCubit = BlocProvider.of<VendorCubit>(context);
   return showBottomSheet(
     backgroundColor: AppColors.kOfWhiteColor,
     context: context,
@@ -35,7 +32,10 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
               ),
             ),
             CustomMainButton(
-              onPressed: () {},
+              onPressed: () {
+                vCubit.getImageFromCameraAndUploadtoStorage();
+                GoRouter.of(context).pop();
+              },
               fcolorWhite: true,
               width: 200.w,
               color: AppColors.kPrimaryColor,
@@ -45,10 +45,10 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
             CustomMainButton(
               onPressed: () async {
                 print("/" * 30);
-             //   await repo.getImageFromGallery();
-               // final st = await repo.uploadImageToStorage();
+                vCubit.getImageFromGalleryAndUploadtoStorage();
+                GoRouter.of(context).pop();
                 print("+" * 30);
-          //      print(st);
+                //      print(st);
               },
               width: 200.w,
               color: AppColors.kPrimaryColor,

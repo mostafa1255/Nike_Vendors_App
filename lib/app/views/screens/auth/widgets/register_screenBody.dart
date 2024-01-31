@@ -1,4 +1,4 @@
-import '../../../../core/Functions/changePhotoBottomSheet.dart';
+import 'package:nike_app_vendors/app/core/Functions/Snack_Bar.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
@@ -12,6 +12,7 @@ import '../../../widgets/customMainButton.dart';
 import 'CustomAuthHaveaccount.dart';
 import 'RegisterBlocListener.dart';
 import 'RegisterFormField.dart';
+import 'VendorImageBlocBuilder.dart';
 
 class RegisterScreenBody extends StatelessWidget {
   const RegisterScreenBody({super.key});
@@ -46,21 +47,7 @@ class RegisterScreenBody extends StatelessWidget {
             ),
           ),
           const VsizedBox(height: 8),
-          Center(
-            child: CircleAvatar(
-              radius: 70.r,
-              backgroundColor: Colors.grey.shade300.withOpacity(0.55),
-              child: IconButton(
-                  onPressed: () {
-                    changePhotoBottomSheet(context);
-                  },
-                  icon: Icon(
-                    Icons.camera_alt,
-                    color: AppColors.kPrimaryColor,
-                    size: 25.sp,
-                  )),
-            ),
-          ),
+          const Center(child: VendorImageBlocBuilder()),
           const RegisterFormField(),
           const VsizedBox(height: 27),
           const VsizedBox(height: 15),
@@ -71,12 +58,17 @@ class RegisterScreenBody extends StatelessWidget {
             color: AppColors.kPrimaryColor,
             onPressed: () async {
               if (GlobalKeys.riKey2.currentState!.validate()) {
-                await BlocProvider.of<RegisterCubit>(context)
-                    .signUpwithEmailandPassword(
-                  name: cubitRead.nameController.text,
-                  email: cubitRead.emailController.text,
-                  password: cubitRead.passController.text,
-                );
+                if (Constants.imageUrl != null) {
+                  await BlocProvider.of<RegisterCubit>(context)
+                      .signUpwithEmailandPassword(
+                    name: cubitRead.nameController.text,
+                    email: cubitRead.emailController.text,
+                    password: cubitRead.passController.text,
+                  );
+                } else {
+                  customsnackBar(
+                      context, "Please Upload Your Image", Colors.redAccent);
+                }
               }
             },
           ),
@@ -100,10 +92,6 @@ class RegisterScreenBody extends StatelessWidget {
             color: AppColors.kOfWhiteColor,
             onPressed: () async {
               await regCubit.signUpWithGoogle();
-              print("/" * 50);
-
-              // FirebaseAuth.instance.currentUser!.providerData
-              //   .any((userInfo) => userInfo.providerId == 'google.com');
             },
           ),
           const VsizedBox(height: 20),
