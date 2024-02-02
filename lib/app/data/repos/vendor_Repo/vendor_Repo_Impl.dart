@@ -65,19 +65,18 @@ class VendroRepoImpl extends VendorRepo {
     required double longitude,
     required String vendorImageUrl,
     required num number,
-    required num totalPrice,
-    required int totalOrders,
   }) async {
     VendorModel usermodel = VendorModel(
-        totalOrders: 10,
-        totalPrice: 10,
-        vendorImageUrl: "https//",
+        totalOrders: 0,
+        totalPrice: 0,
+        vendorImageUrl: vendorImageUrl,
         id: userid,
         name: name,
         email: email,
-        latitude: 5,
-        longitude: 10,
+        latitude: latitude,
+        longitude: longitude,
         number: number);
+    print(usermodel);
 
     try {
       return right(await FirebaseFirestore.instance

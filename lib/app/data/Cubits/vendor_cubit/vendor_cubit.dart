@@ -15,17 +15,14 @@ class VendorCubit extends Cubit<VendorState> {
     required double longitude,
     required String vendorImageUrl,
     required num number,
-    required num totalPrice,
-    required int totalOrders,
   }) async {
+    print("in send Vendor Info");
     emit(UserInfoUploadedLoading());
     var result = await vendorRepo.sendVendorInfotoFirestore(
-        number: 01289880177,
-        latitude: 15,
-        longitude: 10,
-        totalOrders: 20,
-        totalPrice: 3500,
-        vendorImageUrl: "",
+        number: number,
+        latitude: latitude,
+        longitude: longitude,
+        vendorImageUrl: vendorImageUrl,
         name: name,
         email: email,
         userid: userid);

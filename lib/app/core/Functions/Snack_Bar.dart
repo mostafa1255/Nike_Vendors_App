@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../styles/text_Style.dart';
 
 Future<void> customsnackBar(BuildContext context, String messgae, Color color) {

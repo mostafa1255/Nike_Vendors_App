@@ -13,8 +13,6 @@ abstract class VendorRepo {
     required double longitude,
     required String vendorImageUrl,
     required num number,
-    required num totalPrice,
-    required int totalOrders,
   });
   Future<Either<AppState, File>> getImageFromGallery();
   Future<Either<AppState, File>> getImageFromCamera();

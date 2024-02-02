@@ -82,14 +82,8 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
             ),
             const VsizedBox(height: 8),
             CustomTextFormField(
+              stringController: regCubit.phoneController,
               // ignore: body_might_complete_normally_nullable
-              validator: (value) {
-                if (value == null ||
-                    value.isEmpty ||
-                    !AppRegex.isEmailValid(value)) {
-                  return "Please enter your correct Email";
-                }
-              },
               hinttext: "0124567890",
               securPass: false,
               width: double.infinity,
