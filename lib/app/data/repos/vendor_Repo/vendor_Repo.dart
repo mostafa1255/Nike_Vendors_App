@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:nike_app_vendors/app/core/errors/faliure.dart';
 import 'package:nike_app_vendors/app/core/tools/App_States.dart';
+import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 
 abstract class VendorRepo {
+  Future<Either<Faliures, VendorModel>> getVendorInfo();
+
   Future<Either<Faliures, void>> sendVendorInfotoFirestore({
     required String userid,
     required String name,

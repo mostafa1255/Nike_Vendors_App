@@ -14,7 +14,8 @@ import '../../models/Vendors_Model.dart';
 
 class VendroRepoImpl extends VendorRepo {
   File? userImage;
-
+  final database = FirebaseFirestore.instance;
+  final auth = FirebaseAuth.instance;
   @override
   Future<Either<AppState, File>> getImageFromCamera() async {
     final pickedImage =
@@ -49,7 +50,7 @@ class VendroRepoImpl extends VendorRepo {
       Reference imageref =
           FirebaseStorage.instance.ref(basename(userImage!.path));
       print(userImage);
-      await imageref.putFile(userImage!);
+      await imageref.putFile(userImage);
       return right(await imageref.getDownloadURL());
     } on FirebaseException catch (e) {
       return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
@@ -79,7 +80,7 @@ class VendroRepoImpl extends VendorRepo {
     print(usermodel);
 
     try {
-      return right(await FirebaseFirestore.instance
+      return right(await database
           .collection("vendors")
           .doc(userid)
           .set(usermodel.toMap()));
@@ -91,4 +92,22 @@ class VendroRepoImpl extends VendorRepo {
       }
     }
   }
+
+  @override
+  Future<Either<Faliures, VendorModel>> getVendorInfo() async {
+    try {
+      final vendorSnapshot = await database
+          .collection("vendors")
+          .where("id", isEqualTo: auth.currentUser!.uid)
+          .get();
+      VendorModel vendorModel =
+          VendorModel.fromMap(map: vendorSnapshot.docs[0].data());
+      return right(vendorModel);
+    } on FirebaseException catch (e) {
+      return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
+    }
+  }
 }
+/* List<VendorModel> vendorList = vendorSnapshot.docs
+        .map((doc) => VendorModel.fromMap(map: doc.data()))
+        .toList();* */

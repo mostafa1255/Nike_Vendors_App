@@ -20,7 +20,8 @@ class NikeStoreApp extends StatelessWidget {
                   RegisterRepoImpl(),
                 )),
         BlocProvider(create: (_) => LoginCubit(LoginRepoImpl())),
-        BlocProvider(create: (_) => VendorCubit(VendroRepoImpl())),
+        BlocProvider(
+            create: (_) => VendorCubit(VendroRepoImpl())..getVendorInfo()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

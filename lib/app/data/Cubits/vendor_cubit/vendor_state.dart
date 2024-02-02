@@ -38,3 +38,17 @@ class ImageUploadedFaliure extends VendorState {
 
   ImageUploadedFaliure({required this.errMessage});
 }
+
+class VendorInfoLoading extends VendorState {}
+
+class VendorInfoSuccsess extends VendorState {
+  final VendorModel vendorModel;
+
+  VendorInfoSuccsess({required this.vendorModel});
+}
+
+class VendorInfoFaliure extends VendorState {
+  final String errMessage;
+
+  VendorInfoFaliure({required this.errMessage});
+}

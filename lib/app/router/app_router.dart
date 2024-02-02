@@ -27,7 +27,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => AddProductScreen(),
+        builder: (context, state) => PerconalInfoScreen(),
       ),
       /*  GoRoute(
         path: pageview,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/views/screens/my_Profile_Screen/widgets/my_profile_screen_body.dart';
 
 class MyProfileScreen extends StatelessWidget {
@@ -6,6 +8,9 @@ class MyProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-return Scaffold(body: MyProfileScreenBody(),);
+  
+    return Scaffold(
+      body: MyProfileScreenBody(),
+    );
   }
 }

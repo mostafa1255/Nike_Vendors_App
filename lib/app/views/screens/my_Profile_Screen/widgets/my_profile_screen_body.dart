@@ -2,10 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Image.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/CustomBackIcon.dart';
+import 'AvailableBalanceBlocBuilder.dart';
 import 'CustomListTile.dart';
 
 class MyProfileScreenBody extends StatelessWidget {
@@ -25,7 +27,7 @@ class MyProfileScreenBody extends StatelessWidget {
                   bottomRight: Radius.circular(22.r))),
           child: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -50,16 +52,7 @@ class MyProfileScreenBody extends StatelessWidget {
                     style: Txtstyle.style18(context: context).copyWith(
                         fontWeight: FontWeight.w500, color: Colors.white),
                   ),
-                  AutoSizeText(
-                    "\$500.00",
-                    style: TextStyle(
-                      fontSize: 40.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                    maxLines: 2,
-                    minFontSize: 10,
-                  ),
+                  const AvailableBalanceBlocBuilder(),
                   const VsizedBox(height: 30),
                   CustomMainButton(
                     fontcolor: AppColors.kPrimaryColor,

@@ -1,11 +1,23 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo.dart';
 part 'vendor_state.dart';
 
 class VendorCubit extends Cubit<VendorState> {
   VendorCubit(this.vendorRepo) : super(VendorInitial());
   VendorRepo vendorRepo;
+
+  Future<void> getVendorInfo() async {
+    print("in get Vendor Info");
+    emit(VendorInfoLoading());
+    var result = await vendorRepo.getVendorInfo();
+    result.fold((faliure) {
+      emit(VendorInfoFaliure(errMessage: faliure.errmessage));
+    }, (vendorModel) {
+      emit(VendorInfoSuccsess(vendorModel: vendorModel));
+    });
+  }
 
   Future<void> sendVendorInfotoFirestore({
     required String userid,
