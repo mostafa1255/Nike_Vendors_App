@@ -1,18 +1,28 @@
-import 'package:nike_app_vendors/app/core/Functions/changePhotoBottomSheet.dart';
+import 'package:flutter/services.dart';
+import 'package:nike_app_vendors/app/core/Functions/Snack_Bar.dart';
+import 'package:nike_app_vendors/app/core/constants.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/views/screens/auth/register_screen/register_screen.dart';
 import 'package:nike_app_vendors/app/views/widgets/CustomTextFormField.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
-import '../../../../core/Functions/Snack_Bar.dart';
-import '../../../../core/constants.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
-import '../../auth/widgets/CustomCircleAvatarRegisterScreen.dart';
+import 'AddProductImageBlocBuilder.dart';
 
-class AddProductScreenBody extends StatelessWidget {
+class AddProductScreenBody extends StatefulWidget {
   const AddProductScreenBody({super.key});
+
+  @override
+  State<AddProductScreenBody> createState() => _AddProductScreenBodyState();
+}
+
+class _AddProductScreenBodyState extends State<AddProductScreenBody> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+  final TextEditingController priceController = TextEditingController();
+  final TextEditingController brandController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,61 +34,7 @@ class AddProductScreenBody extends StatelessWidget {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BlocBuilder<ProductCubit, ProductState>(
-            builder: (context, state) {
-              if (state is ImageUploadedSuccsess) {
-                Constants.productImageUrl = state.imageUrl;
-                return CircleAvatar(
-                    radius: 70.r,
-                    backgroundColor: Colors.grey.shade300.withOpacity(0.55),
-                    backgroundImage: NetworkImage(state.imageUrl));
-              } else if (state is ImageUploadedLoading) {
-                return CircleAvatar(
-                  radius: 70.r,
-                  backgroundColor: Colors.grey.shade300.withOpacity(0.55),
-                  child: const Center(
-                      child: CircularProgressIndicator(
-                    color: AppColors.kPrimaryColor,
-                  )),
-                );
-              } else if (state is ImageUploadedFaliure) {
-                return CustomCircleAvatarRegisterScreen(
-                  onPressed: () {
-                    customsnackBar(context, state.errMessage, Colors.red);
-                    changePhotoBottomSheet(
-                      context: context,
-                      onPressed1: () => GoRouter.of(context).pop(),
-                      onPressed2: () async {
-                        await pCubit.getImageFromCameraAndUploadtoStorage();
-                        GoRouter.of(context).pop();
-                      },
-                      onPressed3: () async {
-                        await pCubit.getImageFromGalleryAndUploadtoStorage();
-                        GoRouter.of(context).pop();
-                      },
-                    );
-                  },
-                );
-              } else {
-                return CustomCircleAvatarRegisterScreen(
-                  onPressed: () {
-                    changePhotoBottomSheet(
-                      context: context,
-                      onPressed1: () => GoRouter.of(context).pop(),
-                      onPressed2: () async {
-                        await pCubit.getImageFromCameraAndUploadtoStorage();
-                        GoRouter.of(context).pop();
-                      },
-                      onPressed3: () async {
-                        await pCubit.getImageFromGalleryAndUploadtoStorage();
-                        GoRouter.of(context).pop();
-                      },
-                    );
-                  },
-                );
-              }
-            },
-          ),
+          AddProductImageBlocBuilder(pCubit: pCubit),
           const VsizedBox(height: 20),
           Text(
             "Name of Product",
@@ -87,6 +43,7 @@ class AddProductScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 10),
           CustomTextFormField(
+            stringController: nameController,
             securPass: false,
             width: 375.w,
             height: 60.h,
@@ -100,6 +57,7 @@ class AddProductScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 10),
           CustomTextFormField(
+            stringController: descriptionController,
             securPass: false,
             width: 375.w,
             height: 60.h,
@@ -113,6 +71,7 @@ class AddProductScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 10),
           CustomTextFormField(
+            stringController: brandController,
             securPass: false,
             width: 375.w,
             height: 60.h,
@@ -126,6 +85,8 @@ class AddProductScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 10),
           CustomTextFormField(
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            stringController: priceController,
             securPass: false,
             width: 375.w,
             height: 60.h,
@@ -136,9 +97,23 @@ class AddProductScreenBody extends StatelessWidget {
             color: AppColors.kPrimaryColor,
             txt: "Upload",
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return RegisterScreen();
-              }));
+              if (Constants.productImageUrl != null &&
+                  Constants.productImageUrl != "" &&
+                  nameController.text.isNotEmpty &&
+                  descriptionController.text.isNotEmpty &&
+                  brandController.text.isNotEmpty &&
+                  priceController.text.isNotEmpty) {
+                pCubit.setProducts(
+                    productImageUrl: Constants.productImageUrl!,
+                    name: nameController.text,
+                    descreption: descriptionController.text,
+                    brand: brandController.text,
+                    price: priceController.text);
+                Constants.productImageUrl != "";
+              } else {
+                customsnackBar(
+                    context, " Please fill all the fields ", Colors.redAccent);
+              }
             },
             fcolorWhite: true,
             width: 375.w,

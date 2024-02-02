@@ -38,3 +38,13 @@ class ImageUploadedFaliure extends ProductState {
 
   ImageUploadedFaliure({required this.errMessage});
 }
+
+class ProductAddedLoading extends ProductState {}
+
+class ProductAddedSuccsess extends ProductState {}
+
+class ProductAddedFaliure extends ProductState {
+  final String errMessage;
+
+  ProductAddedFaliure({required this.errMessage});
+}

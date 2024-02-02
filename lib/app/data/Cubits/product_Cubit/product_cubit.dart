@@ -1,14 +1,36 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo.dart';
 import '../../repos/vendor_Repo/vendor_Repo.dart';
 part 'product_state.dart';
 
 class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this.vendorRepo) : super(ProductInitial());
+  ProductCubit(this.vendorRepo, this.productRepo) : super(ProductInitial());
   VendorRepo vendorRepo;
+  ProductRepo productRepo;
+
+  Future<void> setProducts({
+    required String productImageUrl,
+    required String name,
+    required String descreption,
+    required String brand,
+    required String price,
+  }) async {
+    emit(ProductAddedLoading());
+    var result = await productRepo.setProducts(
+        productImageUrl: productImageUrl,
+        name: name,
+        descreption: descreption,
+        brand: brand,
+        price: price);
+    result.fold((faliure) {
+      emit(ProductAddedFaliure(errMessage: faliure.errmessage));
+    }, (success) {
+      emit(ProductAddedSuccsess());
+    });
+  }
 
   Future<void> getImageFromGalleryAndUploadtoStorage() async {
-    emit(ImageSelectedLoading());
     var result = await vendorRepo.getImageFromGallery();
     result.fold((faliure) {
       emit(ImageSelectedFaliure(errMessage: "Please Select Image"));

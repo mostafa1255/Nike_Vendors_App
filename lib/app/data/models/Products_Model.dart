@@ -7,7 +7,7 @@ class ProductsModel {
   String? name;
   String? imageUrl;
   String? description;
-  num? price;
+  String? price;
 
   ProductsModel({
     required this.id,

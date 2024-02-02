@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/styles/App_Colors.dart';
@@ -6,7 +7,7 @@ import '../../core/styles/text_Style.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     this.hinttext,
     required this.securPass,
@@ -18,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.fontcolor,
     this.enableWriting,
     this.initialValue,
+    this.inputFormatters,
   });
   final bool securPass;
   final TextEditingController? stringController;
@@ -28,14 +30,15 @@ class CustomTextFormField extends StatelessWidget {
   final Color? fontcolor;
   final bool? enableWriting;
   final String? initialValue;
-  String? Function(String?)? validator;
-
+  final String? Function(String?)? validator;
+  final List<TextInputFormatter>? inputFormatters;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
       width: width,
       child: TextFormField(
+        inputFormatters: inputFormatters,
         validator: validator,
         initialValue: initialValue,
         enabled: enableWriting ?? true,
