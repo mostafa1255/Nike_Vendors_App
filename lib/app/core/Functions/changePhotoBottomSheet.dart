@@ -5,8 +5,10 @@ import '../../views/widgets/customMainButton.dart';
 import '../styles/App_Colors.dart';
 
 PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
-    BuildContext context) {
-  final vCubit = BlocProvider.of<VendorCubit>(context);
+    {required BuildContext context,
+    void Function()? onPressed1,
+    void Function()? onPressed2,
+    void Function()? onPressed3}) {
   return showBottomSheet(
     backgroundColor: AppColors.kOfWhiteColor,
     context: context,
@@ -21,9 +23,7 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
               child: Align(
                 alignment: Alignment.centerRight,
                 child: IconButton(
-                    onPressed: () {
-                      GoRouter.of(context).pop();
-                    },
+                    onPressed: onPressed1,
                     icon: Icon(
                       Icons.cancel,
                       size: 25.sp,
@@ -32,10 +32,7 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
               ),
             ),
             CustomMainButton(
-              onPressed: () {
-                vCubit.getImageFromCameraAndUploadtoStorage();
-                GoRouter.of(context).pop();
-              },
+              onPressed: onPressed2,
               fcolorWhite: true,
               width: 200.w,
               color: AppColors.kPrimaryColor,
@@ -43,13 +40,7 @@ PersistentBottomSheetController<dynamic> changePhotoBottomSheet(
             ),
             const VsizedBox(height: 10),
             CustomMainButton(
-              onPressed: () async {
-                print("/" * 30);
-                vCubit.getImageFromGalleryAndUploadtoStorage();
-                GoRouter.of(context).pop();
-                print("+" * 30);
-                //      print(st);
-              },
+              onPressed: onPressed3,
               width: 200.w,
               color: AppColors.kPrimaryColor,
               txt: "Choose Photo",

@@ -38,7 +38,10 @@ class EditProfileScreenBody extends StatelessWidget {
                 const VsizedBox(height: 4),
                 GestureDetector(
                   onTap: () {
-                    changePhotoBottomSheet(context);
+                    changePhotoBottomSheet(
+                      context: context,
+                      onPressed1: () => GoRouter.of(context).pop(),
+                    );
                   },
                   child: Text(
                     "Change Profile Picture",

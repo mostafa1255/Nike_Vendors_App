@@ -13,10 +13,11 @@ class VendorImageBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final vCubit = BlocProvider.of<VendorCubit>(context);
     return BlocBuilder<VendorCubit, VendorState>(
       builder: (context, state) {
         if (state is ImageUploadedSuccsess) {
-          Constants.imageUrl = state.imageUrl;
+          Constants.vendorImageUrl = state.imageUrl;
           return CircleAvatar(
               radius: 70.r,
               backgroundColor: Colors.grey.shade300.withOpacity(0.55),
@@ -34,13 +35,36 @@ class VendorImageBlocBuilder extends StatelessWidget {
           return CustomCircleAvatarRegisterScreen(
             onPressed: () {
               customsnackBar(context, state.errMessage, Colors.red);
-              changePhotoBottomSheet(context);
+              changePhotoBottomSheet(
+                context: context,
+                onPressed1: () => GoRouter.of(context).pop(),
+                onPressed2: () async {
+                  await vCubit.getImageFromCameraAndUploadtoStorage();
+                  GoRouter.of(context).pop();
+                },
+                onPressed3: () async {
+                  await vCubit.getImageFromGalleryAndUploadtoStorage();
+                  GoRouter.of(context).pop();
+                },
+              );
             },
           );
         } else {
           return CustomCircleAvatarRegisterScreen(
             onPressed: () {
-              changePhotoBottomSheet(context);
+              changePhotoBottomSheet(context: context);
+              changePhotoBottomSheet(
+                context: context,
+                onPressed1: () => GoRouter.of(context).pop(),
+                onPressed2: () async {
+                  await vCubit.getImageFromCameraAndUploadtoStorage();
+                  GoRouter.of(context).pop();
+                },
+                onPressed3: () async {
+                  await vCubit.getImageFromGalleryAndUploadtoStorage();
+                  GoRouter.of(context).pop();
+                },
+              );
             },
           );
         }

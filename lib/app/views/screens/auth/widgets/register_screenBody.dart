@@ -58,14 +58,14 @@ class RegisterScreenBody extends StatelessWidget {
             color: AppColors.kPrimaryColor,
             onPressed: () async {
               if (GlobalKeys.riKey2.currentState!.validate()) {
-                if (Constants.imageUrl != null) {
-                  print(Constants.imageUrl);
+                if (Constants.vendorImageUrl != null) {
+                  print(Constants.vendorImageUrl);
                   await BlocProvider.of<RegisterCubit>(context)
                       .signUpwithEmailandPassword(
                     context: context,
                     latitude: "5",
                     longitude: "120",
-                    vendorImageUrl: Constants.imageUrl!,
+                    vendorImageUrl: Constants.vendorImageUrl!,
                     phoneNumber: cubitRead.phoneController.text,
                     name: cubitRead.nameController.text,
                     email: cubitRead.emailController.text,

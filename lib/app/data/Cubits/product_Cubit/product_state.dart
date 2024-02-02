@@ -1,0 +1,40 @@
+part of 'product_cubit.dart';
+
+@immutable
+sealed class ProductState {}
+
+final class ProductInitial extends ProductState {}
+
+class UserInfoUploadedLoading extends ProductState {}
+
+class UserInfoUploadedSuccsess extends ProductState {}
+
+class UserInfoUploadedFaliure extends ProductState {
+  final String errMessage;
+
+  UserInfoUploadedFaliure({required this.errMessage});
+}
+
+class ImageSelectedSuccsess extends ProductState {}
+
+class ImageSelectedFaliure extends ProductState {
+  final String errMessage;
+
+  ImageSelectedFaliure({required this.errMessage});
+}
+
+class ImageSelectedLoading extends ProductState {}
+
+class ImageUploadedLoading extends ProductState {}
+
+class ImageUploadedSuccsess extends ProductState {
+  final String imageUrl;
+
+  ImageUploadedSuccsess({required this.imageUrl});
+}
+
+class ImageUploadedFaliure extends ProductState {
+  final String errMessage;
+
+  ImageUploadedFaliure({required this.errMessage});
+}
