@@ -52,3 +52,36 @@ class VendorInfoFaliure extends VendorState {
 
   VendorInfoFaliure({required this.errMessage});
 }
+
+////////////////
+class VendorImageLoading extends VendorState {}
+
+class VendorImageSuccsess extends VendorState {}
+
+class VendorImageFaliure extends VendorState {
+  final String errMessage;
+
+  VendorImageFaliure({required this.errMessage});
+}
+
+//
+class VendorNameLoading extends VendorState {}
+
+class VendorNameSuccsess extends VendorState {}
+
+class VendorNameFaliure extends VendorState {
+  final String errMessage;
+
+  VendorNameFaliure({required this.errMessage});
+}
+
+//
+class VendorNumberLoading extends VendorState {}
+
+class VendorNumberSuccsess extends VendorState {}
+
+class VendorNumberFaliure extends VendorState {
+  final String errMessage;
+
+  VendorNumberFaliure({required this.errMessage});
+}

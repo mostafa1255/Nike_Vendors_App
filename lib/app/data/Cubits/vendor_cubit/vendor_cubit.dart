@@ -8,6 +8,38 @@ class VendorCubit extends Cubit<VendorState> {
   VendorCubit(this.vendorRepo) : super(VendorInitial());
   VendorRepo vendorRepo;
 
+  Future<void> updateVendorImageUrl({required String vendorImageUrl}) async {
+    emit(VendorImageLoading());
+    var result =
+        await vendorRepo.updateVendorImageUrl(vendorImageUrl: vendorImageUrl);
+    result.fold((faliure) {
+      emit(VendorImageFaliure(errMessage: faliure.errmessage));
+    }, (vendorModel) {
+      emit(VendorImageSuccsess());
+    });
+  }
+
+  Future<void> updateVendorName({required String vendorName}) async {
+    emit(VendorNameLoading());
+    var result = await vendorRepo.updateVendorName(vendorName: vendorName);
+    result.fold((faliure) {
+      emit(VendorNameFaliure(errMessage: faliure.errmessage));
+    }, (vendorModel) {
+      emit(VendorNameSuccsess());
+    });
+  }
+
+  Future<void> updateVendorNumber({required String vendorNumber}) async {
+    emit(VendorNumberLoading());
+    var result =
+        await vendorRepo.updateVendorNumber(vendorNumber: vendorNumber);
+    result.fold((faliure) {
+      emit(VendorNumberFaliure(errMessage: faliure.errmessage));
+    }, (vendorModel) {
+      emit(VendorNumberSuccsess());
+    });
+  }
+
   Future<void> getVendorInfo() async {
     print("in get Vendor Info");
     emit(VendorInfoLoading());

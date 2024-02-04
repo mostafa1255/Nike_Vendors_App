@@ -107,6 +107,48 @@ class VendroRepoImpl extends VendorRepo {
       return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
     }
   }
+
+  @override
+  Future<Either<Faliures, void>> updateVendorImageUrl(
+      {required String vendorImageUrl}) async {
+    try {
+      await database
+          .collection("vendors")
+          .doc(auth.currentUser!.uid)
+          .update({"vendorImageUrl": vendorImageUrl});
+      return right(null);
+    } on FirebaseException catch (e) {
+      return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
+    }
+  }
+
+  @override
+  Future<Either<Faliures, void>> updateVendorName(
+      {required String vendorName}) async {
+    try {
+      await database
+          .collection("vendors")
+          .doc(auth.currentUser!.uid)
+          .update({"name": vendorName});
+      return right(null);
+    } on FirebaseException catch (e) {
+      return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
+    }
+  }
+
+  @override
+  Future<Either<Faliures, void>> updateVendorNumber(
+      {required String vendorNumber}) async {
+    try {
+      await database
+          .collection("vendors")
+          .doc(auth.currentUser!.uid)
+          .update({"number": num.parse(vendorNumber)});
+      return right(null);
+    } on FirebaseException catch (e) {
+      return left(FirebaseFailure.fromFirebaseError(errorCode: e.code));
+    }
+  }
 }
 /* List<VendorModel> vendorList = vendorSnapshot.docs
         .map((doc) => VendorModel.fromMap(map: doc.data()))

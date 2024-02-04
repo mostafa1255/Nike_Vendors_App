@@ -6,6 +6,11 @@ import 'package:nike_app_vendors/app/core/tools/App_States.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 
 abstract class VendorRepo {
+  Future<Either<Faliures, void>> updateVendorImageUrl(
+      {required String vendorImageUrl});
+  Future<Either<Faliures, void>> updateVendorName({required String vendorName});
+  Future<Either<Faliures, void>> updateVendorNumber(
+      {required String vendorNumber});
   Future<Either<Faliures, VendorModel>> getVendorInfo();
 
   Future<Either<Faliures, void>> sendVendorInfotoFirestore({
