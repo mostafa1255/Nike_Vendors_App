@@ -6,8 +6,9 @@ import '../../../../core/tools/reg_imp.dart';
 class TotalOrdersHomeScreen extends StatelessWidget {
   const TotalOrdersHomeScreen({
     super.key,
+    required this.totalOrders,
   });
-
+  final String totalOrders;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,7 @@ class TotalOrdersHomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             AutoSizeText(
-              "20",
+              totalOrders,
               style: TextStyle(
                 fontSize: 50.sp,
                 fontWeight: FontWeight.bold,

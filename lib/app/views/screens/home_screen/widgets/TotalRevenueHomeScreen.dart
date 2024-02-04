@@ -6,8 +6,9 @@ import '../../../../core/tools/reg_imp.dart';
 
 class TotalRevenueHomeScreen extends StatelessWidget {
   const TotalRevenueHomeScreen({
-    super.key,
+    super.key, required this.totalRevenue,
   });
+final String totalRevenue;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class TotalRevenueHomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold, color: AppColors.kGreyColorB81),
             ),
             AutoSizeText(
-              "\$1600",
+              "\$$totalRevenue",
               style: TextStyle(
                 fontSize: 40.sp,
                 fontWeight: FontWeight.bold,
