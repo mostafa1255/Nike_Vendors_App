@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:nike_app_vendors/app/data/models/Products_Model.dart';
 import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo.dart';
 import '../../repos/vendor_Repo/vendor_Repo.dart';
 part 'product_state.dart';
@@ -8,6 +9,19 @@ class ProductCubit extends Cubit<ProductState> {
   ProductCubit(this.vendorRepo, this.productRepo) : super(ProductInitial());
   VendorRepo vendorRepo;
   ProductRepo productRepo;
+
+  Future<void> getVendorProducts() async {
+    emit(ProductsLoading());
+    var result = await productRepo.getVendorProducts();
+    result.fold((faliure) {
+      emit(ProductsFaliure(errMessage: faliure.errmessage));
+    }, (products) {
+      if (products == []) {
+        return emit(VendorNotHaveProducts());
+      }
+      emit(ProductsSuccsess(products: products));
+    });
+  }
 
   Future<void> setProducts({
     required String productImageUrl,

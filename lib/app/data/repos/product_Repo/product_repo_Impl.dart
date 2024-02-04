@@ -36,7 +36,21 @@ class ProductRepoImpl extends ProductRepo {
 
   @override
   Future<Either<Faliures, List<ProductsModel>>> getVendorProducts() async {
-    // TODO: implement setProducts
-    throw UnimplementedError();
+    try {
+      final product = await dataBase
+          .collection("products")
+          .where("vendorId", isEqualTo: auth.currentUser!.uid)
+          .get();
+      if (product.docs.isEmpty) {
+        return const Right([]);
+      }
+      List<ProductsModel> productsList = [];
+      for (var element in product.docs) {
+        productsList.add(ProductsModel.fromJson(map: element.data()));
+      }
+      return Right(productsList);
+    } catch (e) {
+      return Left(FirebaseFailure.fromFirebaseError(errorCode: e.toString()));
+    }
   }
 }

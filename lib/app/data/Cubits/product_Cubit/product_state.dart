@@ -48,3 +48,20 @@ class ProductAddedFaliure extends ProductState {
 
   ProductAddedFaliure({required this.errMessage});
 }
+
+//
+class ProductsLoading extends ProductState {}
+
+class VendorNotHaveProducts extends ProductState {}
+
+class ProductsSuccsess extends ProductState {
+  final List<ProductsModel> products;
+
+  ProductsSuccsess({required this.products});
+}
+
+class ProductsFaliure extends ProductState {
+  final String errMessage;
+
+  ProductsFaliure({required this.errMessage});
+}
