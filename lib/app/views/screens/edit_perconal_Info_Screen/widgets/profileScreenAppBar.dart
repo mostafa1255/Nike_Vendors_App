@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -9,9 +11,10 @@ import '../../../widgets/HsizedBox.dart';
 PreferredSizeWidget profileScreenAppBar(BuildContext context) {
   return AppBar(
     surfaceTintColor: Colors.transparent,
-    backgroundColor: AppColors.kOfWhiteColor,
-    leading: CustomBackAndFavIcon(onPressed: () {
-      //  GoRouter.of(context).push(Approuter.profilescreen);
+    backgroundColor: Colors.white,
+    leading: CustomBackAndFavIcon(onPressed: () async {
+      GoRouter.of(context).pop();
+      await BlocProvider.of<VendorCubit>(context).getVendorInfo();
     }),
     centerTitle: true,
     title: Text(

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
+import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import '../../../../core/Functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
@@ -9,11 +9,22 @@ import '../../../widgets/CustomTextFormField.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
 
-class EditProfileScreenBody extends StatelessWidget {
-  const EditProfileScreenBody({super.key});
+class EditProfileScreenBody extends StatefulWidget {
+  const EditProfileScreenBody({super.key, required this.vendorModel});
+  final VendorModel vendorModel;
+
+  @override
+  State<EditProfileScreenBody> createState() => _EditProfileScreenBodyState();
+}
+
+class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
+  final TextEditingController nameController = TextEditingController();
+
+  final TextEditingController numberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final vCubit = BlocProvider.of<VendorCubit>(context);
     return SafeArea(
         child: Padding(
       padding: EdgeInsets.only(top: 15.h, left: 14.w, right: 14.w),
@@ -24,24 +35,46 @@ class EditProfileScreenBody extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                CircleAvatar(
-                  radius: 50.r,
+                BlocBuilder<VendorCubit, VendorState>(
+                  builder: (context, state) {
+                    if (state is ImageUploadedSuccsess) {
+                      Constants.vendorImageUrl = state.imageUrl;
+                      return CircleAvatar(
+                        radius: 70.r,
+                        backgroundColor: Colors.grey.shade300.withOpacity(0.45),
+                        backgroundImage: NetworkImage(state.imageUrl),
+                      );
+                    } else {
+                      return CircleAvatar(
+                        radius: 70.r,
+                        backgroundColor: Colors.grey.shade300.withOpacity(0.45),
+                        backgroundImage:
+                            NetworkImage(widget.vendorModel.vendorImageUrl!),
+                      );
+                    }
+                  },
                 ),
                 const VsizedBox(height: 10),
                 Text(
-                  "Emmanuel Oyiboke",
+                  widget.vendorModel.name!,
                   style: Txtstyle.style20(context: context).copyWith(
                       fontWeight: FontWeight.w600,
                       color: AppColors.kFontColor,
                       fontFamily: Constants.relwayFamily),
                 ),
-                const VsizedBox(height: 4),
-                GestureDetector(
-                  onTap: () {
+                TextButton(
+                  onPressed: () {
                     changePhotoBottomSheet(
-                      context: context,
-                      onPressed1: () => GoRouter.of(context).pop(),
-                    );
+                        context: context,
+                        onPressed1: () {
+                          GoRouter.of(context).pop();
+                        },
+                        onPressed2: () {
+                          vCubit.getImageFromCameraAndUploadtoStorage();
+                        },
+                        onPressed3: () {
+                          vCubit.getImageFromGalleryAndUploadtoStorage();
+                        });
                   },
                   child: Text(
                     "Change Profile Picture",
@@ -50,13 +83,13 @@ class EditProfileScreenBody extends StatelessWidget {
                         color: AppColors.kPrimaryColor,
                         fontFamily: Constants.relwayFamily),
                   ),
-                ),
+                )
               ],
             ),
           ),
-          const VsizedBox(height: 30),
+          const VsizedBox(height: 15),
           Text(
-            "Your Name",
+            "Your New Name",
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kGreyColorB81,
                 fontWeight: FontWeight.w500,
@@ -64,7 +97,7 @@ class EditProfileScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 8),
           CustomTextFormField(
-            initialValue: "Mostafa Yasser",
+            stringController: nameController,
             fontcolor: AppColors.kFontColor,
             securPass: false,
             width: double.infinity,
@@ -72,7 +105,7 @@ class EditProfileScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 12),
           Text(
-            "Email Address",
+            "New Mobile Number",
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kGreyColorB81,
                 fontWeight: FontWeight.w500,
@@ -80,35 +113,45 @@ class EditProfileScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 8),
           CustomTextFormField(
-            initialValue: "XYZ@gmail.com",
-            fontcolor: AppColors.kFontColor,
-            securPass: false,
-            width: double.infinity,
-            height: 80.h,
-          ),
-          const VsizedBox(height: 12),
-          Text(
-            "Mobile Number",
-            style: Txtstyle.style16(context: context).copyWith(
-                color: AppColors.kGreyColorB81,
-                fontWeight: FontWeight.w500,
-                fontFamily: Constants.relwayFamily),
-          ),
-          const VsizedBox(height: 8),
-          CustomTextFormField(
-            initialValue: "01289880177",
+            stringController: numberController,
             securPass: false,
             fontcolor: AppColors.kFontColor,
             width: double.infinity,
             height: 80.h,
           ),
-          const VsizedBox(height: 8),
+          const VsizedBox(height: 150),
           CustomMainButton(
             color: AppColors.kPrimaryColor,
             fcolorWhite: true,
             width: 375.w,
             txt: "Save Now",
-            onPressed: () {},
+            onPressed: () async {
+              if (nameController.text.isNotEmpty &&
+                  nameController.text != "" &&
+                  nameController.text.isNotEmpty &&
+                  nameController.text != "" &&
+                  Constants.vendorImageUrl != null &&
+                  Constants.vendorImageUrl != "") {
+                await vCubit.updateVendorName(vendorName: nameController.text);
+                await vCubit.updateVendorNumber(
+                    vendorNumber: numberController.text);
+                await vCubit.updateVendorImageUrl(
+                    vendorImageUrl: Constants.vendorImageUrl!);
+                Constants.vendorImageUrl = "";
+              } else if (nameController.text.isNotEmpty &&
+                  nameController.text != "") {
+                await vCubit.updateVendorName(vendorName: nameController.text);
+              } else if (numberController.text.isNotEmpty &&
+                  numberController.text != "") {
+                await vCubit.updateVendorNumber(
+                    vendorNumber: numberController.text);
+              } else if (Constants.vendorImageUrl != null &&
+                  Constants.vendorImageUrl != "") {
+                await vCubit.updateVendorImageUrl(
+                    vendorImageUrl: Constants.vendorImageUrl!);
+                Constants.vendorImageUrl = "";
+              }
+            },
           ),
         ],
       )),

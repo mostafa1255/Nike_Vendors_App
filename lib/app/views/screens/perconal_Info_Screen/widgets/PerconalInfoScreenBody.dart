@@ -1,5 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
+import 'package:nike_app_vendors/app/views/screens/edit_perconal_Info_Screen/edit_profile_screen.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -38,7 +39,12 @@ class PerconalInfoScreenBody extends StatelessWidget {
                         backgroundColor: AppColors.kPrimaryColor,
                         child: IconButton(
                             onPressed: () {
-                              //      GoRouter.of(context).push(Approuter.editprofilescreen);
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) {
+                                  return EditProfileScreen(
+                                      vendorModel: state.vendorModel);
+                                },
+                              ));
                             },
                             icon: Icon(
                               FontAwesomeIcons.pen,
