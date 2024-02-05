@@ -1,4 +1,4 @@
-import 'package:nike_app_vendors/app/core/Functions/Snack_Bar.dart';
+import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';

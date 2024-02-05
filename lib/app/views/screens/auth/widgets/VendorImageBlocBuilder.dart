@@ -1,7 +1,7 @@
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
-import '../../../../core/Functions/Snack_Bar.dart';
-import '../../../../core/Functions/changePhotoBottomSheet.dart';
+import '../../../../core/functions/Snack_Bar.dart';
+import '../../../../core/functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'CustomCircleAvatarRegisterScreen.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/Functions/Snack_Bar.dart';
+import '../../../../core/functions/Snack_Bar.dart';
 import '../../../../core/tools/reg_imp.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 

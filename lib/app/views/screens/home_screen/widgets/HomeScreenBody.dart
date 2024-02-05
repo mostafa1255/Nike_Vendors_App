@@ -20,59 +20,63 @@ class HomeScreenBody extends StatelessWidget {
             child: Padding(
           padding: EdgeInsets.only(top: 15.h, left: 14.w, right: 14.w),
           child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TotalOrdersHomeScreen(
-                  totalOrders: vendorModel.totalOrders.toString()),
-              const VsizedBox(height: 20),
-              TotalRevenueHomeScreen(
-                  totalRevenue: vendorModel.totalPrice.toString()),
-              const VsizedBox(height: 20),
-              Container(
-                width: 350.w,
-                height: 100.h,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15.r)),
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TotalOrdersHomeScreen(
+                      totalOrders: vendorModel.totalOrders.toString()),
+                  const VsizedBox(height: 20),
+                  TotalRevenueHomeScreen(
+                      totalRevenue: vendorModel.totalPrice.toString()),
+                  const VsizedBox(height: 20),
+                  Container(
+                    width: 350.w,
+                    height: 100.h,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15.r)),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.w, vertical: 10.h),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Reviews",
-                            style: Txtstyle.style14(context: context).copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.kFontColor),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Reviews",
+                                style: Txtstyle.style14(context: context)
+                                    .copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.kFontColor),
+                              ),
+                              Text(
+                                "See All Reviews",
+                                style: Txtstyle.style14(context: context)
+                                    .copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.kPrimaryColor),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "See All Reviews",
-                            style: Txtstyle.style14(context: context).copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.kPrimaryColor),
-                          ),
+                          const ReviewsContainerHomeScreen()
                         ],
                       ),
-                      const ReviewsContainerHomeScreen()
-                    ],
+                    ),
                   ),
-                ),
-              ),
-              const VsizedBox(height: 20),
-              Text(
-                "Your Product",
-                style: Txtstyle.style14(context: context).copyWith(
-                    fontWeight: FontWeight.w500, color: AppColors.kFontColor),
-              ),
-              const VsizedBox(height: 20),
-              const CustomHomeCardListView()
-            ],
-          )),
+                  const VsizedBox(height: 20),
+                  Text(
+                    "Your Product",
+                    style: Txtstyle.style14(context: context).copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.kFontColor),
+                  ),
+                  const VsizedBox(height: 20),
+                  const CustomHomeCardListView()
+                ],
+              )),
         ));
       },
     );

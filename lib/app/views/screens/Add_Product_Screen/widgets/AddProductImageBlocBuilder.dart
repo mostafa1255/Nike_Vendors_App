@@ -1,5 +1,5 @@
-import '../../../../core/Functions/Snack_Bar.dart';
-import '../../../../core/Functions/changePhotoBottomSheet.dart';
+import '../../../../core/functions/Snack_Bar.dart';
+import '../../../../core/functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/tools/reg_imp.dart';

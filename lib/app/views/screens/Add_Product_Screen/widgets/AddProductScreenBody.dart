@@ -1,5 +1,5 @@
 import 'package:flutter/services.dart';
-import 'package:nike_app_vendors/app/core/Functions/Snack_Bar.dart';
+import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
 import 'package:nike_app_vendors/app/core/constants.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';

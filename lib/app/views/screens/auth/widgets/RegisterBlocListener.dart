@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/Functions/Snack_Bar.dart';
+import '../../../../core/functions/Snack_Bar.dart';
 import '../../../../data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import '../../../../router/app_router.dart';
 
