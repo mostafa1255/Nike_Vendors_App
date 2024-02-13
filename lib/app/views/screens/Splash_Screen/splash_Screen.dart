@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'dart:async';
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToHomePage();
+    navigateToNextScreen();
   }
 
   @override
@@ -27,9 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  void _navigateToHomePage() {
+  void navigateToNextScreen() {
     Future.delayed(const Duration(milliseconds: 1500), () {
-      GoRouter.of(context).push(Approuter.registerscreen);
+      if (FirebaseAuth.instance.currentUser?.uid != null) {
+        GoRouter.of(context).push(Approuter.homescreen);
+      } else {
+        GoRouter.of(context).push(Approuter.registerscreen);
+      }
     });
   }
 }

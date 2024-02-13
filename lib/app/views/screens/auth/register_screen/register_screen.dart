@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/register_screenBody.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -7,7 +6,7 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: RegisterScreenBody(),
     );
   }

@@ -16,7 +16,7 @@ class ProductCubit extends Cubit<ProductState> {
     result.fold((faliure) {
       emit(ProductsFaliure(errMessage: faliure.errmessage));
     }, (products) {
-      if (products == []) {
+      if (products.isEmpty) {
         return emit(VendorNotHaveProducts());
       }
       emit(ProductsSuccsess(products: products));

@@ -1,4 +1,3 @@
-
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
@@ -6,6 +5,7 @@ import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
+import '../../../../router/app_router.dart';
 import '../../../widgets/HsizedBox.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
@@ -21,20 +21,11 @@ class LoginScreenBody extends StatelessWidget {
     var logCubit = context.read<LoginCubit>();
     return SafeArea(
         child: Padding(
-      padding: EdgeInsets.only(top: 15.h, left: 14.w, right: 14.w),
+      padding: EdgeInsets.only(top: 25.h, left: 14.w, right: 14.w),
       child: SingleChildScrollView(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundColor: AppColors.kOfWhiteColor,
-            child: IconButton(
-                iconSize: 17.sp,
-                onPressed: () {
-                  GoRouter.of(context).pop();
-                },
-                icon: const Icon(Icons.arrow_back_ios_rounded)),
-          ),
           const VsizedBox(height: 8),
           Align(
             alignment: Alignment.center,
@@ -44,7 +35,7 @@ class LoginScreenBody extends StatelessWidget {
                   color: AppColors.kFontColor, fontWeight: FontWeight.bold),
             ),
           ),
-          const VsizedBox(height: 8),
+          const VsizedBox(height: 15),
           Align(
             alignment: Alignment.center,
             child: SizedBox(
@@ -57,7 +48,7 @@ class LoginScreenBody extends StatelessWidget {
               ),
             ),
           ),
-          const VsizedBox(height: 27),
+          const VsizedBox(height: 50),
           const VsizedBox(height: 3),
           const LoginForm(),
           const LoginBlocListener(),
@@ -65,7 +56,7 @@ class LoginScreenBody extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-               //   GoRouter.of(context).push(Approuter.forgetpasswordscreen);
+                  GoRouter.of(context).push(Approuter.forgetpasswordscreen);
                 },
                 child: Text(
                   "Recovery Password",
@@ -112,10 +103,10 @@ class LoginScreenBody extends StatelessWidget {
               logCubit.signInWithGoogle();
             },
           ),
-          const VsizedBox(height: 80),
+          const VsizedBox(height: 60),
           CustomAuthHaveaccount(
             onTap: () {
-            //  GoRouter.of(context).pushReplacement(Approuter.registerscreen);
+              GoRouter.of(context).pushReplacement(Approuter.registerscreen);
             },
             accountType: "New User? ",
             createOrLogin: "Create Account",

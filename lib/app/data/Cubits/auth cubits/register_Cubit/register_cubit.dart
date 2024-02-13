@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:nike_app_vendors/app/core/functions/save_user_UID.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import '../../../repos/register_Repo/register_repo.dart';
@@ -29,7 +29,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       required String longitude,
       required String vendorImageUrl,
       required BuildContext context}) async {
-    final bloc = BlocProvider.of<VendorCubit>(context);
+    final vBloc = BlocProvider.of<VendorCubit>(context);
     emit(RegisterLoading());
     var result = await registerrepo.signUpwithEmailandPassword(
       email: email,
@@ -39,9 +39,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterFailure(errMessage: faliure.errmessage));
     }, (usercredential) async {
       userCredential = usercredential;
-      print("--*" * 10);
-      print(auth.currentUser!.uid);
-      await bloc.sendVendorInfotoFirestore(
+      UserUID.saveUID(userCredential.user!.uid);
+      await vBloc.sendVendorInfotoFirestore(
           name: name,
           email: email,
           userid: auth.currentUser!.uid,
@@ -61,13 +60,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterFailure(errMessage: faliure.errmessage));
     }, (usercredential) {
       userCredential = usercredential;
+      UserUID.saveUID(userCredential!.user!.uid);
       emit(RegisterSuccess());
-      //    vendorCubit!.sendVendorInfotoFirestore(
-      ///       name: userCredential.user!.displayName!,
-      //     email: userCredential.user!.email!,
-      //      userid: userCredential.user!.uid);
     });
   }
-
-// Upload User Info
 }

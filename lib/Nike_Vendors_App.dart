@@ -1,8 +1,8 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/data/repos/login_Repo/login_repo_Impl.dart';
+import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo_Impl.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
-
 import 'app/data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import 'app/data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import 'app/data/Cubits/vendor_cubit/vendor_cubit.dart';
@@ -23,7 +23,6 @@ class NikeStoreApp extends StatelessWidget {
         BlocProvider(create: (_) => LoginCubit(LoginRepoImpl())),
         BlocProvider(
             create: (_) => VendorCubit(VendroRepoImpl())..getVendorInfo()),
-            
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

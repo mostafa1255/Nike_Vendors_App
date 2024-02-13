@@ -12,19 +12,24 @@ class ReviewsContainerHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(
-          Icons.star,
-          size: 27.sp,
-          color: AppColors.kPrimaryColor,
-        ),
-        const HsizedBox(width: 5),
-        Text(
-          "4.6",
-          style: Txtstyle.style22(context: context).copyWith(
-              fontWeight: FontWeight.bold,
-              fontFamily: "",
-              color: AppColors.kPrimaryColor),
+        Row(
+          children: [
+            Icon(
+              Icons.star,
+              size: 27.sp,
+              color: AppColors.kPrimaryColor,
+            ),
+            const HsizedBox(width: 5),
+            Text(
+              "4.6",
+              style: Txtstyle.style22(context: context).copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "",
+                  color: AppColors.kPrimaryColor),
+            ),
+          ],
         ),
         const HsizedBox(width: 20),
         Text(

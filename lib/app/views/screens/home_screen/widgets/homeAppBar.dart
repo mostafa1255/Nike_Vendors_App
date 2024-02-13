@@ -5,8 +5,8 @@ import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';
 
-PreferredSizeWidget homeAppBar(BuildContext context,
-    {required String vendorImageUrl}) {
+PreferredSizeWidget homeAppBar(
+    {required BuildContext context, required String vendorImageUrl}) {
   return AppBar(
     surfaceTintColor: Colors.transparent,
     backgroundColor: AppColors.kOfWhiteColor,

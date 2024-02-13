@@ -7,6 +7,7 @@ import 'package:nike_app_vendors/app/views/screens/edit_perconal_Info_Screen/edi
 import 'package:nike_app_vendors/app/views/screens/home_screen/home_screen.dart';
 import 'package:nike_app_vendors/app/views/screens/my_Profile_Screen/my_profile_Screen.dart';
 import 'package:nike_app_vendors/app/views/screens/perconal_Info_Screen/PerconalInfoScreen.dart';
+import 'package:nike_app_vendors/app/views/widgets/BottomNavBar.dart';
 import '../data/models/Vendors_Model.dart';
 import '../views/screens/auth/forget_password_screen/forget_password_Screen.dart';
 
@@ -25,7 +26,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => const SplashScreen(),
+        builder: (context, state) => RegisterScreen(),
       ),
       GoRoute(
         path: registerscreen,
@@ -41,7 +42,7 @@ abstract class Approuter {
       ),
       GoRoute(
         path: homescreen,
-        builder: (context, state) => const HomeScreen(),
+        builder: (context, state) => HomeScreen(),
       ),
       GoRoute(
         path: myprofilescreen,

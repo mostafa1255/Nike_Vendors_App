@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/global_keys.dart';
@@ -23,7 +23,7 @@ class ForgetPasswordScreenBody extends StatelessWidget {
         children: [
           CustomBackAndFavIcon(
             onPressed: () {
-              //     GoRouter.of(context).pop();
+              GoRouter.of(context).pop();
             },
           ),
           const VsizedBox(height: 8),
@@ -65,7 +65,8 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                         .emailController
                         .text);
               } else {
-                debugPrint("Not valid");
+                customsnackBar(
+                    context, " Please Enter Valid Email", Colors.red);
               }
             },
           ),

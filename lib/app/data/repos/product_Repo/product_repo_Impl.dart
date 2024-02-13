@@ -41,9 +41,6 @@ class ProductRepoImpl extends ProductRepo {
           .collection("products")
           .where("vendorId", isEqualTo: auth.currentUser!.uid)
           .get();
-      if (product.docs.isEmpty) {
-        return const Right([]);
-      }
       List<ProductsModel> productsList = [];
       for (var element in product.docs) {
         productsList.add(ProductsModel.fromJson(map: element.data()));

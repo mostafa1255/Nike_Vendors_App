@@ -36,7 +36,6 @@ class VendroRepoImpl extends VendorRepo {
       userImage = File(pickedImage.path);
       return right(userImage!);
     } else {
-      print("Image is null");
       return left(AppState.notPickedImage);
     }
   }
@@ -46,10 +45,10 @@ class VendroRepoImpl extends VendorRepo {
       {required File userImage}) async {
     try {
       debugPrint("File is : $userImage");
-      debugPrint("Base name is : ${basename(userImage!.path)}");
+      debugPrint("Base name is : ${basename(userImage.path)}");
       Reference imageref =
-          FirebaseStorage.instance.ref(basename(userImage!.path));
-      print(userImage);
+          FirebaseStorage.instance.ref(basename(userImage.path));
+
       await imageref.putFile(userImage);
       return right(await imageref.getDownloadURL());
     } on FirebaseException catch (e) {
@@ -77,8 +76,6 @@ class VendroRepoImpl extends VendorRepo {
         latitude: latitude,
         longitude: longitude,
         number: number);
-    print(usermodel);
-
     try {
       return right(await database
           .collection("vendors")
@@ -150,6 +147,3 @@ class VendroRepoImpl extends VendorRepo {
     }
   }
 }
-/* List<VendorModel> vendorList = vendorSnapshot.docs
-        .map((doc) => VendorModel.fromMap(map: doc.data()))
-        .toList();* */

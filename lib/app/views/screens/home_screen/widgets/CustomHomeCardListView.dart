@@ -10,9 +10,8 @@ import '../../../widgets/VsizedBox.dart';
 class CustomHomeCardListView extends StatelessWidget {
   const CustomHomeCardListView({
     super.key,
-  
   });
- 
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
@@ -86,14 +85,14 @@ class CustomHomeCardListView extends StatelessWidget {
           );
         } else if (state is VendorNotHaveProducts) {
           return Center(
+            heightFactor: 5.h,
             child: Text(
-              "You Have No Products",
-              style: Txtstyle.style15(context: context)
+              "You Have No Products Yet",
+              style: Txtstyle.style18(context: context)
                   .copyWith(color: AppColors.kFontColor),
             ),
           );
         } else if (state is ProductsFaliure) {
-          print(state.errMessage);
           return Center(
             child: Text(
               state.errMessage,
