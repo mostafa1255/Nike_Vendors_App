@@ -1,20 +1,25 @@
-import 'package:flutter/material.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo_Impl.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
+import 'package:nike_app_vendors/app/views/screens/Add_Product_Screen/add_Product_Screen.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/widgets/homeAppBar.dart';
-import 'package:nike_app_vendors/app/views/widgets/BottomNavBar.dart';
-
+import 'package:nike_app_vendors/app/views/screens/my_Profile_Screen/my_profile_Screen.dart';
+import 'package:nike_app_vendors/app/views/screens/reviews/reviews_Screen.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../../../core/styles/App_Colors.dart';
 import '../../../core/tools/reg_imp.dart';
 import 'widgets/HomeDrawer.dart';
 import 'widgets/HomeScreenBody.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-// This code defines a HomeScreen class that extends StatelessWidget. It builds a Scaffold widget with a body of HomeScreenBody widget.
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -24,13 +29,14 @@ class HomeScreen extends StatelessWidget {
         builder: (context, state) {
           if (state is VendorInfoSuccsess) {
             return Scaffold(
-              bottomNavigationBar: BottomNavBar(),
-              backgroundColor: AppColors.kOfWhiteColor,
-              drawer: const HomeDrawer(),
-              appBar: homeAppBar(context,
-                  vendorImageUrl: state.vendorModel.vendorImageUrl!),
-              body: HomeScreenBody(vendorModel: state.vendorModel),
-            );
+                backgroundColor: AppColors.kOfWhiteColor,
+                drawer: const HomeDrawer(),
+                appBar: homeAppBar(
+                    context: context,
+                    vendorImageUrl: state.vendorModel.vendorImageUrl!),
+                body: HomeScreenBody(
+                  vendorModel: state.vendorModel,
+                ));
           } else if (state is VendorInfoFaliure) {
             return Center(child: Text(state.errMessage));
           } else {

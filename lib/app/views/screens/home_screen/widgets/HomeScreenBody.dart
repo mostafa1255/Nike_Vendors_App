@@ -1,3 +1,4 @@
+import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/widgets/CustomHomeCardListView.dart';
@@ -14,71 +15,61 @@ class HomeScreenBody extends StatelessWidget {
   final VendorModel vendorModel;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<VendorCubit, VendorState>(
-      builder: (context, state) {
-        return SafeArea(
+    return SafeArea(
+        child: Padding(
+      padding: EdgeInsets.only(top: 15.h, left: 14.w, right: 14.w),
+      child: SingleChildScrollView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TotalOrdersHomeScreen(
+              totalOrders: vendorModel.totalOrders.toString()),
+          const VsizedBox(height: 20),
+          TotalRevenueHomeScreen(
+              totalRevenue: vendorModel.totalPrice.toString()),
+          const VsizedBox(height: 20),
+          Container(
+            width: 350.w,
+            height: 100.h,
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(15.r)),
             child: Padding(
-          padding: EdgeInsets.only(top: 15.h, left: 14.w, right: 14.w),
-          child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TotalOrdersHomeScreen(
-                      totalOrders: vendorModel.totalOrders.toString()),
-                  const VsizedBox(height: 20),
-                  TotalRevenueHomeScreen(
-                      totalRevenue: vendorModel.totalPrice.toString()),
-                  const VsizedBox(height: 20),
-                  Container(
-                    width: 350.w,
-                    height: 100.h,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15.r)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.w, vertical: 10.h),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Reviews",
-                                style: Txtstyle.style14(context: context)
-                                    .copyWith(
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.kFontColor),
-                              ),
-                              Text(
-                                "See All Reviews",
-                                style: Txtstyle.style14(context: context)
-                                    .copyWith(
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.kPrimaryColor),
-                              ),
-                            ],
-                          ),
-                          const ReviewsContainerHomeScreen()
-                        ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Reviews",
+                        style: Txtstyle.style14(context: context).copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.kFontColor),
                       ),
-                    ),
+                      Text(
+                        "See All Reviews",
+                        style: Txtstyle.style14(context: context).copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.kPrimaryColor),
+                      ),
+                    ],
                   ),
-                  const VsizedBox(height: 20),
-                  Text(
-                    "Your Product",
-                    style: Txtstyle.style14(context: context).copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.kFontColor),
-                  ),
-                  const VsizedBox(height: 20),
-                  const CustomHomeCardListView()
+                  const ReviewsContainerHomeScreen()
                 ],
-              )),
-        ));
-      },
-    );
+              ),
+            ),
+          ),
+          const VsizedBox(height: 20),
+          Text(
+            "Your Product",
+            style: Txtstyle.style14(context: context).copyWith(
+                fontWeight: FontWeight.w500, color: AppColors.kFontColor),
+          ),
+          const VsizedBox(height: 20),
+          const CustomHomeCardListView()
+        ],
+      )),
+    ));
   }
 }

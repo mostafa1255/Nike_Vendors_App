@@ -1,69 +1,65 @@
-import 'package:flutter/material.dart';
+import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
+import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/views/screens/Add_Product_Screen/add_Product_Screen.dart';
 import 'package:nike_app_vendors/app/views/screens/my_Profile_Screen/my_profile_Screen.dart';
-import 'package:nike_app_vendors/app/views/screens/reviews/reviews_Screen.dart';
-
 import '../screens/home_screen/home_screen.dart';
-import '../screens/perconal_Info_Screen/PerconalInfoScreen.dart';
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
-  static const List<Widget> _widgetOptions = [
-    HomeScreen(),
-    ReviewsScreen(),
-    AddProductScreen(),
-    MyProfileScreen(),
-    PerconalInfoScreen()
+  List screens = [
+    const HomeScreen(),
+    const AddProductScreen(),
+    const MyProfileScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  int slectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bottom Navigation Bar Example'),
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        selectedItemColor: AppColors.kPrimaryColor,
+        currentIndex: slectedIndex,
+        onTap: (index) {
+          slectedIndex = index;
+          setState(() {});
+        },
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(
+              Icons.home_filled,
+              size: 27.sp,
+            ),
+            label: "",
+            backgroundColor: Colors.grey.withOpacity(0.2),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.reviews),
-            label: 'review',
+            icon: CircleAvatar(
+              radius: 25.r,
+              backgroundColor: Colors.grey.shade300,
+              child: Icon(
+                Icons.add,
+                color:
+                    slectedIndex == 1 ? AppColors.kPrimaryColor : Colors.white,
+                size: 40.sp,
+              ),
+            ),
+            label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Add Product',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.details),
-            label: 'My Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Add Product',
-          ),
+            icon: Icon(Icons.account_circle_rounded, size: 27.sp),
+            label: "",
+          )
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        onTap: _onItemTapped,
       ),
+      body: screens[slectedIndex],
     );
   }
 }
