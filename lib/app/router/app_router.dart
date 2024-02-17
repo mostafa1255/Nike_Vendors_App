@@ -14,6 +14,7 @@ import '../views/screens/auth/forget_password_screen/forget_password_Screen.dart
 abstract class Approuter {
   static const initial = "/";
   static const loginescreen = "/loginescreen";
+  static const bottomnav = "/bottomnav";
   static const registerscreen = "/registerscreen";
   static const forgetpasswordscreen = "/forgetpasswordscreen";
   static const homescreen = "/homescreen";
@@ -26,7 +27,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => RegisterScreen(),
+        builder: (context, state) => SplashScreen(),
       ),
       GoRoute(
         path: registerscreen,
@@ -39,6 +40,10 @@ abstract class Approuter {
       GoRoute(
         path: forgetpasswordscreen,
         builder: (context, state) => const ForgetPasswordScreen(),
+      ),
+      GoRoute(
+        path: bottomnav,
+        builder: (context, state) => const BottomNavBar(),
       ),
       GoRoute(
         path: homescreen,

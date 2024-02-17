@@ -64,4 +64,11 @@ class RegisterCubit extends Cubit<RegisterState> {
       emit(RegisterSuccess());
     });
   }
+
+  void disposeControllers() {
+    nameController.dispose();
+    emailController.dispose();
+    passController.dispose();
+    phoneController.dispose();
+  }
 }

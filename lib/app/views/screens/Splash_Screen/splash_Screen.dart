@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigateToNextScreen() {
     Future.delayed(const Duration(milliseconds: 1500), () {
       if (FirebaseAuth.instance.currentUser?.uid != null) {
-        GoRouter.of(context).push(Approuter.homescreen);
+        GoRouter.of(context).push(Approuter.bottomnav);
       } else {
         GoRouter.of(context).push(Approuter.registerscreen);
       }

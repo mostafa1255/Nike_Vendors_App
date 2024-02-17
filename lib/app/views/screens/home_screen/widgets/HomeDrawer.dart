@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nike_app_vendors/app/data/Cubits/auth%20cubits/login_Cubit/login_cubit.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
+import '../../../../core/tools/reg_imp.dart';
 import '../../../widgets/VsizedBox.dart';
 import 'CustomRowDrawer.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({
     super.key,
+    required this.vendorImageUrl,
   });
-
+  final String vendorImageUrl;
   @override
   Widget build(BuildContext context) {
+    var lCubit = BlocProvider.of<LoginCubit>(context);
     return Drawer(
       width: 260.w,
       backgroundColor: AppColors.kSecondaryColor,
@@ -24,6 +28,7 @@ class HomeDrawer extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: Colors.white,
+              backgroundImage: NetworkImage(vendorImageUrl),
               radius: 45.r,
             ),
             const VsizedBox(height: 20),
@@ -67,6 +72,10 @@ class HomeDrawer extends StatelessWidget {
             ),
             const VsizedBox(height: 35),
             CustomRowDrawer(
+              onTap: () {
+                lCubit.signOut();
+                
+              },
               widget: Image.asset(
                 AppImages.iconsIconSignOut,
                 color: Colors.white,

@@ -9,21 +9,26 @@ class CustomRowDrawer extends StatelessWidget {
     super.key,
     required this.widget,
     required this.text,
+    this.onTap,
   });
   final Widget widget;
   final String text;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        widget,
-        const HsizedBox(width: 20),
-        Text(
-          text,
-          style: Txtstyle.style16(context: context)
-              .copyWith(fontFamily: Constants.relwayFamily),
-        ),
-      ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          widget,
+          const HsizedBox(width: 20),
+          Text(
+            text,
+            style: Txtstyle.style16(context: context)
+                .copyWith(fontFamily: Constants.relwayFamily),
+          ),
+        ],
+      ),
     );
   }
 }

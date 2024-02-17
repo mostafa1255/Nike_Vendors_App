@@ -68,4 +68,15 @@ class LoginCubit extends Cubit<LoginState> {
       emit(EmailVerificationFailure(errMessage: e.message.toString()));
     }
   }
+
+  Future<void> signOut() async {
+    await auth.signOut();
+    UserUID.removeUID();
+  }
+
+  void disposeControllers() {
+    nameController.dispose();
+    emailController.dispose();
+    passController.dispose();
+  }
 }
