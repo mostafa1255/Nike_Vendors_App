@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nike_app_vendors/app/core/functions/simple_bloc_observer.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'Nike_Vendors_App.dart';
+import 'app/core/tools/local_notification_services.dart';
 import 'firebase_options.dart';
 
 void main() async {

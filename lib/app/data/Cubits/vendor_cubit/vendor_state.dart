@@ -1,7 +1,7 @@
 part of 'vendor_cubit.dart';
 
 @immutable
-sealed class VendorState {}
+abstract class VendorState {}
 
 final class VendorInitial extends VendorState {}
 

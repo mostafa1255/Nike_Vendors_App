@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';

@@ -1,6 +1,7 @@
-import 'package:geolocator/geolocator.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
-import 'package:nike_app_vendors/app/core/functions/determine_Location.dart';
+import 'package:nike_app_vendors/app/core/functions/send_remote_notification.dart';
+import 'package:nike_app_vendors/app/core/tools/local_notification_services.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/functions/regestrationAndLocation.dart';
 import '../../../../core/styles/App_Colors.dart';
@@ -18,8 +19,21 @@ import 'RegisterBlocListener.dart';
 import 'RegisterFormField.dart';
 import 'VendorImageBlocBuilder.dart';
 
-class RegisterScreenBody extends StatelessWidget {
+class RegisterScreenBody extends StatefulWidget {
   const RegisterScreenBody({super.key});
+
+  @override
+  State<RegisterScreenBody> createState() => _RegisterScreenBodyState();
+}
+
+class _RegisterScreenBodyState extends State<RegisterScreenBody> {
+  RemoteNotificationService remoteNotificationService =
+      RemoteNotificationService();
+  @override
+  void initState() {
+    LocalNotificationService.initializeNotification();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
