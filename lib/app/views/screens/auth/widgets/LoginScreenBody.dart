@@ -72,9 +72,10 @@ class LoginScreenBody extends StatelessWidget {
             fcolorWhite: true,
             txt: "Sign In",
             color: AppColors.kPrimaryColor,
-            onPressed: () {
-              if (GlobalKeys.riKey1.currentState!.validate()) {
-                BlocProvider.of<LoginCubit>(context).signInwithEmailandPassword(
+            onPressed: () async {
+              if (context.read<LoginCubit>().riKey1.currentState!.validate()) {
+                await BlocProvider.of<LoginCubit>(context)
+                    .signInwithEmailandPassword(
                   context: context,
                   email: logCubit.emailController.text,
                   password: logCubit.passController.text,

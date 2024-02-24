@@ -23,7 +23,9 @@ class ForgetPasswordScreenBody extends StatelessWidget {
         children: [
           CustomBackAndFavIcon(
             onPressed: () {
-              GoRouter.of(context).pop();
+              if (GoRouter.of(context).canPop()) {
+                GoRouter.of(context).pop();
+              }
             },
           ),
           const VsizedBox(height: 8),

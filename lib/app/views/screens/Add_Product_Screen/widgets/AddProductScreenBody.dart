@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
 import 'package:nike_app_vendors/app/core/constants.dart';
+import 'package:nike_app_vendors/app/core/tools/send_remote_notification.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/views/widgets/CustomTextFormField.dart';
@@ -22,6 +23,13 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController brandController = TextEditingController();
+  RemoteNotificationService remoteNotificationService =
+      RemoteNotificationService();
+  @override
+  void initState() {
+    remoteNotificationService.requestNotificationPermission();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,20 +58,6 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           ),
           const VsizedBox(height: 20),
           Text(
-            "Descreption",
-            style: Txtstyle.style14(context: context).copyWith(
-                fontWeight: FontWeight.bold, color: AppColors.kFontColor),
-          ),
-          const VsizedBox(height: 10),
-          CustomTextFormField(
-            stringController: descriptionController,
-            securPass: false,
-            width: 375.w,
-            height: 60.h,
-            hinttext: "Air Jordan 1",
-          ),
-          const VsizedBox(height: 20),
-          Text(
             "Brand",
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.kFontColor),
@@ -74,7 +68,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
             securPass: false,
             width: 375.w,
             height: 60.h,
-            hinttext: "Air Jordan 1",
+            hinttext: "Nike",
           ),
           const VsizedBox(height: 20),
           Text(
@@ -89,20 +83,38 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
             securPass: false,
             width: 375.w,
             height: 60.h,
-            hinttext: "Air Jordan 1",
+            hinttext: "200\$",
+          ),
+          const VsizedBox(height: 20),
+          Text(
+            "Descreption",
+            style: Txtstyle.style14(context: context).copyWith(
+                fontWeight: FontWeight.bold, color: AppColors.kFontColor),
+          ),
+          const VsizedBox(height: 10),
+          CustomTextFormField(
+            stringController: descriptionController,
+            securPass: false,
+            width: 375.w,
+            height: 60.h,
+            hinttext: "The Best Air Jordan",
           ),
           const VsizedBox(height: 30),
           CustomMainButton(
             color: AppColors.kPrimaryColor,
             txt: "Upload",
-            onPressed: () {
+            onPressed: () async {
               if (Constants.productImageUrl != null &&
                   Constants.productImageUrl != "" &&
                   nameController.text.isNotEmpty &&
                   descriptionController.text.isNotEmpty &&
                   brandController.text.isNotEmpty &&
                   priceController.text.isNotEmpty) {
-                pCubit.setProducts(
+                remoteNotificationService.sendRemoteNotification(
+                    title: nameController.text,
+                    body: descriptionController.text,
+                    image: Constants.productImageUrl!);
+                await pCubit.setProducts(
                     productImageUrl: Constants.productImageUrl!,
                     name: nameController.text,
                     descreption: descriptionController.text,
@@ -116,7 +128,8 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
             },
             fcolorWhite: true,
             width: 375.w,
-          )
+          ),
+          const VsizedBox(height: 30),
         ],
       )),
     ));

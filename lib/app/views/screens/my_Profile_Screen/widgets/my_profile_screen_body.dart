@@ -1,20 +1,22 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Colors.dart';
 import 'package:nike_app_vendors/app/core/styles/App_Image.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
-import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
 import '../../../../core/styles/text_Style.dart';
+import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
+import '../../../../router/app_router.dart';
 import '../../../widgets/CustomBackIcon.dart';
 import 'AvailableBalanceBlocBuilder.dart';
 import 'CustomListTile.dart';
+import 'CustomShadowContainerMyProfileScreen.dart';
 
 class MyProfileScreenBody extends StatelessWidget {
   const MyProfileScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var lCubit = BlocProvider.of<LoginCubit>(context);
     return SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
@@ -34,7 +36,9 @@ class MyProfileScreenBody extends StatelessWidget {
                   Row(
                     children: [
                       CustomBackAndFavIcon(
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context).pop();
+                        },
                       ),
                       Center(
                         widthFactor: 3.w,
@@ -79,14 +83,22 @@ class MyProfileScreenBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20.r)),
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 15.h),
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomListTile(
+                        onTap: () {
+                          GoRouter.of(context)
+                              .push(Approuter.perconalinfoscreen);
+                        },
                         image: AppImages.iconUser,
                         title: "Personal Info",
                       ),
                       CustomListTile(
+                        onTap: () {
+                          GoRouter.of(context)
+                              .push(Approuter.perconalinfoscreen);
+                        },
                         image: AppImages.iconsIconsettings,
                         title: "Settings",
                         imageColor: AppColors.kPrimaryColor,
@@ -96,16 +108,11 @@ class MyProfileScreenBody extends StatelessWidget {
                 ),
               ),
               const VsizedBox(height: 20),
-              Container(
-                width: 340.w,
-                height: 75.h,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade400.withOpacity(0.25),
-                    borderRadius: BorderRadius.circular(20.r)),
-                child: Center(
+              CustomShadowContainerMyProfileScreen(
+                widget: Center(
                   child: CustomListTile(
                     onTap: () {
-                      // print("object");
+                      GoRouter.of(context).push(Approuter.perconalinfoscreen);
                     },
                     image: AppImages.userReview,
                     title: "User Reviews",
@@ -113,20 +120,19 @@ class MyProfileScreenBody extends StatelessWidget {
                 ),
               ),
               const VsizedBox(height: 10),
-              Container(
-                width: 340.w,
-                height: 75.h,
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade400.withOpacity(0.25),
-                    borderRadius: BorderRadius.circular(20.r)),
-                child: Center(
+              CustomShadowContainerMyProfileScreen(
+                widget: Center(
                   child: CustomListTile(
-                    onTap: () {},
+                    onTap: () async {
+                      GoRouter.of(context)
+                          .pushReplacement(Approuter.loginescreen);
+                      await lCubit.signOut();
+                    },
                     image: AppImages.redLogout,
                     title: "Log Out",
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ),

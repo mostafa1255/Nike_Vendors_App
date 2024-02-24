@@ -19,7 +19,6 @@ class EditProfileScreenBody extends StatefulWidget {
 
 class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
   final TextEditingController nameController = TextEditingController();
-
   final TextEditingController numberController = TextEditingController();
 
   @override
@@ -128,8 +127,8 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
             onPressed: () async {
               if (nameController.text.isNotEmpty &&
                   nameController.text != "" &&
-                  nameController.text.isNotEmpty &&
-                  nameController.text != "" &&
+                  numberController.text.isNotEmpty &&
+                  numberController.text != "" &&
                   Constants.vendorImageUrl != null &&
                   Constants.vendorImageUrl != "") {
                 await vCubit.updateVendorName(vendorName: nameController.text);

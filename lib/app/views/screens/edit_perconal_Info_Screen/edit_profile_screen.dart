@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/styles/App_Colors.dart';
 import '../../../data/models/Vendors_Model.dart';
 import 'widgets/EditProfileScreenBody.dart';
 import 'widgets/profileScreenAppBar.dart';

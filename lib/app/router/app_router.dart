@@ -27,7 +27,7 @@ abstract class Approuter {
     routes: [
       GoRoute(
         path: initial,
-        builder: (context, state) => SplashScreen(),
+        builder: (context, state) => LoginScreen(),
       ),
       GoRoute(
         path: registerscreen,

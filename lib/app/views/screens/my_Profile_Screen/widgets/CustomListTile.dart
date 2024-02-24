@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
-
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 
@@ -17,16 +17,23 @@ class CustomListTile extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
+    return ElevatedButton(
+      onPressed: onTap,
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.r),
+          )),
+          padding: const MaterialStatePropertyAll(EdgeInsets.zero),
+          overlayColor: const MaterialStatePropertyAll(AppColors.kPrimaryColor),
+          backgroundColor: const MaterialStatePropertyAll(Colors.transparent),
+          surfaceTintColor: const MaterialStatePropertyAll(Colors.transparent),
+          shadowColor: const MaterialStatePropertyAll(Colors.transparent)),
       child: ListTile(
-        trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: AppColors.kGreyColorB81,
-              size: 20.sp,
-            )),
+        trailing: Icon(
+          Icons.arrow_forward_ios_rounded,
+          color: AppColors.kGreyColorB81,
+          size: 20.sp,
+        ),
         leading: CircleAvatar(
             backgroundColor: Colors.white,
             radius: 22.r,

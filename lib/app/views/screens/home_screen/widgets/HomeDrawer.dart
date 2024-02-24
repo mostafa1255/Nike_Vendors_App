@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nike_app_vendors/app/data/Cubits/auth%20cubits/login_Cubit/login_cubit.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
+import '../../../../router/app_router.dart';
 import '../../../widgets/VsizedBox.dart';
 import 'CustomRowDrawer.dart';
 
@@ -37,7 +36,10 @@ class HomeDrawer extends StatelessWidget {
               style: Txtstyle.style20(context: context),
             ),
             const VsizedBox(height: 45),
-            CustomRowDrawer(
+            CustomElevatedButtonDrawer(
+              onTap: () {
+                GoRouter.of(context).push(Approuter.myprofilescreen);
+              },
               widget: Icon(
                 FontAwesomeIcons.user,
                 size: 20.sp,
@@ -46,7 +48,10 @@ class HomeDrawer extends StatelessWidget {
               text: "Profile",
             ),
             const VsizedBox(height: 35),
-            CustomRowDrawer(
+            CustomElevatedButtonDrawer(
+              onTap: () {
+                GoRouter.of(context).push(Approuter.perconalinfoscreen);
+              },
               widget: Icon(
                 FontAwesomeIcons.edit,
                 color: Colors.white,
@@ -55,7 +60,10 @@ class HomeDrawer extends StatelessWidget {
               text: "Personal Info",
             ),
             const VsizedBox(height: 35),
-            CustomRowDrawer(
+            CustomElevatedButtonDrawer(
+              onTap: () {
+                GoRouter.of(context).push(Approuter.addproductscreen);
+              },
               widget: Icon(
                 FontAwesomeIcons.add,
                 size: 20.sp,
@@ -71,10 +79,10 @@ class HomeDrawer extends StatelessWidget {
               indent: 0,
             ),
             const VsizedBox(height: 35),
-            CustomRowDrawer(
+            CustomElevatedButtonDrawer(
               onTap: () {
                 lCubit.signOut();
-                
+                GoRouter.of(context).pushReplacement(Approuter.loginescreen);
               },
               widget: Image.asset(
                 AppImages.iconsIconSignOut,

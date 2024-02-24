@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
 import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo_Impl.dart';
@@ -17,11 +16,15 @@ class AddProductScreen extends StatelessWidget {
         context: context,
         title: "Add Product",
         iconData: Icons.add,
-        onPressed1: () {},
+        onPressed1: () {
+          if (GoRouter.of(context).canPop()) {
+            GoRouter.of(context).pop();
+          }
+        },
       ),
       body: BlocProvider(
         create: (context) => ProductCubit(VendroRepoImpl(), ProductRepoImpl()),
-        child: AddProductScreenBody(),
+        child: const AddProductScreenBody(),
       ),
     );
   }

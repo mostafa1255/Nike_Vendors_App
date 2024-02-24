@@ -28,7 +28,9 @@ class LocalNotificationService {
             body: message.notification!.body,
             color: AppColors.kPrimaryColor,
             title: message.notification!.title,
-            notificationLayout: NotificationLayout.BigPicture,
+            notificationLayout: message.notification?.android?.imageUrl != null
+                ? NotificationLayout.BigPicture
+                : NotificationLayout.Default,
             bigPicture: message.notification?.android?.imageUrl ??
                 "https://firebasestorage.googleapis.com/v0/b/nike-store-app-f8ff2.appspot.com/o/-5902198634768874126_121.jpg?alt=media&token=67fac45d-59e6-4eb1-a505-7bf823f63478"));
   }

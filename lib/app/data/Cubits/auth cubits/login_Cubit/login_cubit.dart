@@ -15,6 +15,7 @@ class LoginCubit extends Cubit<LoginState> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
+  final riKey1 = GlobalKey<FormState>();
 
   Future<void> signInwithEmailandPassword(
       {required String email,
@@ -29,6 +30,10 @@ class LoginCubit extends Cubit<LoginState> {
       userCredential = usercredential;
       UserUID.saveUID(userCredential!.user!.uid);
       emit(LoginSuccess());
+      Future.delayed(const Duration(seconds: 2)).then((_) {
+        emailController.clear();
+        passController.clear();
+      });
     });
   }
 

@@ -21,7 +21,7 @@ class RegisterBlocListener extends StatelessWidget {
           );
         } else if (state is RegisterSuccess) {
           customsnackBar(context, "Account Created Successfully", Colors.green);
-          GoRouter.of(context).push(Approuter.loginescreen);
+          GoRouter.of(context).pushReplacement(Approuter.loginescreen);
         } else if (state is RegisterFailure) {
           customsnackBar(context, state.errMessage, Colors.red);
         }

@@ -3,7 +3,6 @@ import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/App_Regex.dart';
-import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../widgets/CustomTextFormField.dart';
@@ -21,7 +20,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     var logCubit = BlocProvider.of<LoginCubit>(context);
     return Form(
-      key: GlobalKeys.riKey1,
+      key: context.read<LoginCubit>().riKey1,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -59,7 +58,8 @@ class _LoginFormState extends State<LoginForm> {
           CustomTextFormField(
             stringController: logCubit.passController,
             widget: IconButton(
-                onPressed: () {}, icon: Image.asset(AppImages.iconsEyePassword)),
+                onPressed: () {},
+                icon: Image.asset(AppImages.iconsEyePassword)),
             hinttext: "Password",
             securPass: true,
             width: double.infinity,

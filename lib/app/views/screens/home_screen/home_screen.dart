@@ -33,7 +33,10 @@ class HomeScreen extends StatelessWidget {
             return Center(child: Text(state.errMessage));
           } else {
             return const Scaffold(
-                body: Center(child: CircularProgressIndicator()));
+                body: Center(
+                    child: CircularProgressIndicator(
+              color: AppColors.kPrimaryColor,
+            )));
           }
         },
       ),

@@ -4,8 +4,8 @@ import '../../../../core/constants.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';
 
-class CustomRowDrawer extends StatelessWidget {
-  const CustomRowDrawer({
+class CustomElevatedButtonDrawer extends StatelessWidget {
+  const CustomElevatedButtonDrawer({
     super.key,
     required this.widget,
     required this.text,
@@ -16,8 +16,12 @@ class CustomRowDrawer extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
+    return ElevatedButton(
+      style: const ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+          surfaceTintColor: MaterialStatePropertyAll(Colors.transparent),
+          shadowColor: MaterialStatePropertyAll(Colors.transparent)),
+      onPressed: onTap,
       child: Row(
         children: [
           widget,
