@@ -17,12 +17,6 @@ final class LoginFailure extends LoginState {
 
 class EmailVerificationSuccess extends LoginState {}
 
-class EmailVerificationLoading extends LoginState {
-  final String errMessage;
-
-  EmailVerificationLoading({required this.errMessage});
-}
-
 class EmailVerificationFailure extends LoginState {
   final String errMessage;
 

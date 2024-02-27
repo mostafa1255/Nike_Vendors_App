@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import '../../../../core/constants.dart';
@@ -13,7 +11,9 @@ PreferredSizeWidget profileScreenAppBar(BuildContext context) {
     surfaceTintColor: Colors.transparent,
     backgroundColor: Colors.white,
     leading: CustomBackAndFavIcon(onPressed: () async {
-      GoRouter.of(context).pop();
+      if (GoRouter.of(context).canPop()) {
+        GoRouter.of(context).pop();
+      }
       await BlocProvider.of<VendorCubit>(context).getVendorInfo();
     }),
     centerTitle: true,
@@ -26,7 +26,11 @@ PreferredSizeWidget profileScreenAppBar(BuildContext context) {
     ),
     actions: [
       TextButton(
-        onPressed: () {},
+        onPressed: () {
+          if (GoRouter.of(context).canPop()) {
+            GoRouter.of(context).pop();
+          }
+        },
         child: Text(
           "Cancel",
           style: Txtstyle.style16(context: context).copyWith(

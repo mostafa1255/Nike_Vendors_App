@@ -18,9 +18,7 @@ class _MyHomePageState extends State<BottomNavBar> {
     const AddProductScreen(),
     const MyProfileScreen(),
   ];
-
   int slectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,3 @@
-import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dart';
-import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/widgets/CustomHomeCardListView.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
@@ -67,7 +65,8 @@ class HomeScreenBody extends StatelessWidget {
                 fontWeight: FontWeight.w500, color: AppColors.kFontColor),
           ),
           const VsizedBox(height: 20),
-          const CustomHomeCardListView()
+          const CustomHomeCardListView(),
+          const VsizedBox(height: 20),
         ],
       )),
     ));

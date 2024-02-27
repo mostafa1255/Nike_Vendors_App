@@ -13,7 +13,7 @@ class EditProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: profileScreenAppBar(context,),
+      appBar: profileScreenAppBar(context),
       body: EditProfileScreenBody(vendorModel: vendorModel),
     );
   }

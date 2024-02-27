@@ -24,8 +24,7 @@ class HomeScreen extends StatelessWidget {
                 drawer: HomeDrawer(
                     vendorImageUrl: state.vendorModel.vendorImageUrl!),
                 appBar: homeAppBar(
-                    context: context,
-                    vendorImageUrl: state.vendorModel.vendorImageUrl!),
+                    context: context, vendorModel: state.vendorModel),
                 body: HomeScreenBody(
                   vendorModel: state.vendorModel,
                 ));

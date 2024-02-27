@@ -1,3 +1,4 @@
+import 'package:nike_app_vendors/app/core/tools/global_keys.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
@@ -20,7 +21,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     var logCubit = BlocProvider.of<LoginCubit>(context);
     return Form(
-      key: context.read<LoginCubit>().riKey1,
+      key: GlobalKeys.riKey1,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

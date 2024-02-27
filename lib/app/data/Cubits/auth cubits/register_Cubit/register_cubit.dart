@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:nike_app_vendors/app/core/functions/save_user_UID.dart';
+import 'package:nike_app_vendors/app/core/tools/save_user_UID.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import '../../../repos/register_Repo/register_repo.dart';

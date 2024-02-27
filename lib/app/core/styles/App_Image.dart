@@ -122,4 +122,6 @@ class AppImages {
   static const String userReview = "assets/icons/userReview.png";
 
   static const String redLogout = "assets/icons/redLogout.png";
+  static const String lottieLoadingAnimation =
+      "assets/jsons/Animation - 1708977162147.json";
 }

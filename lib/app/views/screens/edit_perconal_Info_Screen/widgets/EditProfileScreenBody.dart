@@ -8,6 +8,7 @@ import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/CustomTextFormField.dart';
 import '../../../widgets/VsizedBox.dart';
 import '../../../widgets/customMainButton.dart';
+import 'Edit_Profile_Bloc_Builder.dart';
 
 class EditProfileScreenBody extends StatefulWidget {
   const EditProfileScreenBody({super.key, required this.vendorModel});
@@ -34,25 +35,7 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
           Center(
             child: Column(
               children: [
-                BlocBuilder<VendorCubit, VendorState>(
-                  builder: (context, state) {
-                    if (state is ImageUploadedSuccsess) {
-                      Constants.vendorImageUrl = state.imageUrl;
-                      return CircleAvatar(
-                        radius: 70.r,
-                        backgroundColor: Colors.grey.shade300.withOpacity(0.45),
-                        backgroundImage: NetworkImage(state.imageUrl),
-                      );
-                    } else {
-                      return CircleAvatar(
-                        radius: 70.r,
-                        backgroundColor: Colors.grey.shade300.withOpacity(0.45),
-                        backgroundImage:
-                            NetworkImage(widget.vendorModel.vendorImageUrl!),
-                      );
-                    }
-                  },
-                ),
+                Edit_Profile_Bloc_Builder(widget: widget),
                 const VsizedBox(height: 10),
                 Text(
                   widget.vendorModel.name!,

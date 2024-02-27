@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nike_app_vendors/app/core/tools/Location_Services.dart';
+import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';
 
 PreferredSizeWidget homeAppBar(
-    {required BuildContext context, required String vendorImageUrl}) {
+    {required BuildContext context, required VendorModel vendorModel}) {
+  
   return AppBar(
     surfaceTintColor: Colors.transparent,
     backgroundColor: AppColors.kOfWhiteColor,
@@ -39,7 +42,7 @@ PreferredSizeWidget homeAppBar(
       CircleAvatar(
         radius: 25.r,
         backgroundColor: AppColors.kPrimaryColor,
-        backgroundImage: NetworkImage(vendorImageUrl),
+        backgroundImage: NetworkImage(vendorModel.vendorImageUrl!),
       ),
       const HsizedBox(width: 10)
     ],

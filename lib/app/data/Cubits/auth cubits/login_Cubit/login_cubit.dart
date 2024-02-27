@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import '../../../../core/functions/save_user_UID.dart';
+import '../../../../core/tools/save_user_UID.dart';
 import '../../../repos/login_Repo/login_repo.dart';
 part 'login_state.dart';
 
@@ -15,7 +15,7 @@ class LoginCubit extends Cubit<LoginState> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
-  final riKey1 = GlobalKey<FormState>();
+  // final riKey1 = GlobalKey<FormState>();
 
   Future<void> signInwithEmailandPassword(
       {required String email,
@@ -65,9 +65,8 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       if (auth.currentUser!.emailVerified) {
         emit(EmailVerificationSuccess());
-      } else {
-        auth.currentUser!.sendEmailVerification();
-        emit(EmailVerificationLoading(errMessage: "please verify your email"));
+      } else if (auth.currentUser!.emailVerified == false) {
+        emit(EmailVerificationFailure(errMessage: "please verify your email"));
       }
     } on FirebaseAuthException catch (e) {
       emit(EmailVerificationFailure(errMessage: e.message.toString()));
