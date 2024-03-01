@@ -1,3 +1,20 @@
 {
     "app_name": "nike_app_vendors"
+    ,"register_Account":"Register Account"
+    ,"login":"Log in",
+    "email":"Email Address",
+    "password":"Password",
+    "phone_Number":"Phone Number",
+"sign_Up":"Sign Up",
+"already_have_an_account":"Already have an account?",
+"please_Upload_Your_Image":"Please Upload Your Image",
+"your_Name":"Your Name",
+"please_enter_correct_name":"Please enter correct name",
+"please_enter_correct_email":"Please enter your correct Email",
+"please_enter_correct_Password":"Please enter correct Password",
+"password_Condition":"Password must have uppercase , lower case and 8 character",
+"sign_In_with_Google":"Sign In with Google",
+"please_enter_correct_phone":"please_enter_correct_Phone"
+,"take_Photo":"Take Photo",
+"choose_Photo":"Choose Photo"
 }

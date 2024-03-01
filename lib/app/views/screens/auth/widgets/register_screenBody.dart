@@ -1,4 +1,5 @@
 import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/functions/regestrationAndLocation.dart';
 import '../../../../core/styles/App_Colors.dart';
@@ -40,7 +41,7 @@ class RegisterScreenBody extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Register Account",
+                  S.of(context).register_Account,
                   style: Txtstyle.style32(context: context).copyWith(
                       color: AppColors.kFontColor, fontWeight: FontWeight.bold),
                 ),
@@ -53,7 +54,7 @@ class RegisterScreenBody extends StatelessWidget {
               CustomMainButton(
                 width: 375.w,
                 fcolorWhite: true,
-                txt: "Sign Up",
+                txt: S.of(context).sign_Up,
                 color: AppColors.kPrimaryColor,
                 onPressed: () async {
                   if (GlobalKeys.riKey2.currentState!.validate()) {
@@ -61,7 +62,9 @@ class RegisterScreenBody extends StatelessWidget {
                       await regestrationAndLocation(
                           regCubit, context, cubitRead);
                     } else {
-                      customsnackBar(context, "Please Upload Your Image",
+                      customsnackBar(
+                          context,
+                          S.of(context).please_Upload_Your_Image,
                           Colors.redAccent);
                     }
                   }
@@ -75,7 +78,7 @@ class RegisterScreenBody extends StatelessWidget {
                     Image.asset(AppImages.iconsGoogleicon),
                     const HsizedBox(width: 15),
                     Text(
-                      "Sign In with Google ",
+                      S.of(context).sign_In_with_Google,
                       style: Txtstyle.style14(context: context).copyWith(
                           fontFamily: Constants.relwayFamily,
                           color: AppColors.kFontColor),
@@ -93,8 +96,8 @@ class RegisterScreenBody extends StatelessWidget {
                 onTap: () {
                   GoRouter.of(context).pushReplacement(Approuter.loginescreen);
                 },
-                accountType: "Already Have Account?",
-                createOrLogin: " Log In",
+                accountType: S.of(context).already_have_an_account,
+                createOrLogin: S.of(context).login,
               ),
               const VsizedBox(height: 30),
             ],

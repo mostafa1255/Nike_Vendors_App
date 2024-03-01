@@ -59,6 +59,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Register Account`
+  String get register_Account {
+    return Intl.message(
+      'Register Account',
+      name: 'register_Account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in`
+  String get login {
+    return Intl.message(
+      'Log in',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Address`
+  String get email {
+    return Intl.message(
+      'Email Address',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_Number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_Number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get sign_Up {
+    return Intl.message(
+      'Sign Up',
+      name: 'sign_Up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get already_have_an_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'already_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Upload Your Image`
+  String get please_Upload_Your_Image {
+    return Intl.message(
+      'Please Upload Your Image',
+      name: 'please_Upload_Your_Image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Name`
+  String get your_Name {
+    return Intl.message(
+      'Your Name',
+      name: 'your_Name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter correct name`
+  String get please_enter_correct_name {
+    return Intl.message(
+      'Please enter correct name',
+      name: 'please_enter_correct_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your correct Email`
+  String get please_enter_correct_email {
+    return Intl.message(
+      'Please enter your correct Email',
+      name: 'please_enter_correct_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter correct Password`
+  String get please_enter_correct_Password {
+    return Intl.message(
+      'Please enter correct Password',
+      name: 'please_enter_correct_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must have uppercase , lower case and 8 character`
+  String get password_Condition {
+    return Intl.message(
+      'Password must have uppercase , lower case and 8 character',
+      name: 'password_Condition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In with Google`
+  String get sign_In_with_Google {
+    return Intl.message(
+      'Sign In with Google',
+      name: 'sign_In_with_Google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please_enter_correct_Phone`
+  String get please_enter_correct_phone {
+    return Intl.message(
+      'please_enter_correct_Phone',
+      name: 'please_enter_correct_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take Photo`
+  String get take_Photo {
+    return Intl.message(
+      'Take Photo',
+      name: 'take_Photo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Photo`
+  String get choose_Photo {
+    return Intl.message(
+      'Choose Photo',
+      name: 'choose_Photo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

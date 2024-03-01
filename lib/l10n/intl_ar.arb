@@ -1,1 +1,19 @@
-{}
+{ "app_name": "nike_app_vendors",
+"register_Account": "تسجيل حساب",
+"login": "تسجيل الدخول",
+"email": "عنوان البريد الإلكتروني",
+"password": "كلمة المرور",
+"phone_Number": "رقم الهاتف",
+"sign_Up": "سجل",
+"already_have_an_account": "هل لديك حساب بالفعل؟",
+"please_Upload_Your_Image": "يرجى تحميل صورتك",
+"your_Name": "اسمك",
+"please_enter_correct_name": "الرجاء إدخال الاسم الصحيح",
+"please_enter_correct_email": "الرجاء إدخال البريد الإلكتروني الصحيح",
+"please_enter_correct_Password": "الرجاء إدخال كلمة المرور الصحيحة",
+"password_Condition": "يجب أن تحتوي كلمة المرور على حروف كبيرة وصغيرة وتتكون من 8 أحرف على الأقل",
+"sign_In_with_Google": "تسجيل الدخول باستخدام جوجل",
+"please_enter_correct_phone": "الرجاء إدخال رقم الهاتف الصحيح",
+"take_Photo": "التقاط صورة",
+"choose_Photo": "اختيار صورة" 
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -29,7 +30,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Your Name",
+              S.of(context).your_Name,
               style: Txtstyle.style16(context: context).copyWith(
                   color: AppColors.kFontColor,
                   fontWeight: FontWeight.w500,
@@ -40,7 +41,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
               // ignore: body_might_complete_normally_nullable
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "Please enter correct name";
+                  return S.of(context).please_enter_correct_name;
                 }
               },
               stringController: regCubit.nameController,
@@ -51,7 +52,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
             ),
             const VsizedBox(height: 8),
             Text(
-              "Email Address",
+              S.of(context).email,
               style: Txtstyle.style16(context: context).copyWith(
                   color: AppColors.kFontColor,
                   fontWeight: FontWeight.w500,
@@ -64,7 +65,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
                 if (value == null ||
                     value.isEmpty ||
                     !AppRegex.isEmailValid(value)) {
-                  return "Please enter your correct Email";
+                  return S.of(context).please_enter_correct_email;
                 }
               },
               stringController: regCubit.emailController,
@@ -74,7 +75,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
               height: 80.h,
             ),
             Text(
-              "Phone Number",
+              S.of(context).phone_Number,
               style: Txtstyle.style16(context: context).copyWith(
                   color: AppColors.kFontColor,
                   fontWeight: FontWeight.w500,
@@ -82,8 +83,15 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
             ),
             const VsizedBox(height: 8),
             CustomTextFormField(
-              stringController: regCubit.phoneController,
               // ignore: body_might_complete_normally_nullable
+              validator: (value) {
+                if (value == null ||
+                    value.isEmpty ||
+                    !AppRegex.hasNumber(value)) {
+                  return S.of(context).please_enter_correct_phone;
+                }
+              },
+              stringController: regCubit.phoneController,
               hinttext: "0124567890",
               securPass: false,
               width: double.infinity,
@@ -91,7 +99,7 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
             ),
             const VsizedBox(height: 8),
             Text(
-              "Password",
+              S.of(context).password,
               style: Txtstyle.style16(context: context).copyWith(
                   color: AppColors.kFontColor,
                   fontWeight: FontWeight.w500,
@@ -102,11 +110,11 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
                 // ignore: body_might_complete_normally_nullable
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Please enter correct Password";
+                    return S.of(context).please_enter_correct_Password;
                   } else if (!AppRegex.hasUpperCase(value) ||
                       !AppRegex.hasLowerCase(value) ||
                       !AppRegex.hasMinLength(value)) {
-                    return "Password must have uppercase , lower case and 8 character ";
+                    return S.of(context).password_Condition;
                   }
                 },
                 passController: regCubit.passController),

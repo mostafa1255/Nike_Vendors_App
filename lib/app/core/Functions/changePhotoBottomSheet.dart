@@ -1,4 +1,5 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
+import '../../../generated/l10n.dart';
 import '../../views/widgets/VsizedBox.dart';
 import '../../views/widgets/customMainButton.dart';
 import '../styles/App_Colors.dart';
@@ -36,14 +37,14 @@ dynamic changePhotoBottomSheet(
               fcolorWhite: true,
               width: 200.w,
               color: AppColors.kPrimaryColor,
-              txt: "Take Photo",
+              txt: S.of(context).take_Photo,
             ),
             const VsizedBox(height: 10),
             CustomMainButton(
               onPressed: onPressed3,
               width: 200.w,
               color: AppColors.kPrimaryColor,
-              txt: "Choose Photo",
+              txt: S.of(context).choose_Photo,
               fcolorWhite: true,
             )
           ],

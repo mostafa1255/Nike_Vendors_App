@@ -22,6 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors")
+        "already_have_an_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "choose_Photo": MessageLookupByLibrary.simpleMessage("Choose Photo"),
+        "email": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "login": MessageLookupByLibrary.simpleMessage("Log in"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_Condition": MessageLookupByLibrary.simpleMessage(
+            "Password must have uppercase , lower case and 8 character"),
+        "phone_Number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "please_Upload_Your_Image":
+            MessageLookupByLibrary.simpleMessage("Please Upload Your Image"),
+        "please_enter_correct_Password": MessageLookupByLibrary.simpleMessage(
+            "Please enter correct Password"),
+        "please_enter_correct_email": MessageLookupByLibrary.simpleMessage(
+            "Please enter your correct Email"),
+        "please_enter_correct_name":
+            MessageLookupByLibrary.simpleMessage("Please enter correct name"),
+        "please_enter_correct_phone":
+            MessageLookupByLibrary.simpleMessage("please_enter_correct_Phone"),
+        "register_Account":
+            MessageLookupByLibrary.simpleMessage("Register Account"),
+        "sign_In_with_Google":
+            MessageLookupByLibrary.simpleMessage("Sign In with Google"),
+        "sign_Up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "take_Photo": MessageLookupByLibrary.simpleMessage("Take Photo"),
+        "your_Name": MessageLookupByLibrary.simpleMessage("Your Name")
       };
 }
