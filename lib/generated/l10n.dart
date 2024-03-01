@@ -120,10 +120,10 @@ class S {
     );
   }
 
-  /// `Already have an account?`
+  /// `Already have an account? `
   String get already_have_an_account {
     return Intl.message(
-      'Already have an account?',
+      'Already have an account? ',
       name: 'already_have_an_account',
       desc: '',
       args: [],
@@ -225,6 +225,66 @@ class S {
     return Intl.message(
       'Choose Photo',
       name: 'choose_Photo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello Again!`
+  String get hello_Again {
+    return Intl.message(
+      'Hello Again!',
+      name: 'hello_Again',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill your details or continue with Google`
+  String get fill_your_details_or_continue_with_Google {
+    return Intl.message(
+      'Fill your details or continue with Google',
+      name: 'fill_your_details_or_continue_with_Google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recovery Password`
+  String get recovery_Password {
+    return Intl.message(
+      'Recovery Password',
+      name: 'recovery_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get sign_In {
+    return Intl.message(
+      'Sign In',
+      name: 'sign_In',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New User? `
+  String get new_User {
+    return Intl.message(
+      'New User? ',
+      name: 'new_User',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get create_Account {
+    return Intl.message(
+      'Create Account',
+      name: 'create_Account',
       desc: '',
       args: [],
     );

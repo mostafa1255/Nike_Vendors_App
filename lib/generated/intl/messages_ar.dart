@@ -26,9 +26,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("اختيار صورة"),
+        "create_Account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "email":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
+        "fill_your_details_or_continue_with_Google":
+            MessageLookupByLibrary.simpleMessage(
+                "املأ تفاصيلك أو استمر بالتسجيل باستخدام جوجل"),
+        "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "new_User": MessageLookupByLibrary.simpleMessage("مستخدم جديد؟ "),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
             "يجب أن تحتوي كلمة المرور على حروف كبيرة وصغيرة وتتكون من 8 أحرف على الأقل"),
@@ -43,7 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال الاسم الصحيح"),
         "please_enter_correct_phone": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال رقم الهاتف الصحيح"),
+        "recovery_Password":
+            MessageLookupByLibrary.simpleMessage("استعادة كلمة المرور"),
         "register_Account": MessageLookupByLibrary.simpleMessage("تسجيل حساب"),
+        "sign_In": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام جوجل"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("سجل"),

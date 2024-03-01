@@ -29,7 +29,7 @@ class NikeStoreApp extends StatelessWidget {
         splitScreenMode: false,
         builder: (_, child) {
           return MaterialApp.router(
-            locale: Locale("ar"),
+            locale: const Locale("ar"),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

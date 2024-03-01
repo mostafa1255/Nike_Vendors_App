@@ -1,12 +1,12 @@
 {
-    "app_name": "nike_app_vendors"
-    ,"register_Account":"Register Account"
-    ,"login":"Log in",
-    "email":"Email Address",
-    "password":"Password",
-    "phone_Number":"Phone Number",
+"app_name": "nike_app_vendors"
+,"register_Account":"Register Account"
+,"login":"Log in",
+"email":"Email Address",
+"password":"Password",
+"phone_Number":"Phone Number",
 "sign_Up":"Sign Up",
-"already_have_an_account":"Already have an account?",
+"already_have_an_account":"Already have an account? ",
 "please_Upload_Your_Image":"Please Upload Your Image",
 "your_Name":"Your Name",
 "please_enter_correct_name":"Please enter correct name",
@@ -16,5 +16,12 @@
 "sign_In_with_Google":"Sign In with Google",
 "please_enter_correct_phone":"please_enter_correct_Phone"
 ,"take_Photo":"Take Photo",
-"choose_Photo":"Choose Photo"
+"choose_Photo":"Choose Photo",
+"hello_Again":"Hello Again!",
+"fill_your_details_or_continue_with_Google":"Fill your details or continue with Google",
+"recovery_Password":"Recovery Password",
+"sign_In":"Sign In",
+"new_User":"New User? ",
+"create_Account":"Create Account"
+
 }

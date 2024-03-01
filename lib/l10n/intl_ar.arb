@@ -1,4 +1,5 @@
-{ "app_name": "nike_app_vendors",
+{ 
+"app_name": "nike_app_vendors",
 "register_Account": "تسجيل حساب",
 "login": "تسجيل الدخول",
 "email": "عنوان البريد الإلكتروني",
@@ -15,5 +16,11 @@
 "sign_In_with_Google": "تسجيل الدخول باستخدام جوجل",
 "please_enter_correct_phone": "الرجاء إدخال رقم الهاتف الصحيح",
 "take_Photo": "التقاط صورة",
-"choose_Photo": "اختيار صورة" 
+"choose_Photo": "اختيار صورة" ,
+"hello_Again": "مرحبا مرة أخرى!",
+"fill_your_details_or_continue_with_Google": "املأ تفاصيلك أو استمر بالتسجيل باستخدام جوجل",
+"recovery_Password": "استعادة كلمة المرور",
+"sign_In": "تسجيل الدخول",
+"new_User": "مستخدم جديد؟ ",
+"create_Account": "إنشاء حساب"
 }

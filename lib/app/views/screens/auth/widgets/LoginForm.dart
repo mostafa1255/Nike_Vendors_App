@@ -1,7 +1,8 @@
 import 'package:nike_app_vendors/app/core/tools/global_keys.dart';
+import 'package:nike_app_vendors/app/views/widgets/SecurePasswordTextField.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
-import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/App_Regex.dart';
 import '../../../../core/tools/reg_imp.dart';
@@ -26,7 +27,7 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Email Address",
+            S.of(context).email,
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kFontColor,
                 fontWeight: FontWeight.w500,
@@ -39,7 +40,7 @@ class _LoginFormState extends State<LoginForm> {
               if (value == null ||
                   value.isEmpty ||
                   !AppRegex.isEmailValid(value)) {
-                return "Please enter your correct Email";
+                return S.of(context).please_enter_correct_email;
               }
               return null;
             },
@@ -50,28 +51,21 @@ class _LoginFormState extends State<LoginForm> {
           ),
           const VsizedBox(height: 12),
           Text(
-            "Password",
+            S.of(context).password,
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kFontColor,
                 fontWeight: FontWeight.w500,
                 fontFamily: Constants.relwayFamily),
           ),
           const VsizedBox(height: 8),
-          CustomTextFormField(
-            stringController: logCubit.passController,
-            widget: IconButton(
-                onPressed: () {},
-                icon: Image.asset(AppImages.iconsEyePassword)),
-            hinttext: "Password",
-            securPass: true,
-            width: double.infinity,
-            height: 80.h,
+          SecurePasswordTextField(
+            passController: logCubit.passController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return "Please enter correct Password";
+                return S.of(context).please_enter_correct_Password;
               }
             },
-          ),
+          )
         ],
       ),
     );

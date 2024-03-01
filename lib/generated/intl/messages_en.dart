@@ -23,11 +23,18 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "already_have_an_account":
-            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+            MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("Choose Photo"),
+        "create_Account":
+            MessageLookupByLibrary.simpleMessage("Create Account"),
         "email": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "fill_your_details_or_continue_with_Google":
+            MessageLookupByLibrary.simpleMessage(
+                "Fill your details or continue with Google"),
+        "hello_Again": MessageLookupByLibrary.simpleMessage("Hello Again!"),
         "login": MessageLookupByLibrary.simpleMessage("Log in"),
+        "new_User": MessageLookupByLibrary.simpleMessage("New User? "),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
             "Password must have uppercase , lower case and 8 character"),
@@ -42,8 +49,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter correct name"),
         "please_enter_correct_phone":
             MessageLookupByLibrary.simpleMessage("please_enter_correct_Phone"),
+        "recovery_Password":
+            MessageLookupByLibrary.simpleMessage("Recovery Password"),
         "register_Account":
             MessageLookupByLibrary.simpleMessage("Register Account"),
+        "sign_In": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("Sign Up"),

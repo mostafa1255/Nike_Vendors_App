@@ -1,5 +1,6 @@
 import 'package:nike_app_vendors/app/core/tools/global_keys.dart';
 import 'package:nike_app_vendors/app/views/widgets/Lottie_Loading_Animation.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
@@ -37,7 +38,7 @@ class LoginScreenBody extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Hello Again!",
+                  S.of(context).hello_Again,
                   style: Txtstyle.style32(context: context).copyWith(
                       color: AppColors.kFontColor, fontWeight: FontWeight.bold),
                 ),
@@ -48,7 +49,7 @@ class LoginScreenBody extends StatelessWidget {
                 child: SizedBox(
                   width: 260.w,
                   child: Text(
-                    "Fill your details or continue with social media",
+                    S.of(context).fill_your_details_or_continue_with_Google,
                     textAlign: TextAlign.center,
                     style: Txtstyle.style16(context: context)
                         .copyWith(color: AppColors.kGreyColorB81),
@@ -65,7 +66,7 @@ class LoginScreenBody extends StatelessWidget {
                       GoRouter.of(context).push(Approuter.forgetpasswordscreen);
                     },
                     child: Text(
-                      "Recovery Password",
+                      S.of(context).recovery_Password,
                       style: Txtstyle.style12(context: context).copyWith(
                           color: AppColors.kGreyColorB81,
                           fontWeight: FontWeight.w500,
@@ -76,7 +77,7 @@ class LoginScreenBody extends StatelessWidget {
               CustomMainButton(
                 width: 375.w,
                 fcolorWhite: true,
-                txt: "Sign In",
+                txt: S.of(context).sign_In,
                 color: AppColors.kPrimaryColor,
                 onPressed: () async {
                   if (GlobalKeys.riKey1.currentState!.validate()) {
@@ -97,7 +98,7 @@ class LoginScreenBody extends StatelessWidget {
                     Image.asset(AppImages.iconsGoogleicon),
                     const HsizedBox(width: 15),
                     Text(
-                      "Sign In with Google",
+                      S.of(context).sign_In_with_Google,
                       style: Txtstyle.style14(context: context).copyWith(
                           fontFamily: Constants.relwayFamily,
                           color: AppColors.kFontColor),
@@ -116,8 +117,8 @@ class LoginScreenBody extends StatelessWidget {
                   GoRouter.of(context)
                       .pushReplacement(Approuter.registerscreen);
                 },
-                accountType: "New User? ",
-                createOrLogin: "Create Account",
+                accountType: S.of(context).new_User,
+                createOrLogin: S.of(context).create_Account,
               ),
             ],
           )),
