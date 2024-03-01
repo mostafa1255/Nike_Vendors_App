@@ -15,14 +15,6 @@ final class LoginFailure extends LoginState {
   LoginFailure({required this.errMessage});
 }
 
-class EmailVerificationSuccess extends LoginState {}
-
-class EmailVerificationFailure extends LoginState {
-  final String errMessage;
-
-  EmailVerificationFailure({required this.errMessage});
-}
-
 class ResetPasswordLoading extends LoginState {}
 
 class ResetPasswordsucsess extends LoginState {}

@@ -121,6 +121,11 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
                     brand: brandController.text,
                     price: priceController.text);
                 Constants.productImageUrl != "";
+                nameController.clear();
+                descriptionController.clear();
+                brandController.clear();
+                priceController.clear();
+                //     await pCubit.getVendorProducts();
               } else {
                 customsnackBar(
                     context, " Please fill all the fields ", Colors.redAccent);

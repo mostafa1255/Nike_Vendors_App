@@ -27,9 +27,13 @@ class LoginCubit extends Cubit<LoginState> {
     result.fold((faliure) {
       emit(LoginFailure(errMessage: faliure.errmessage));
     }, (usercredential) {
-      userCredential = usercredential;
-      UserUID.saveUID(userCredential!.user!.uid);
-      emit(LoginSuccess());
+      if (auth.currentUser!.emailVerified) {
+        userCredential = usercredential;
+        UserUID.saveUID(userCredential!.user!.uid);
+        emit(LoginSuccess());
+      } else {
+        emit(LoginFailure(errMessage: "Please Verify Your Email"));
+      }
       Future.delayed(const Duration(seconds: 2)).then((_) {
         emailController.clear();
         passController.clear();
@@ -59,18 +63,6 @@ class LoginCubit extends Cubit<LoginState> {
     }, (voidreturn) {
       emit(ResetPasswordsucsess());
     });
-  }
-
-  Future<void> isEmailVerified() async {
-    try {
-      if (auth.currentUser!.emailVerified) {
-        emit(EmailVerificationSuccess());
-      } else if (auth.currentUser!.emailVerified == false) {
-        emit(EmailVerificationFailure(errMessage: "please verify your email"));
-      }
-    } on FirebaseAuthException catch (e) {
-      emit(EmailVerificationFailure(errMessage: e.message.toString()));
-    }
   }
 
   Future<void> signOut() async {

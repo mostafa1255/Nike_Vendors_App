@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nike_app_vendors/app/core/errors/faliure.dart';
 import 'package:nike_app_vendors/app/core/errors/firebase_faliure.dart';
+import 'package:nike_app_vendors/app/core/tools/Location_Services.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo.dart';
 import 'package:path/path.dart';
 import '../../../core/tools/App_States.dart';
@@ -67,6 +68,8 @@ class VendroRepoImpl extends VendorRepo {
     required num number,
   }) async {
     VendorModel usermodel = VendorModel(
+        streetName: await LocationServices.getCurrentPositionStreet(
+            latitude: latitude, longitude: longitude),
         totalOrders: 0,
         totalPrice: 0,
         vendorImageUrl: vendorImageUrl,

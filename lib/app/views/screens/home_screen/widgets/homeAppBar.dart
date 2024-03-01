@@ -8,8 +8,9 @@ import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';
 
 PreferredSizeWidget homeAppBar(
-    {required BuildContext context, required VendorModel vendorModel}) {
-  
+    {required BuildContext context,
+    required VendorModel vendorModel,
+    required String location}) {
   return AppBar(
     surfaceTintColor: Colors.transparent,
     backgroundColor: AppColors.kOfWhiteColor,
@@ -32,7 +33,7 @@ PreferredSizeWidget homeAppBar(
                   fontWeight: FontWeight.bold, color: AppColors.kPrimaryColor),
             ),
             Text(
-              "Halal Lab office",
+              location,
               style: Txtstyle.style14(context: context).copyWith(
                   fontWeight: FontWeight.w500, color: AppColors.kFontColor),
             ),

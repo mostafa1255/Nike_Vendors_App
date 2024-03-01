@@ -2,12 +2,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../../../core/errors/faliure.dart';
 import '../../../core/errors/firebase_faliure.dart';
 import '../../../core/tools/reg_imp.dart';
-import '../../Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import 'login_repo.dart';
 
 class LoginRepoImpl extends LoginRepo {
@@ -28,8 +26,6 @@ class LoginRepoImpl extends LoginRepo {
         print("in Login function");
         UserCredential userCredential = await auth.signInWithEmailAndPassword(
             email: email, password: password);
-        print(userCredential.user?.uid);
-        await BlocProvider.of<LoginCubit>(context).isEmailVerified();
         return right(userCredential);
       } on Exception catch (e) {
         if (e is FirebaseAuthException) {

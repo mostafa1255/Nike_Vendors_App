@@ -2,6 +2,7 @@ class VendorModel {
   String? id;
   String? name;
   String? email;
+  String? streetName;
   num? number;
   double? latitude;
   double? longitude;
@@ -12,6 +13,7 @@ class VendorModel {
   VendorModel({
     required this.id,
     required this.email,
+    required this.streetName,
     required this.totalOrders,
     required this.totalPrice,
     required this.vendorImageUrl,
@@ -26,6 +28,7 @@ class VendorModel {
     return {
       'id': id,
       'name': name,
+      'streetName': streetName,
       'email': email,
       'totalOrders': totalOrders,
       'totalPrice': totalPrice,
@@ -40,6 +43,7 @@ class VendorModel {
   factory VendorModel.fromMap({required Map<String, dynamic> map}) {
     return VendorModel(
       id: map['id'] ?? '',
+      streetName: map['streetName'] ?? '',
       email: map['email'] ?? '',
       totalOrders: map['totalOrders'] ?? '',
       totalPrice: map['totalPrice'] ?? '',

@@ -41,6 +41,7 @@ class _LoginFormState extends State<LoginForm> {
                   !AppRegex.isEmailValid(value)) {
                 return "Please enter your correct Email";
               }
+              return null;
             },
             hinttext: "xyz@gmail.com",
             securPass: false,

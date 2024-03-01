@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/repos/login_Repo/login_repo_Impl.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
@@ -6,6 +7,7 @@ import 'app/data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import 'app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'app/data/repos/register_Repo/register_repo_Imp.dart';
 import 'app/router/app_router.dart';
+import 'generated/l10n.dart';
 
 class NikeStoreApp extends StatelessWidget {
   const NikeStoreApp({Key? key}) : super(key: key);
@@ -19,8 +21,7 @@ class NikeStoreApp extends StatelessWidget {
                   RegisterRepoImpl(),
                 )),
         BlocProvider(create: (_) => LoginCubit(LoginRepoImpl())),
-        BlocProvider(
-            create: (_) => VendorCubit(VendroRepoImpl())..getVendorInfo()),
+        BlocProvider(create: (_) => VendorCubit(VendroRepoImpl())),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
@@ -28,6 +29,13 @@ class NikeStoreApp extends StatelessWidget {
         splitScreenMode: false,
         builder: (_, child) {
           return MaterialApp.router(
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
             routerConfig: Approuter.router,
             debugShowCheckedModeBanner: false,
           );

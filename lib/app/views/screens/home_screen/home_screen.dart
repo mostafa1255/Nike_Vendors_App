@@ -2,6 +2,7 @@ import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dar
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo_Impl.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
+import 'package:nike_app_vendors/app/router/app_router.dart';
 import '../../../core/styles/App_Colors.dart';
 import '../../../core/tools/reg_imp.dart';
 import 'widgets/HomeDrawer.dart';
@@ -24,9 +25,17 @@ class HomeScreen extends StatelessWidget {
                 drawer: HomeDrawer(
                     vendorImageUrl: state.vendorModel.vendorImageUrl!),
                 appBar: homeAppBar(
-                    context: context, vendorModel: state.vendorModel),
-                body: HomeScreenBody(
-                  vendorModel: state.vendorModel,
+                    location: state.vendorModel.streetName!,
+                    context: context,
+                    vendorModel: state.vendorModel),
+                body: RefreshIndicator(
+                  color: AppColors.kPrimaryColor,
+                  onRefresh: () async {
+                    GoRouter.of(context).pushReplacement(Approuter.bottomnav);
+                  },
+                  child: HomeScreenBody(
+                    vendorModel: state.vendorModel,
+                  ),
                 ));
           } else if (state is VendorInfoFaliure) {
             return Center(child: Text(state.errMessage));
