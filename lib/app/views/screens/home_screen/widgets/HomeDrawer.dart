@@ -1,5 +1,7 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nike_app_vendors/app/data/Cubits/auth%20cubits/login_Cubit/login_cubit.dart';
+import '../../../../../generated/l10n.dart';
+import '../../../../core/functions/isEnglish.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -21,7 +23,10 @@ class HomeDrawer extends StatelessWidget {
       width: 260.w,
       backgroundColor: AppColors.kSecondaryColor,
       child: Padding(
-        padding: EdgeInsets.only(left: 25.w, top: 75.h),
+        padding: EdgeInsets.only(
+            left: isEnglish() ? 25.w : 0.w,
+            right: isEnglish() ? 0.w : 25.w,
+            top: 75.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,7 +50,7 @@ class HomeDrawer extends StatelessWidget {
                 size: 20.sp,
                 color: Colors.white,
               ),
-              text: "Profile",
+              text: S.of(context).profile,
             ),
             const VsizedBox(height: 35),
             CustomElevatedButtonDrawer(
@@ -57,7 +62,7 @@ class HomeDrawer extends StatelessWidget {
                 color: Colors.white,
                 size: 20.sp,
               ),
-              text: "Personal Info",
+              text: S.of(context).personal_Information,
             ),
             const VsizedBox(height: 35),
             CustomElevatedButtonDrawer(
@@ -69,7 +74,7 @@ class HomeDrawer extends StatelessWidget {
                 size: 20.sp,
                 color: Colors.white,
               ),
-              text: "Add Product",
+              text: S.of(context).add_Product,
             ),
             const VsizedBox(height: 35),
             Divider(
@@ -88,7 +93,7 @@ class HomeDrawer extends StatelessWidget {
                 AppImages.iconsIconSignOut,
                 color: Colors.white,
               ),
-              text: "Sign Out",
+              text: S.of(context).sign_Out,
             ),
           ],
         ),

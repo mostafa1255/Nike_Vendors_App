@@ -20,8 +20,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(number) => "إجمالي التقييمات ${number}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_Product": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
@@ -39,11 +42,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_Password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
+        "location": MessageLookupByLibrary.simpleMessage("الموقع"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "new_User": MessageLookupByLibrary.simpleMessage("مستخدم جديد؟ "),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
             "يجب أن تحتوي كلمة المرور على حروف كبيرة وصغيرة وتتكون من 8 أحرف على الأقل"),
+        "personal_Information":
+            MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "phone_Number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "please_Upload_Your_Image":
             MessageLookupByLibrary.simpleMessage("يرجى تحميل صورتك"),
@@ -55,19 +61,29 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال الاسم الصحيح"),
         "please_enter_correct_phone": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال رقم الهاتف الصحيح"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "recovery_Password":
             MessageLookupByLibrary.simpleMessage("استعادة كلمة المرور"),
         "register_Account": MessageLookupByLibrary.simpleMessage("تسجيل حساب"),
         "reset_Password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
+        "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "see_All_Reviews":
+            MessageLookupByLibrary.simpleMessage("عرض جميع التقييمات"),
         "sign_In": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام جوجل"),
+        "sign_Out": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("سجل"),
         "take_Photo": MessageLookupByLibrary.simpleMessage("التقاط صورة"),
+        "total_Orders": MessageLookupByLibrary.simpleMessage("إجمالي الطلبات"),
+        "total_Revenue":
+            MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
+        "total_Reviews": m0,
         "we_have_send_link_to_your_email_to_reset_password":
             MessageLookupByLibrary.simpleMessage(
                 "لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
-        "your_Name": MessageLookupByLibrary.simpleMessage("اسمك")
+        "your_Name": MessageLookupByLibrary.simpleMessage("اسمك"),
+        "your_Product": MessageLookupByLibrary.simpleMessage("منتجك")
       };
 }

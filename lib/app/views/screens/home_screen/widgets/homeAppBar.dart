@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nike_app_vendors/app/core/tools/Location_Services.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -28,7 +29,7 @@ PreferredSizeWidget homeAppBar(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Location",
+              S.of(context).location,
               style: Txtstyle.style12(context: context).copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.kPrimaryColor),
             ),

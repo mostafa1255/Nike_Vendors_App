@@ -1,5 +1,6 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';
@@ -33,7 +34,7 @@ class ReviewsContainerHomeScreen extends StatelessWidget {
         ),
         const HsizedBox(width: 20),
         Text(
-          "Total 20 Reviews",
+          S.of(context).total_Reviews("30"),
           style: Txtstyle.style14(context: context).copyWith(
               fontWeight: FontWeight.w500, color: AppColors.kFontColor),
         ),

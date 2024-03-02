@@ -28,4 +28,16 @@
 "reset_Password":"Reset Password"
 ,"check_your_email":"Check your email",
 "we_have_send_link_to_your_email_to_reset_password":"We have send link to your email to reset password"
+,"location":"Location",
+"profile":"Profile",
+"personal_Information":"Personal Info",
+"add_Product":"Add Product",
+"sign_Out":"Sign Out",
+"reviews":"Reviews",
+"see_All_Reviews":"See All Reviews",
+"your_Product":"Your Product",
+"total_Orders":"TOTAL Orders",
+"total_Revenue":"TOTAL Revenue",
+"total_Reviews":"Total {number} Reviews"
+
 }

@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
@@ -32,7 +33,7 @@ class TotalOrdersHomeScreen extends StatelessWidget {
               minFontSize: 10,
             ),
             Text(
-              "TOTAL Orders",
+              S.of(context).total_Orders,
               style: Txtstyle.style14(context: context).copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.kGreyColorB81),
             ),

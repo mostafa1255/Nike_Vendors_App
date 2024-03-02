@@ -20,8 +20,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(number) => "Total ${number} Reviews";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_Product": MessageLookupByLibrary.simpleMessage("Add Product"),
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
@@ -39,11 +42,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_Password":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("Hello Again!"),
+        "location": MessageLookupByLibrary.simpleMessage("Location"),
         "login": MessageLookupByLibrary.simpleMessage("Log in"),
         "new_User": MessageLookupByLibrary.simpleMessage("New User? "),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
             "Password must have uppercase , lower case and 8 character"),
+        "personal_Information":
+            MessageLookupByLibrary.simpleMessage("Personal Info"),
         "phone_Number": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "please_Upload_Your_Image":
             MessageLookupByLibrary.simpleMessage("Please Upload Your Image"),
@@ -55,20 +61,29 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter correct name"),
         "please_enter_correct_phone":
             MessageLookupByLibrary.simpleMessage("please_enter_correct_Phone"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recovery_Password":
             MessageLookupByLibrary.simpleMessage("Recovery Password"),
         "register_Account":
             MessageLookupByLibrary.simpleMessage("Register Account"),
         "reset_Password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "see_All_Reviews":
+            MessageLookupByLibrary.simpleMessage("See All Reviews"),
         "sign_In": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
+        "sign_Out": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "take_Photo": MessageLookupByLibrary.simpleMessage("Take Photo"),
+        "total_Orders": MessageLookupByLibrary.simpleMessage("TOTAL Orders"),
+        "total_Revenue": MessageLookupByLibrary.simpleMessage("TOTAL Revenue"),
+        "total_Reviews": m0,
         "we_have_send_link_to_your_email_to_reset_password":
             MessageLookupByLibrary.simpleMessage(
                 "We have send link to your email to reset password"),
-        "your_Name": MessageLookupByLibrary.simpleMessage("Your Name")
+        "your_Name": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "your_Product": MessageLookupByLibrary.simpleMessage("Your Product")
       };
 }

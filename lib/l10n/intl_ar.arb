@@ -28,6 +28,16 @@
 "reset_Password":"إعادة تعيين كلمة المرور" ,
 "check_your_email":"تحقق من بريدك الإلكتروني",
 "we_have_send_link_to_your_email_to_reset_password":"لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"
-
+,"location":"الموقع",
+"profile":"الملف الشخصي",
+"personal_Information":"المعلومات الشخصية",
+"add_Product":"إضافة منتج",
+"sign_Out":"تسجيل الخروج",
+"reviews":"التقييمات",
+"see_All_Reviews":"عرض جميع التقييمات",
+"your_Product":"منتجك",
+"total_Orders":"إجمالي الطلبات",
+"total_Revenue":"إجمالي الإيرادات",
+"total_Reviews":"إجمالي التقييمات {number}"
 
 }

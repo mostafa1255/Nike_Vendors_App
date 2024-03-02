@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
@@ -23,7 +24,7 @@ final String totalRevenue;
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "TOTAL Revenue",
+              S.of(context).total_Revenue,
               style: Txtstyle.style14(context: context).copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.kGreyColorB81),
             ),

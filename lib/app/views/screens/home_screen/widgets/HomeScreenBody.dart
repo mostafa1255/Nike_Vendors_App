@@ -1,6 +1,7 @@
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/widgets/CustomHomeCardListView.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
@@ -40,13 +41,13 @@ class HomeScreenBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Reviews",
+                        S.of(context).reviews,
                         style: Txtstyle.style14(context: context).copyWith(
                             fontWeight: FontWeight.w500,
                             color: AppColors.kFontColor),
                       ),
                       Text(
-                        "See All Reviews",
+                        S.of(context).see_All_Reviews,
                         style: Txtstyle.style14(context: context).copyWith(
                             fontWeight: FontWeight.w500,
                             color: AppColors.kPrimaryColor),
@@ -60,7 +61,7 @@ class HomeScreenBody extends StatelessWidget {
           ),
           const VsizedBox(height: 20),
           Text(
-            "Your Product",
+            S.of(context).your_Product,
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.w500, color: AppColors.kFontColor),
           ),

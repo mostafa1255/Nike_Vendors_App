@@ -339,6 +339,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Location`
+  String get location {
+    return Intl.message(
+      'Location',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Info`
+  String get personal_Information {
+    return Intl.message(
+      'Personal Info',
+      name: 'personal_Information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Product`
+  String get add_Product {
+    return Intl.message(
+      'Add Product',
+      name: 'add_Product',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Out`
+  String get sign_Out {
+    return Intl.message(
+      'Sign Out',
+      name: 'sign_Out',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message(
+      'Reviews',
+      name: 'reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See All Reviews`
+  String get see_All_Reviews {
+    return Intl.message(
+      'See All Reviews',
+      name: 'see_All_Reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Product`
+  String get your_Product {
+    return Intl.message(
+      'Your Product',
+      name: 'your_Product',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TOTAL Orders`
+  String get total_Orders {
+    return Intl.message(
+      'TOTAL Orders',
+      name: 'total_Orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TOTAL Revenue`
+  String get total_Revenue {
+    return Intl.message(
+      'TOTAL Revenue',
+      name: 'total_Revenue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total {number} Reviews`
+  String total_Reviews(Object number) {
+    return Intl.message(
+      'Total $number Reviews',
+      name: 'total_Reviews',
+      desc: '',
+      args: [number],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
