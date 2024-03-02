@@ -25,13 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "check_your_email":
+            MessageLookupByLibrary.simpleMessage("Check your email"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("Choose Photo"),
         "create_Account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "email": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "enter_Email_to_Reset_Password": MessageLookupByLibrary.simpleMessage(
+            "Enter your Email account to reset your password"),
         "fill_your_details_or_continue_with_Google":
             MessageLookupByLibrary.simpleMessage(
                 "Fill your details or continue with Google"),
+        "forgot_Password":
+            MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("Hello Again!"),
         "login": MessageLookupByLibrary.simpleMessage("Log in"),
         "new_User": MessageLookupByLibrary.simpleMessage("New User? "),
@@ -53,11 +59,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Recovery Password"),
         "register_Account":
             MessageLookupByLibrary.simpleMessage("Register Account"),
+        "reset_Password":
+            MessageLookupByLibrary.simpleMessage("Reset Password"),
         "sign_In": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "take_Photo": MessageLookupByLibrary.simpleMessage("Take Photo"),
+        "we_have_send_link_to_your_email_to_reset_password":
+            MessageLookupByLibrary.simpleMessage(
+                "We have send link to your email to reset password"),
         "your_Name": MessageLookupByLibrary.simpleMessage("Your Name")
       };
 }

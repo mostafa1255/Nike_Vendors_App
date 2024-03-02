@@ -23,5 +23,9 @@
 "sign_In":"Sign In",
 "new_User":"New User? ",
 "create_Account":"Create Account"
-
+,"forgot_Password":"Forgot Password"
+,"enter_Email_to_Reset_Password":"Enter your Email account to reset your password",
+"reset_Password":"Reset Password"
+,"check_your_email":"Check your email",
+"we_have_send_link_to_your_email_to_reset_password":"We have send link to your email to reset password"
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/App_Image.dart';
@@ -27,7 +28,7 @@ class CustomForgetPasswordAlertDialog extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Check your email",
+              S.of(context).check_your_email,
               style: Txtstyle.style16(context: context).copyWith(
                   color: AppColors.kFontColor,
                   fontWeight: FontWeight.bold,
@@ -37,7 +38,7 @@ class CustomForgetPasswordAlertDialog extends StatelessWidget {
             SizedBox(
               width: 230.w,
               child: Text(
-                "We have send link to your email to reset password",
+                S.of(context).we_have_send_link_to_your_email_to_reset_password,
                 textAlign: TextAlign.center,
                 style: Txtstyle.style16(context: context).copyWith(
                     color: AppColors.kGreyColorB81,

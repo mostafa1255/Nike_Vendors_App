@@ -289,6 +289,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Forgot Password`
+  String get forgot_Password {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgot_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your Email account to reset your password`
+  String get enter_Email_to_Reset_Password {
+    return Intl.message(
+      'Enter your Email account to reset your password',
+      name: 'enter_Email_to_Reset_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get reset_Password {
+    return Intl.message(
+      'Reset Password',
+      name: 'reset_Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check your email`
+  String get check_your_email {
+    return Intl.message(
+      'Check your email',
+      name: 'check_your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have send link to your email to reset password`
+  String get we_have_send_link_to_your_email_to_reset_password {
+    return Intl.message(
+      'We have send link to your email to reset password',
+      name: 'we_have_send_link_to_your_email_to_reset_password',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

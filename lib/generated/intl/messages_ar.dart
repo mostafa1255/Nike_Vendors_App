@@ -25,13 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "check_your_email":
+            MessageLookupByLibrary.simpleMessage("تحقق من بريدك الإلكتروني"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("اختيار صورة"),
         "create_Account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "email":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
+        "enter_Email_to_Reset_Password": MessageLookupByLibrary.simpleMessage(
+            "أدخل عنوان بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
         "fill_your_details_or_continue_with_Google":
             MessageLookupByLibrary.simpleMessage(
                 "املأ تفاصيلك أو استمر بالتسجيل باستخدام جوجل"),
+        "forgot_Password":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "new_User": MessageLookupByLibrary.simpleMessage("مستخدم جديد؟ "),
@@ -52,11 +58,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "recovery_Password":
             MessageLookupByLibrary.simpleMessage("استعادة كلمة المرور"),
         "register_Account": MessageLookupByLibrary.simpleMessage("تسجيل حساب"),
+        "reset_Password":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "sign_In": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام جوجل"),
         "sign_Up": MessageLookupByLibrary.simpleMessage("سجل"),
         "take_Photo": MessageLookupByLibrary.simpleMessage("التقاط صورة"),
+        "we_have_send_link_to_your_email_to_reset_password":
+            MessageLookupByLibrary.simpleMessage(
+                "لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
         "your_Name": MessageLookupByLibrary.simpleMessage("اسمك")
       };
 }

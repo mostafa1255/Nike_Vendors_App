@@ -1,4 +1,5 @@
 import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/global_keys.dart';
@@ -32,7 +33,7 @@ class ForgetPasswordScreenBody extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Forgot Password",
+              S.of(context).forgot_Password,
               style: Txtstyle.style32(context: context).copyWith(
                   color: AppColors.kFontColor, fontWeight: FontWeight.bold),
             ),
@@ -45,7 +46,7 @@ class ForgetPasswordScreenBody extends StatelessWidget {
             child: SizedBox(
               width: 260.w,
               child: Text(
-                "Enter your Email account to reset your password",
+                S.of(context).enter_Email_to_Reset_Password,
                 textAlign: TextAlign.center,
                 style: Txtstyle.style16(context: context)
                     .copyWith(color: AppColors.kGreyColorB81),
@@ -58,7 +59,7 @@ class ForgetPasswordScreenBody extends StatelessWidget {
           CustomMainButton(
             width: 375.w,
             fcolorWhite: true,
-            txt: "Reset password",
+            txt: S.of(context).reset_Password,
             color: AppColors.kPrimaryColor,
             onPressed: () async {
               if (GlobalKeys.riKey3.currentState!.validate()) {
@@ -67,8 +68,8 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                         .emailController
                         .text);
               } else {
-                customsnackBar(
-                    context, " Please Enter Valid Email", Colors.red);
+                customsnackBar(context,
+                    S.of(context).please_enter_correct_email, Colors.red);
               }
             },
           ),

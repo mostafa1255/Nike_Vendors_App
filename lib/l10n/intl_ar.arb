@@ -23,4 +23,11 @@
 "sign_In": "تسجيل الدخول",
 "new_User": "مستخدم جديد؟ ",
 "create_Account": "إنشاء حساب"
+,"forgot_Password":"نسيت كلمة المرور" ,
+"enter_Email_to_Reset_Password":"أدخل عنوان بريدك الإلكتروني لإعادة تعيين كلمة المرور",
+"reset_Password":"إعادة تعيين كلمة المرور" ,
+"check_your_email":"تحقق من بريدك الإلكتروني",
+"we_have_send_link_to_your_email_to_reset_password":"لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"
+
+
 }

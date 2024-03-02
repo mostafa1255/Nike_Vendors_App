@@ -1,3 +1,4 @@
+import '../../../../../generated/l10n.dart';
 import '../../../../core/tools/App_Regex.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';
@@ -21,7 +22,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
       child: CustomTextFormField(
         validator: (value) {
           if (value == null || value.isEmpty || !AppRegex.isEmailValid(value)) {
-            return "Please enter your correct Email";
+            return S.of(context).please_enter_correct_email;
           }
         },
         stringController: BlocProvider.of<LoginCubit>(context).emailController,
