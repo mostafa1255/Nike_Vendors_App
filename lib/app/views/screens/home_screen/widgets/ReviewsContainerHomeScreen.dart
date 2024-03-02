@@ -1,3 +1,5 @@
+import 'package:nike_app_vendors/app/core/functions/isEnglish.dart';
+import 'package:nike_app_vendors/app/core/functions/translate_Numbers.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 
 import '../../../../../generated/l10n.dart';
@@ -24,7 +26,7 @@ class ReviewsContainerHomeScreen extends StatelessWidget {
             ),
             const HsizedBox(width: 5),
             Text(
-              "4.6",
+              isEnglish() ? "4.6" : translateNumbersToArabic(number: 4.6),
               style: Txtstyle.style22(context: context).copyWith(
                   fontWeight: FontWeight.bold,
                   fontFamily: "",
@@ -34,7 +36,8 @@ class ReviewsContainerHomeScreen extends StatelessWidget {
         ),
         const HsizedBox(width: 20),
         Text(
-          S.of(context).total_Reviews("30"),
+          S.of(context).total_Reviews(
+              isEnglish() ? 30 : translateNumbersToArabic(number: 30)),
           style: Txtstyle.style14(context: context).copyWith(
               fontWeight: FontWeight.w500, color: AppColors.kFontColor),
         ),
