@@ -1,4 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:nike_app_vendors/app/core/functions/isEnglish.dart';
+import 'package:nike_app_vendors/app/core/functions/translate_Numbers.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/tools/reg_imp.dart';
 import '../../../../data/Cubits/vendor_cubit/vendor_cubit.dart';
 
@@ -13,7 +16,7 @@ class AvailableBalanceBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is VendorInfoSuccsess) {
           return AutoSizeText(
-            "\$${state.vendorModel.totalPrice}",
+            "\$${isEnglish() ? state.vendorModel.totalPrice : translateNumbersToArabic(number: state.vendorModel.totalPrice!)}",
             style: TextStyle(
               fontSize: 40.sp,
               fontWeight: FontWeight.bold,
@@ -35,7 +38,7 @@ class AvailableBalanceBlocBuilder extends StatelessWidget {
           );
         } else {
           return AutoSizeText(
-            "\$Loading...",
+            "\$${S.of(context).loading}...",
             style: TextStyle(
               fontSize: 40.sp,
               fontWeight: FontWeight.bold,

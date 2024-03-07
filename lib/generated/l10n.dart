@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Log Out`
+  String get log_Out {
+    return Intl.message(
+      'Log Out',
+      name: 'log_Out',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email Address`
   String get email {
     return Intl.message(
@@ -515,6 +525,76 @@ class S {
     return Intl.message(
       'My Profile',
       name: 'my_Profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available Balance`
+  String get available_Balance {
+    return Intl.message(
+      'Available Balance',
+      name: 'available_Balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Withdraw`
+  String get withdraw {
+    return Intl.message(
+      'Withdraw',
+      name: 'withdraw',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading`
+  String get loading {
+    return Intl.message(
+      'Loading',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Reviews`
+  String get no_Reviews {
+    return Intl.message(
+      'No Reviews',
+      name: 'no_Reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Reviews`
+  String get user_Reviews {
+    return Intl.message(
+      'User Reviews',
+      name: 'user_Reviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Info`
+  String get personal_Info {
+    return Intl.message(
+      'Personal Info',
+      name: 'personal_Info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
       desc: '',
       args: [],
     );

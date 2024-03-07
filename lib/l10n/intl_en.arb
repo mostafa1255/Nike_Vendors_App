@@ -2,6 +2,7 @@
 "app_name": "nike_app_vendors"
 ,"register_Account":"Register Account"
 ,"login":"Log in",
+"log_Out":"Log Out",
 "email":"Email Address",
 "password":"Password",
 "phone_Number":"Phone Number",
@@ -45,7 +46,14 @@
 "descreption":"Descreption",
 "upload":"Upload",
 "fill_the_fields":"Please fill all the fields",
-"my_Profile":"My Profile"
+"my_Profile":"My Profile",
+"available_Balance":"Available Balance",
+"withdraw":"Withdraw",
+"loading":"Loading",
+"no_Reviews":"No Reviews",
+"user_Reviews":"User Reviews",
+"personal_Info":"Personal Info",
+"settings":"Settings"
 
 
 

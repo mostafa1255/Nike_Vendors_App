@@ -7,10 +7,10 @@ import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../../router/app_router.dart';
-import '../../../widgets/CustomBackIcon.dart';
 import 'AvailableBalanceBlocBuilder.dart';
 import 'CustomListTile.dart';
 import 'CustomShadowContainerMyProfileScreen.dart';
+import 'MyProfileScreenAppBar.dart';
 
 class MyProfileScreenBody extends StatelessWidget {
   const MyProfileScreenBody({super.key});
@@ -37,7 +37,7 @@ class MyProfileScreenBody extends StatelessWidget {
                   const MyProfileScreenAppBar(),
                   const VsizedBox(height: 25),
                   Text(
-                    "Available Balance",
+                    S.of(context).available_Balance,
                     style: Txtstyle.style18(context: context).copyWith(
                         fontWeight: FontWeight.w500, color: Colors.white),
                   ),
@@ -46,7 +46,7 @@ class MyProfileScreenBody extends StatelessWidget {
                   CustomMainButton(
                     fontcolor: AppColors.kPrimaryColor,
                     color: Colors.white,
-                    txt: "Withdraw",
+                    txt: S.of(context).withdraw,
                     fcolorWhite: false,
                     width: 140.w,
                     onPressed: () {},
@@ -77,7 +77,7 @@ class MyProfileScreenBody extends StatelessWidget {
                               .push(Approuter.perconalinfoscreen);
                         },
                         image: AppImages.iconUser,
-                        title: "Personal Info",
+                        title: S.of(context).personal_Info,
                       ),
                       CustomListTile(
                         onTap: () {
@@ -85,7 +85,7 @@ class MyProfileScreenBody extends StatelessWidget {
                               .push(Approuter.perconalinfoscreen);
                         },
                         image: AppImages.iconsIconsettings,
-                        title: "Settings",
+                        title: S.of(context).settings,
                         imageColor: AppColors.kPrimaryColor,
                       )
                     ],
@@ -100,7 +100,7 @@ class MyProfileScreenBody extends StatelessWidget {
                       GoRouter.of(context).push(Approuter.perconalinfoscreen);
                     },
                     image: AppImages.userReview,
-                    title: "User Reviews",
+                    title: S.of(context).user_Reviews,
                   ),
                 ),
               ),
@@ -114,7 +114,7 @@ class MyProfileScreenBody extends StatelessWidget {
                       await lCubit.signOut();
                     },
                     image: AppImages.redLogout,
-                    title: "Log Out",
+                    title: S.of(context).log_Out,
                   ),
                 ),
               )
@@ -122,35 +122,6 @@ class MyProfileScreenBody extends StatelessWidget {
           ),
         ),
       ]),
-    );
-  }
-}
-
-class MyProfileScreenAppBar extends StatelessWidget {
-  const MyProfileScreenAppBar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CustomBackAndFavIcon(
-          onPressed: () {
-            if (GoRouter.of(context).canPop()) {
-              GoRouter.of(context).pop();
-            }
-          },
-        ),
-        Center(
-          widthFactor: 3.w,
-          child: Text(
-            S.of(context).my_Profile,
-            style: Txtstyle.style18(context: context)
-                .copyWith(fontWeight: FontWeight.w500, color: Colors.white),
-          ),
-        ),
-      ],
     );
   }
 }
