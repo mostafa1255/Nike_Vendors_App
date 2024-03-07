@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../core/styles/App_Colors.dart';
 
 class CustomBackAndFavIcon extends StatelessWidget {

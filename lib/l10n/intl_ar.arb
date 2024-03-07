@@ -2,6 +2,7 @@
 "app_name": "nike_app_vendors",
 "register_Account": "تسجيل حساب",
 "login": "تسجيل الدخول",
+"log_Out":"تسجيل خروج",
 "email": "عنوان البريد الإلكتروني",
 "password": "كلمة المرور",
 "phone_Number": "رقم الهاتف",
@@ -44,6 +45,13 @@
 "brand":"العلامة التجارية",
 "descreption":"الوصف",
 "upload":"رفع",
-"fill_the_fields":"يرجى ملء جميع الحقول"
-
+"fill_the_fields":"يرجى ملء جميع الحقول",
+"my_Profile": "ملفي الشخصي",
+"available_Balance": "الرصيد المتاح",
+"withdraw": "سحب",
+"loading": "جار التحميل",
+"no_Reviews": "لا توجد مراجعات",
+"user_Reviews": "مراجعات المستخدمين",
+"personal_Info": "المعلومات الشخصية",
+"settings": "الإعدادات"
 }

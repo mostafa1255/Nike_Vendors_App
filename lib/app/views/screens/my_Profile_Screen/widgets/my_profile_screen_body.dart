@@ -30,7 +30,7 @@ class MyProfileScreenBody extends StatelessWidget {
                   bottomRight: Radius.circular(22.r))),
           child: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

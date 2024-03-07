@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "available_Balance":
+            MessageLookupByLibrary.simpleMessage("الرصيد المتاح"),
         "brand": MessageLookupByLibrary.simpleMessage("العلامة التجارية"),
         "check_your_email":
             MessageLookupByLibrary.simpleMessage("تحقق من بريدك الإلكتروني"),
@@ -46,13 +48,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_Password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
+        "loading": MessageLookupByLibrary.simpleMessage("جار التحميل"),
         "location": MessageLookupByLibrary.simpleMessage("الموقع"),
+        "log_Out": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "my_Profile": MessageLookupByLibrary.simpleMessage("ملفي الشخصي"),
         "name_of_Product": MessageLookupByLibrary.simpleMessage("اسم المنتج"),
         "new_User": MessageLookupByLibrary.simpleMessage("مستخدم جديد؟ "),
+        "no_Reviews": MessageLookupByLibrary.simpleMessage("لا توجد مراجعات"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
             "يجب أن تحتوي كلمة المرور على حروف كبيرة وصغيرة وتتكون من 8 أحرف على الأقل"),
+        "personal_Info":
+            MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "personal_Information":
             MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "phone_Number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
@@ -76,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "see_All_Reviews":
             MessageLookupByLibrary.simpleMessage("عرض جميع التقييمات"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
         "sign_In": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "sign_In_with_Google":
             MessageLookupByLibrary.simpleMessage("تسجيل الدخول باستخدام جوجل"),
@@ -87,9 +96,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
         "total_Reviews": m0,
         "upload": MessageLookupByLibrary.simpleMessage("رفع"),
+        "user_Reviews":
+            MessageLookupByLibrary.simpleMessage("مراجعات المستخدمين"),
         "we_have_send_link_to_your_email_to_reset_password":
             MessageLookupByLibrary.simpleMessage(
                 "لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
+        "withdraw": MessageLookupByLibrary.simpleMessage("سحب"),
         "your_Name": MessageLookupByLibrary.simpleMessage("اسمك"),
         "your_Product": MessageLookupByLibrary.simpleMessage("منتجك")
       };
