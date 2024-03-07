@@ -38,6 +38,15 @@
 "your_Product":"Your Product",
 "total_Orders":"TOTAL Orders",
 "total_Revenue":"TOTAL Revenue",
-"total_Reviews":"Total {number} Reviews"
+"total_Reviews":"Total {number} Reviews",
+"name_of_Product":"Name of Product",
+"price":"Price",
+"brand":"Brand",
+"descreption":"Descreption",
+"upload":"Upload",
+"fill_the_fields":"Please fill all the fields",
+"my_Profile":"My Profile"
+
+
 
 }

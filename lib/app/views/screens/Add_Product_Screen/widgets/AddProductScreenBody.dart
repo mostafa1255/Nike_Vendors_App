@@ -7,6 +7,7 @@ import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dar
 import 'package:nike_app_vendors/app/views/widgets/CustomTextFormField.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
 import 'AddProductImageBlocBuilder.dart';
@@ -44,7 +45,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           AddProductImageBlocBuilder(pCubit: pCubit),
           const VsizedBox(height: 20),
           Text(
-            "Name of Product",
+            S.of(context).name_of_Product,
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.kFontColor),
           ),
@@ -58,7 +59,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           ),
           const VsizedBox(height: 20),
           Text(
-            "Brand",
+            S.of(context).brand,
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.kFontColor),
           ),
@@ -72,7 +73,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           ),
           const VsizedBox(height: 20),
           Text(
-            "Price",
+            S.of(context).price,
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.kFontColor),
           ),
@@ -87,7 +88,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           ),
           const VsizedBox(height: 20),
           Text(
-            "Descreption",
+            S.of(context).descreption,
             style: Txtstyle.style14(context: context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.kFontColor),
           ),
@@ -102,7 +103,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
           const VsizedBox(height: 30),
           CustomMainButton(
             color: AppColors.kPrimaryColor,
-            txt: "Upload",
+            txt: S.of(context).upload,
             onPressed: () async {
               if (Constants.productImageUrl != null &&
                   Constants.productImageUrl != "" &&
@@ -128,7 +129,7 @@ class _AddProductScreenBodyState extends State<AddProductScreenBody> {
                 //     await pCubit.getVendorProducts();
               } else {
                 customsnackBar(
-                    context, " Please fill all the fields ", Colors.redAccent);
+                    context, S.of(context).fill_the_fields, Colors.redAccent);
               }
             },
             fcolorWhite: true,

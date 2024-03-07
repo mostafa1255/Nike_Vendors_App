@@ -28,14 +28,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "brand": MessageLookupByLibrary.simpleMessage("Brand"),
         "check_your_email":
             MessageLookupByLibrary.simpleMessage("Check your email"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("Choose Photo"),
         "create_Account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
+        "descreption": MessageLookupByLibrary.simpleMessage("Descreption"),
         "email": MessageLookupByLibrary.simpleMessage("Email Address"),
         "enter_Email_to_Reset_Password": MessageLookupByLibrary.simpleMessage(
             "Enter your Email account to reset your password"),
+        "fill_the_fields":
+            MessageLookupByLibrary.simpleMessage("Please fill all the fields"),
         "fill_your_details_or_continue_with_Google":
             MessageLookupByLibrary.simpleMessage(
                 "Fill your details or continue with Google"),
@@ -44,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "hello_Again": MessageLookupByLibrary.simpleMessage("Hello Again!"),
         "location": MessageLookupByLibrary.simpleMessage("Location"),
         "login": MessageLookupByLibrary.simpleMessage("Log in"),
+        "my_Profile": MessageLookupByLibrary.simpleMessage("My Profile"),
+        "name_of_Product":
+            MessageLookupByLibrary.simpleMessage("Name of Product"),
         "new_User": MessageLookupByLibrary.simpleMessage("New User? "),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
@@ -61,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter correct name"),
         "please_enter_correct_phone":
             MessageLookupByLibrary.simpleMessage("please_enter_correct_Phone"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recovery_Password":
             MessageLookupByLibrary.simpleMessage("Recovery Password"),
@@ -80,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_Orders": MessageLookupByLibrary.simpleMessage("TOTAL Orders"),
         "total_Revenue": MessageLookupByLibrary.simpleMessage("TOTAL Revenue"),
         "total_Reviews": m0,
+        "upload": MessageLookupByLibrary.simpleMessage("Upload"),
         "we_have_send_link_to_your_email_to_reset_password":
             MessageLookupByLibrary.simpleMessage(
                 "We have send link to your email to reset password"),

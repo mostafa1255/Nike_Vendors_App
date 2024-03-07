@@ -28,14 +28,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "brand": MessageLookupByLibrary.simpleMessage("العلامة التجارية"),
         "check_your_email":
             MessageLookupByLibrary.simpleMessage("تحقق من بريدك الإلكتروني"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("اختيار صورة"),
         "create_Account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "descreption": MessageLookupByLibrary.simpleMessage("الوصف"),
         "email":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
         "enter_Email_to_Reset_Password": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
+        "fill_the_fields":
+            MessageLookupByLibrary.simpleMessage("يرجى ملء جميع الحقول"),
         "fill_your_details_or_continue_with_Google":
             MessageLookupByLibrary.simpleMessage(
                 "املأ تفاصيلك أو استمر بالتسجيل باستخدام جوجل"),
@@ -44,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
         "location": MessageLookupByLibrary.simpleMessage("الموقع"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "name_of_Product": MessageLookupByLibrary.simpleMessage("اسم المنتج"),
         "new_User": MessageLookupByLibrary.simpleMessage("مستخدم جديد؟ "),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_Condition": MessageLookupByLibrary.simpleMessage(
@@ -61,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الرجاء إدخال الاسم الصحيح"),
         "please_enter_correct_phone": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال رقم الهاتف الصحيح"),
+        "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "recovery_Password":
             MessageLookupByLibrary.simpleMessage("استعادة كلمة المرور"),
@@ -80,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_Revenue":
             MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
         "total_Reviews": m0,
+        "upload": MessageLookupByLibrary.simpleMessage("رفع"),
         "we_have_send_link_to_your_email_to_reset_password":
             MessageLookupByLibrary.simpleMessage(
                 "لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"),

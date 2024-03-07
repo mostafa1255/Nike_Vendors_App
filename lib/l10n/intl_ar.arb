@@ -38,6 +38,12 @@
 "your_Product":"منتجك",
 "total_Orders":"إجمالي الطلبات",
 "total_Revenue":"إجمالي الإيرادات",
-"total_Reviews":"إجمالي التقييمات {number}"
+"total_Reviews":"إجمالي التقييمات {number}",
+"name_of_Product":"اسم المنتج",
+"price":"السعر",
+"brand":"العلامة التجارية",
+"descreption":"الوصف",
+"upload":"رفع",
+"fill_the_fields":"يرجى ملء جميع الحقول"
 
 }

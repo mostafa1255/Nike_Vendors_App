@@ -3,6 +3,7 @@ import 'package:nike_app_vendors/app/core/styles/App_Image.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../../router/app_router.dart';
@@ -33,25 +34,7 @@ class MyProfileScreenBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
-                    children: [
-                      CustomBackAndFavIcon(
-                        onPressed: () {
-                          if (GoRouter.of(context).canPop()) {
-                            GoRouter.of(context).pop();
-                          }
-                        },
-                      ),
-                      Center(
-                        widthFactor: 3.w,
-                        child: Text(
-                          "My Profile",
-                          style: Txtstyle.style18(context: context).copyWith(
-                              fontWeight: FontWeight.w500, color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const MyProfileScreenAppBar(),
                   const VsizedBox(height: 25),
                   Text(
                     "Available Balance",
@@ -139,6 +122,35 @@ class MyProfileScreenBody extends StatelessWidget {
           ),
         ),
       ]),
+    );
+  }
+}
+
+class MyProfileScreenAppBar extends StatelessWidget {
+  const MyProfileScreenAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CustomBackAndFavIcon(
+          onPressed: () {
+            if (GoRouter.of(context).canPop()) {
+              GoRouter.of(context).pop();
+            }
+          },
+        ),
+        Center(
+          widthFactor: 3.w,
+          child: Text(
+            S.of(context).my_Profile,
+            style: Txtstyle.style18(context: context)
+                .copyWith(fontWeight: FontWeight.w500, color: Colors.white),
+          ),
+        ),
+      ],
     );
   }
 }
