@@ -1,5 +1,5 @@
 import 'package:nike_app_vendors/app/core/functions/Snack_Bar.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/functions/regestrationAndLocation.dart';
 import '../../../../core/styles/App_Colors.dart';

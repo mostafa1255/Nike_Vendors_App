@@ -7,7 +7,7 @@ import 'app/data/Cubits/auth cubits/register_Cubit/register_cubit.dart';
 import 'app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'app/data/repos/register_Repo/register_repo_Imp.dart';
 import 'app/router/app_router.dart';
-import 'generated/l10n.dart';
+import 'app/core/localization/generated/l10n.dart';
 
 class NikeStoreApp extends StatelessWidget {
   const NikeStoreApp({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class NikeStoreApp extends StatelessWidget {
         splitScreenMode: false,
         builder: (_, child) {
           return MaterialApp.router(
-            locale: const Locale("ar"),
+            locale: const Locale("en"),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

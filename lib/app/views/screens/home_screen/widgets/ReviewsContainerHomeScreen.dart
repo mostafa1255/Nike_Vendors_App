@@ -2,7 +2,7 @@ import 'package:nike_app_vendors/app/core/functions/isEnglish.dart';
 import 'package:nike_app_vendors/app/core/functions/translate_Numbers.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 
-import '../../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../widgets/HsizedBox.dart';

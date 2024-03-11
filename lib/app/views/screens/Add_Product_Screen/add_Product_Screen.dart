@@ -3,7 +3,7 @@ import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dar
 import 'package:nike_app_vendors/app/data/repos/product_Repo/product_repo_Impl.dart';
 import 'package:nike_app_vendors/app/data/repos/vendor_Repo/vendor_Repo_Impl.dart';
 import 'package:nike_app_vendors/app/views/widgets/customAppBar.dart';
-import '../../../../generated/l10n.dart';
+import '../../../core/localization/generated/l10n.dart';
 import 'widgets/AddProductScreenBody.dart';
 
 class AddProductScreen extends StatelessWidget {

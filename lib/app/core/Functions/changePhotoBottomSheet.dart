@@ -1,5 +1,5 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
-import '../../../generated/l10n.dart';
+import '../localization/generated/l10n.dart';
 import '../../views/widgets/VsizedBox.dart';
 import '../../views/widgets/customMainButton.dart';
 import '../styles/App_Colors.dart';

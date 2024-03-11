@@ -1,6 +1,6 @@
 import 'package:nike_app_vendors/app/core/tools/global_keys.dart';
 import 'package:nike_app_vendors/app/views/widgets/SecurePasswordTextField.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';

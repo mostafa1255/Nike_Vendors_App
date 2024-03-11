@@ -7,7 +7,7 @@ import 'package:nike_app_vendors/app/data/Cubits/product_Cubit/product_cubit.dar
 import 'package:nike_app_vendors/app/views/widgets/CustomTextFormField.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
 import 'AddProductImageBlocBuilder.dart';

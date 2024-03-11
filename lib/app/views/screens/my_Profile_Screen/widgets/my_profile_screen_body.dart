@@ -3,7 +3,7 @@ import 'package:nike_app_vendors/app/core/styles/App_Image.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
-import '../../../../../generated/l10n.dart';
+import '../../../../core/localization/generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../../router/app_router.dart';

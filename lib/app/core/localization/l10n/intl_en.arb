@@ -1,0 +1,66 @@
+{
+"app_name": "nike_app_vendors"
+,"register_Account":"Register Account"
+,"login":"Log in",
+"log_Out":"Log Out",
+"email":"Email Address",
+"password":"Password",
+"phone_Number":"Phone Number",
+"sign_Up":"Sign Up",
+"already_have_an_account":"Already have an account? ",
+"please_Upload_Your_Image":"Please Upload Your Image",
+"your_Name":"Your Name",
+"please_enter_correct_name":"Please enter correct name",
+"please_enter_correct_email":"Please enter your correct Email",
+"please_enter_correct_Password":"Please enter correct Password",
+"password_Condition":"Password must have uppercase , lower case and 8 character",
+"sign_In_with_Google":"Sign In with Google",
+"please_enter_correct_phone":"please_enter_correct_Phone"
+,"take_Photo":"Take Photo",
+"choose_Photo":"Choose Photo",
+"hello_Again":"Hello Again!",
+"fill_your_details_or_continue_with_Google":"Fill your details or continue with Google",
+"recovery_Password":"Recovery Password",
+"sign_In":"Sign In",
+"new_User":"New User? ",
+"create_Account":"Create Account"
+,"forgot_Password":"Forgot Password"
+,"enter_Email_to_Reset_Password":"Enter your Email account to reset your password",
+"reset_Password":"Reset Password"
+,"check_your_email":"Check your email",
+"we_have_send_link_to_your_email_to_reset_password":"We have send link to your email to reset password"
+,"location":"Location",
+"profile":"Profile",
+"personal_Information":"Personal Info",
+"add_Product":"Add Product",
+"sign_Out":"Sign Out",
+"reviews":"Reviews",
+"see_All_Reviews":"See All Reviews",
+"your_Product":"Your Product",
+"total_Orders":"TOTAL Orders",
+"total_Revenue":"TOTAL Revenue",
+"total_Reviews":"Total {number} Reviews",
+"name_of_Product":"Name of Product",
+"price":"Price",
+"brand":"Brand",
+"descreption":"Descreption",
+"upload":"Upload",
+"fill_the_fields":"Please fill all the fields",
+"my_Profile":"My Profile",
+"available_Balance":"Available Balance",
+"withdraw":"Withdraw",
+"loading":"Loading",
+"no_Reviews":"No Reviews",
+"user_Reviews":"User Reviews",
+"personal_Info":"Personal Info",
+"settings":"Settings"
+,"save_Now" :"Save Now",
+"cancel":"Cancel",
+"change_Profile_Picture":"Change Profile Picture",
+"your_New_Name":"Your New Name",
+"your_New_Number":"Your New Number"
+
+
+
+
+}
