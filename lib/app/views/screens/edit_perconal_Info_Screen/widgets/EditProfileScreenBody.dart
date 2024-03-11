@@ -1,6 +1,7 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
@@ -59,7 +60,7 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
                         });
                   },
                   child: Text(
-                    "Change Profile Picture",
+                    S.of(context).change_Profile_Picture,
                     style: Txtstyle.style12(context: context).copyWith(
                         fontWeight: FontWeight.w700,
                         color: AppColors.kPrimaryColor,
@@ -71,7 +72,7 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
           ),
           const VsizedBox(height: 15),
           Text(
-            "Your New Name",
+            S.of(context).your_New_Name,
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kGreyColorB81,
                 fontWeight: FontWeight.w500,
@@ -87,7 +88,7 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
           ),
           const VsizedBox(height: 12),
           Text(
-            "New Mobile Number",
+            S.of(context).your_New_Number,
             style: Txtstyle.style16(context: context).copyWith(
                 color: AppColors.kGreyColorB81,
                 fontWeight: FontWeight.w500,
@@ -106,7 +107,7 @@ class _EditProfileScreenBodyState extends State<EditProfileScreenBody> {
             color: AppColors.kPrimaryColor,
             fcolorWhite: true,
             width: 375.w,
-            txt: "Save Now",
+            txt: S.of(context).save_Now,
             onPressed: () async {
               if (nameController.text.isNotEmpty &&
                   nameController.text != "" &&

@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "available_Balance":
             MessageLookupByLibrary.simpleMessage("Available Balance"),
         "brand": MessageLookupByLibrary.simpleMessage("Brand"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "change_Profile_Picture":
+            MessageLookupByLibrary.simpleMessage("Change Profile Picture"),
         "check_your_email":
             MessageLookupByLibrary.simpleMessage("Check your email"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("Choose Photo"),
@@ -83,6 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset_Password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "save_Now": MessageLookupByLibrary.simpleMessage("Save Now"),
         "see_All_Reviews":
             MessageLookupByLibrary.simpleMessage("See All Reviews"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -102,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "We have send link to your email to reset password"),
         "withdraw": MessageLookupByLibrary.simpleMessage("Withdraw"),
         "your_Name": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "your_New_Name": MessageLookupByLibrary.simpleMessage("Your New Name"),
+        "your_New_Number":
+            MessageLookupByLibrary.simpleMessage("Your New Number"),
         "your_Product": MessageLookupByLibrary.simpleMessage("Your Product")
       };
 }

@@ -599,6 +599,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Save Now`
+  String get save_Now {
+    return Intl.message(
+      'Save Now',
+      name: 'save_Now',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Profile Picture`
+  String get change_Profile_Picture {
+    return Intl.message(
+      'Change Profile Picture',
+      name: 'change_Profile_Picture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your New Name`
+  String get your_New_Name {
+    return Intl.message(
+      'Your New Name',
+      name: 'your_New_Name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your New Number`
+  String get your_New_Number {
+    return Intl.message(
+      'Your New Number',
+      name: 'your_New_Number',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

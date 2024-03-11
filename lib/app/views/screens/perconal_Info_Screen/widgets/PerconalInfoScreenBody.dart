@@ -1,13 +1,14 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/views/screens/edit_perconal_Info_Screen/edit_profile_screen.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
+import '../../../../router/app_router.dart';
 import '../../../widgets/CustomTextFormField.dart';
 import '../../../widgets/VsizedBox.dart';
-import '../../../widgets/customMainButton.dart';
 
 class PerconalInfoScreenBody extends StatelessWidget {
   const PerconalInfoScreenBody({super.key});
@@ -39,12 +40,9 @@ class PerconalInfoScreenBody extends StatelessWidget {
                         backgroundColor: AppColors.kPrimaryColor,
                         child: IconButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(
-                                builder: (context) {
-                                  return EditProfileScreen(
-                                      vendorModel: state.vendorModel);
-                                },
-                              ));
+                              GoRouter.of(context).push(
+                                  Approuter.editprofilescreen,
+                                  extra: state.vendorModel);
                             },
                             icon: Icon(
                               FontAwesomeIcons.pen,
@@ -55,9 +53,9 @@ class PerconalInfoScreenBody extends StatelessWidget {
                     )
                   ],
                 )),
-                const VsizedBox(height: 30),
+                const VsizedBox(height: 60),
                 Text(
-                  "Your Name",
+                  S.of(context).your_Name,
                   style: Txtstyle.style16(context: context).copyWith(
                       color: AppColors.kGreyColorB81,
                       fontWeight: FontWeight.w500,
@@ -72,9 +70,9 @@ class PerconalInfoScreenBody extends StatelessWidget {
                   width: double.infinity,
                   height: 80.h,
                 ),
-                const VsizedBox(height: 12),
+                const VsizedBox(height: 20),
                 Text(
-                  "Email Address",
+                  S.of(context).email,
                   style: Txtstyle.style16(context: context).copyWith(
                       color: AppColors.kGreyColorB81,
                       fontWeight: FontWeight.w500,
@@ -89,9 +87,9 @@ class PerconalInfoScreenBody extends StatelessWidget {
                   width: double.infinity,
                   height: 80.h,
                 ),
-                const VsizedBox(height: 12),
+                const VsizedBox(height: 20),
                 Text(
-                  "Mobile Number",
+                  S.of(context).phone_Number,
                   style: Txtstyle.style16(context: context).copyWith(
                       color: AppColors.kGreyColorB81,
                       fontWeight: FontWeight.w500,
@@ -107,13 +105,6 @@ class PerconalInfoScreenBody extends StatelessWidget {
                   height: 80.h,
                 ),
                 const VsizedBox(height: 30),
-                CustomMainButton(
-                  color: AppColors.kPrimaryColor,
-                  fcolorWhite: true,
-                  width: 375.w,
-                  txt: "Save Now",
-                  onPressed: () {},
-                ),
               ],
             );
           } else {

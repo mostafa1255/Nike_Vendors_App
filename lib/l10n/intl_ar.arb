@@ -53,5 +53,10 @@
 "no_Reviews": "لا توجد مراجعات",
 "user_Reviews": "مراجعات المستخدمين",
 "personal_Info": "المعلومات الشخصية",
-"settings": "الإعدادات"
+"settings": "الإعدادات",
+"save_Now": "حفظ الآن",
+"cancel": "إلغاء",
+"change_Profile_Picture": "تغيير صورة الملف الشخصي",
+"your_New_Name": "اسمك الجديد",
+"your_New_Number": "رقمك الجديد"
 }

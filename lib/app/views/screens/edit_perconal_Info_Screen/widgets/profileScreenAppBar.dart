@@ -1,5 +1,6 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
@@ -18,7 +19,7 @@ PreferredSizeWidget profileScreenAppBar(BuildContext context) {
     }),
     centerTitle: true,
     title: Text(
-      "Profile",
+      S.of(context).profile,
       style: Txtstyle.style20(context: context).copyWith(
           color: AppColors.kFontColor,
           fontWeight: FontWeight.w600,
@@ -32,7 +33,7 @@ PreferredSizeWidget profileScreenAppBar(BuildContext context) {
           }
         },
         child: Text(
-          "Cancel",
+          S.of(context).cancel,
           style: Txtstyle.style16(context: context).copyWith(
               color: AppColors.kPrimaryColor,
               fontWeight: FontWeight.w600,

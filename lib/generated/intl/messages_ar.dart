@@ -31,6 +31,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "available_Balance":
             MessageLookupByLibrary.simpleMessage("الرصيد المتاح"),
         "brand": MessageLookupByLibrary.simpleMessage("العلامة التجارية"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "change_Profile_Picture":
+            MessageLookupByLibrary.simpleMessage("تغيير صورة الملف الشخصي"),
         "check_your_email":
             MessageLookupByLibrary.simpleMessage("تحقق من بريدك الإلكتروني"),
         "choose_Photo": MessageLookupByLibrary.simpleMessage("اختيار صورة"),
@@ -82,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset_Password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
+        "save_Now": MessageLookupByLibrary.simpleMessage("حفظ الآن"),
         "see_All_Reviews":
             MessageLookupByLibrary.simpleMessage("عرض جميع التقييمات"),
         "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
@@ -103,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "لقد قمنا بإرسال رابط إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
         "withdraw": MessageLookupByLibrary.simpleMessage("سحب"),
         "your_Name": MessageLookupByLibrary.simpleMessage("اسمك"),
+        "your_New_Name": MessageLookupByLibrary.simpleMessage("اسمك الجديد"),
+        "your_New_Number": MessageLookupByLibrary.simpleMessage("رقمك الجديد"),
         "your_Product": MessageLookupByLibrary.simpleMessage("منتجك")
       };
 }
