@@ -11,7 +11,7 @@ AppBar customAppBar(
     IconData? iconData}) {
   return AppBar(
     surfaceTintColor: Colors.transparent,
-    backgroundColor: AppColors.kOfWhiteColor,
+    backgroundColor: Colors.white,
     leading: CustomBackAndFavIcon(
       onPressed: onPressed1,
     ),

@@ -1,7 +1,7 @@
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/data/Cubits/vendor_cubit/vendor_cubit.dart';
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
-import '../../../../core/localization/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/functions/changePhotoBottomSheet.dart';
 import '../../../../core/constants.dart';
 import '../../../../core/styles/App_Colors.dart';

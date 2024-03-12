@@ -1,4 +1,4 @@
-import '../../../../core/localization/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/tools/App_Regex.dart';
 import '../../../../core/tools/global_keys.dart';
 import '../../../../core/tools/reg_imp.dart';

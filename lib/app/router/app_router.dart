@@ -7,6 +7,8 @@ import 'package:nike_app_vendors/app/views/screens/edit_perconal_Info_Screen/edi
 import 'package:nike_app_vendors/app/views/screens/home_screen/home_screen.dart';
 import 'package:nike_app_vendors/app/views/screens/my_Profile_Screen/my_profile_Screen.dart';
 import 'package:nike_app_vendors/app/views/screens/perconal_Info_Screen/PerconalInfoScreen.dart';
+import 'package:nike_app_vendors/app/views/screens/reviews/reviews_Screen.dart';
+import 'package:nike_app_vendors/app/views/screens/settings/Setting_Screen.dart';
 import 'package:nike_app_vendors/app/views/widgets/BottomNavBar.dart';
 import '../data/models/Vendors_Model.dart';
 import '../views/screens/auth/forget_password_screen/forget_password_Screen.dart';
@@ -22,6 +24,8 @@ abstract class Approuter {
   static const myprofilescreen = "/myprofilescreen";
   static const editprofilescreen = "/editprofilescreen";
   static const addproductscreen = "/addproductscreen";
+  static const reviewscreen = "/reviewscreen";
+  static const settingscreen = "/settingscreen";
 
   static final router = GoRouter(
     routes: [
@@ -66,6 +70,14 @@ abstract class Approuter {
       GoRoute(
         path: addproductscreen,
         builder: (context, state) => const AddProductScreen(),
+      ),
+      GoRoute(
+        path: reviewscreen,
+        builder: (context, state) => const ReviewsScreen(),
+      ),
+      GoRoute(
+        path: settingscreen,
+        builder: (context, state) => const SettingsScreen(),
       ),
     ],
   );

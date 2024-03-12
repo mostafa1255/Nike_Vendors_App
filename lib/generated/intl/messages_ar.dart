@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "already_have_an_account":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "app_name": MessageLookupByLibrary.simpleMessage("nike_app_vendors"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "available_Balance":
             MessageLookupByLibrary.simpleMessage("الرصيد المتاح"),
         "brand": MessageLookupByLibrary.simpleMessage("العلامة التجارية"),
@@ -41,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "descreption": MessageLookupByLibrary.simpleMessage("الوصف"),
         "email":
             MessageLookupByLibrary.simpleMessage("عنوان البريد الإلكتروني"),
+        "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "enter_Email_to_Reset_Password": MessageLookupByLibrary.simpleMessage(
             "أدخل عنوان بريدك الإلكتروني لإعادة تعيين كلمة المرور"),
         "fill_the_fields":
@@ -51,7 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_Password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "hello_Again": MessageLookupByLibrary.simpleMessage("مرحبا مرة أخرى!"),
+        "languages": MessageLookupByLibrary.simpleMessage("اللغات"),
         "loading": MessageLookupByLibrary.simpleMessage("جار التحميل"),
+        "locale": MessageLookupByLibrary.simpleMessage("ar"),
         "location": MessageLookupByLibrary.simpleMessage("الموقع"),
         "log_Out": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),

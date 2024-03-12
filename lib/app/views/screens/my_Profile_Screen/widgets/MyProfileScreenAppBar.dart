@@ -1,4 +1,4 @@
-import '../../../../core/localization/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';
 import '../../../widgets/CustomBackIcon.dart';

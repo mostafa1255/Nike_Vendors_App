@@ -3,7 +3,7 @@ import 'package:nike_app_vendors/app/core/styles/App_Image.dart';
 import 'package:nike_app_vendors/app/core/tools/reg_imp.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
 import 'package:nike_app_vendors/app/views/widgets/customMainButton.dart';
-import '../../../../core/localization/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../data/Cubits/auth cubits/login_Cubit/login_cubit.dart';
 import '../../../../router/app_router.dart';
@@ -81,8 +81,7 @@ class MyProfileScreenBody extends StatelessWidget {
                       ),
                       CustomListTile(
                         onTap: () {
-                          GoRouter.of(context)
-                              .push(Approuter.perconalinfoscreen);
+                          GoRouter.of(context).push(Approuter.settingscreen);
                         },
                         image: AppImages.iconsIconsettings,
                         title: S.of(context).settings,
@@ -97,7 +96,7 @@ class MyProfileScreenBody extends StatelessWidget {
                 widget: Center(
                   child: CustomListTile(
                     onTap: () {
-                      GoRouter.of(context).push(Approuter.perconalinfoscreen);
+                      GoRouter.of(context).push(Approuter.reviewscreen);
                     },
                     image: AppImages.userReview,
                     title: S.of(context).user_Reviews,

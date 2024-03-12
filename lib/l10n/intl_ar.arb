@@ -58,5 +58,10 @@
 "cancel": "إلغاء",
 "change_Profile_Picture": "تغيير صورة الملف الشخصي",
 "your_New_Name": "اسمك الجديد",
-"your_New_Number": "رقمك الجديد"
+"your_New_Number": "رقمك الجديد",
+"languages": "اللغات",
+"english": "الإنجليزية",
+"arabic": "العربية",
+"locale":"ar"
+
 }

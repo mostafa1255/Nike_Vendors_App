@@ -1,7 +1,7 @@
 import 'package:nike_app_vendors/app/data/models/Vendors_Model.dart';
 import 'package:nike_app_vendors/app/views/screens/home_screen/widgets/CustomHomeCardListView.dart';
 import 'package:nike_app_vendors/app/views/widgets/VsizedBox.dart';
-import '../../../../core/localization/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../core/styles/App_Colors.dart';
 import '../../../../core/styles/text_Style.dart';
 import '../../../../core/tools/reg_imp.dart';

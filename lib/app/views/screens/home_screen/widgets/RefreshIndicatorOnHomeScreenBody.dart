@@ -10,11 +10,13 @@ class RefreshIndicatorOnHomeScreenBody extends StatelessWidget {
     required this.vendorModel,
   });
   final VendorModel vendorModel;
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
       color: AppColors.kPrimaryColor,
       onRefresh: () async {
+      
         GoRouter.of(context).pushReplacement(Approuter.bottomnav);
       },
       child: HomeScreenBody(
