@@ -56,7 +56,6 @@ class LoginRepoImpl extends LoginRepo {
           await FirebaseAuth.instance.signInWithCredential(credential);
       // Check if the user is new
       final isNewUser = userCredential.additionalUserInfo!.isNewUser;
-
       QuerySnapshot query = await FirebaseFirestore.instance
           .collection('users')
           .where('email', isEqualTo: userCredential.user!.email)
